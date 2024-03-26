@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Exploration of datasets related to Buffalo Bayou</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+</head>
+<body>
+    <div>
+        <h1 class="title">Exploration of datasets related to Buffalo Bayou</h1>
+    </div>
+    <div>
+        <p style="margin-left:1rem;color:red;"> NOTE: This is in progress! Work will continue. Things don't all work yet.</p>
+        <p style="margin-left:1rem;color:red;">Only use for Houston Geology Society working group on Buffalo Bayou</p>
+    </div>
+    <div>
+        <div id="geoData" class="mapHolder"></div>
+        <div id="geoDataB" class="mapHolder"><H3>.....Additional material will go here</H3></div>
+    </div>
+    <div>
+        
+        <div id="map" class="mapHolder"></div>
+        <div id="macrostrat-map" class="mapHolder"></div>
+    </div>
+    <div>
+        
+    </div>
+    <div >
+        <div id="streetview" style="height:500px" class="mapHolder"><p style="margin-left:1rem;">A Streetview image will appear here once a click is registered near a photo location. Click near major roads.</p></div>
+            <div id="clickedDiv" class="mapHolder">
+                <div id="lastLatLongClicked" >
+                    <h3>Last Clicked Point</h3>
+                    <span >
+                        <p style=" display: inline; " >Latitude:</p>
+                        <p style=" display: inline; " id="latP">null</p>
+                        <p style=" display: inline; " >Longitude:</p>
+                        <p style=" display: inline; " id="lngP">null</p>
+                    </span> 
+            </div>
+            <div style="display:inline">
+                <div id="RocksAtSurfaceDiv" >
+                    <span style="display:inline">
+                        <h3>Rocks at clicked point</h3>
+                        <!-- <p> sometimes top 2 layers, sometimes 2 sources</p> -->
+                    </span>
+                    <div id="results" class="results-container"></div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    
+
+   
+    
+
+  
+    <script>
+        // Check if developing locally at port 8000
+        if (window.location.port === '8000' || window.location.port === '8080') {
+            // Retrieve the API key from the environmental variable
+            //var apiKey = process.env.GOOGLE_STREETVIEW_KEY;
+            //// THIS KEY IS ONLY USED FOR LOCAL DEVELOPMENT AND WILL NOT WORK ELSEWHERE SO GET YOUR OWN
+            var apiKey = `AIzaSyDBmBG64YBjYMNdGzPoQFxvD45G2Yw5OEw`;
+
+            // Dynamically create the script tag with the API key
+            var script = document.createElement('script');
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey + '&callback=initialize&v=weekly';
+            console.log("delete me")
+            document.head.appendChild(script);
+        } else {
+            // Use the hardcoded API key
+            var script = document.createElement('script');
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=YOUR_STREETVIEW_API_KEY&callback=initialize&v=weekly';
+            document.head.appendChild(script);
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+    <script src="js/jszip.js"></script>
+    <script src="js/L.KML.js"></script>
+    <script src="js/macroStratFetch.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+
