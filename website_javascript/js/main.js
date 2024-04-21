@@ -132,7 +132,7 @@ var fieldData = fetch('data/BB_Outcrops and_faults.kmz')
     return zip.file("doc.kml").async("string");
     })
     .then(function success(kmltext) {
-                    kmltextMod = kmltext.replace(/\b(\d+_\d+\.jpg)\b/g, '/images/$1');
+                    kmltextMod = kmltext.replace(/\b(\d+_\d+\.jpg)\b/g, './images/$1');
                     // Create new kml overlay
                     const parser = new DOMParser();
                     const kml = parser.parseFromString(kmltextMod, 'text/xml');
