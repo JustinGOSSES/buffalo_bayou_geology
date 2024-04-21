@@ -127,13 +127,14 @@
 
   
     <script>
+        // THIS KEY ONLY WORKS ON https://justingosses.github.io/buffalo_bayou_geology/website_javascript/
+        var apiKey = `AIzaSyDBmBG64YBjYMNdGzPoQFxvD45G2Yw5OEw`;
         // Check if developing locally at port 8000
         if (window.location.port === '8000' || window.location.port === '8080') {
             // Retrieve the API key from the environmental variable
             //var apiKey = process.env.GOOGLE_STREETVIEW_KEY;
             //// THIS KEY IS ONLY USED FOR LOCAL DEVELOPMENT AND WILL NOT WORK ELSEWHERE SO GET YOUR OWN //  http://127.0.0.1:8080
-            var apiKey = `AIzaSyDBmBG64YBjYMNdGzPoQFxvD45G2Yw5OEw`;
-
+            
             // Dynamically create the script tag with the API key
             var script = document.createElement('script');
             script.src = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey + '&callback=initialize&v=weekly';
@@ -142,7 +143,7 @@
         } else {
             // Use the hardcoded API key
             var script = document.createElement('script');
-            script.src = 'https://maps.googleapis.com/maps/api/js?key=YOUR_STREETVIEW_API_KEY&callback=initialize&v=weekly';
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey + '&callback=initialize&v=weekly';
             document.head.appendChild(script);
         }
     </script>
