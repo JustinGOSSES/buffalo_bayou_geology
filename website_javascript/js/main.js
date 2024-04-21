@@ -2,6 +2,17 @@ latitude = 29.749907
 longitude = -95.4584
 initialZoom = 10
 
+async function getGeologyData(lat, lng) {
+    // const url = `https://macrostrat.org/api/v2/units/geom?lat=${lat}&lng=${lng}&format=json`;
+    const url =  `https://macrostrat.org/api/geologic_units/map/?lat=${lat}&lng=${lng}&response=long`
+    
+    return fetch(url)
+      .then(
+        response => response.json()
+        )
+      ;
+  }
+
 var geoData = L.map('geoData').setView([latitude, longitude], initialZoom );
 var geoDataLarge = L.map('geoDataLarge').setView([latitude, longitude], 15 );
 
