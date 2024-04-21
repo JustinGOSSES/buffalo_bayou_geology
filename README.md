@@ -6,3 +6,7 @@ purposes of helping members of the Houston Geological Societies working group on
 Buffalo Bayou Geology.
 
 Full licenses, copyright, and citation details are in progress!
+
+## Contributing 
+
+Please reach out through the Houston Geology Association Buffalo Bayou working group to contribute.
