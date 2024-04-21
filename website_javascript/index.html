@@ -6,23 +6,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
     <link rel="stylesheet" href="css/main.css">
     <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div>
         <h1 class="title">Exploration of datasets related to Buffalo Bayou</h1>
     </div>
-    <div>
-        <p style="margin-left:1rem;color:red;"> NOTE: This is in progress! Work will continue. Things don't all work yet.</p>
-        <p style="margin-left:1rem;color:red;">Only use for Houston Geology Society working group on Buffalo Bayou</p>
+    <div class="textHolder">
+        <p style="color:red;"> NOTE: This page is in development and meant only for use by the Houston Geology Society working group on Buffalo Bayou at this time</p>
     </div>
-    <div>
-        <div id="geoData" class="mapHolder"></div>
-        <div id="geoDataB" class="mapHolder"><H3>.....Additional material will go here</H3></div>
+    <div class="textHolder">
+        <p> Please scroll down the page for important information on data limitations and references.</p>
+    </div>
+    <div id="geoDataLarge" class="mapHolderLarge"></div>
+    <div class="centerText">
+        <h2>The maps below will move in sync with one another.</h2>
     </div>
     <div>
         
-        <div id="map" class="mapHolder"></div>
-        <div id="macrostrat-map" class="mapHolder"></div>
+        <div id="geoData" class="mapHolder">
+            <p class="mapTitles fontLight">Geologic data map</p>
+        </div>
+        <div id="macrostrat-map" class="mapHolder">
+            <h3 class="mapTitles fontDark">Macrostrat Geologic map</h3>
+        </div>
+       
+    </div>
+    <div>
+        <div id="map" class="mapHolder">
+            <h3 class="mapTitles fontDark">Open Street Map</h3>
+        </div>
+        <div id="geoDataB" class="mapHolder">
+            <h3 class="mapTitles fontDark">.....Additional material will go here such as georeferenced images of soil maps</h3>
+        </div>
+        
     </div>
     <div>
         
@@ -30,19 +50,20 @@
     <div >
         <div id="streetview" style="height:500px" class="mapHolder"><p style="margin-left:1rem;">A Streetview image will appear here once a click is registered near a photo location. Click near major roads.</p></div>
             <div id="clickedDiv" class="mapHolder">
+
                 <div id="lastLatLongClicked" >
-                    <h3>Last Clicked Point</h3>
+                    <h3>Last Clicked Point on Map</h3>
                     <span >
                         <p style=" display: inline; " >Latitude:</p>
                         <p style=" display: inline; " id="latP">null</p>
                         <p style=" display: inline; " >Longitude:</p>
                         <p style=" display: inline; " id="lngP">null</p>
                     </span> 
-            </div>
+                </div>
             <div style="display:inline">
                 <div id="RocksAtSurfaceDiv" >
                     <span style="display:inline">
-                        <h3>Rocks at clicked point</h3>
+                        <h3>Rocks at clicked point based on <a href="https://macrostrat.org/">Macrostrat</a> geologic map API</h3>
                         <!-- <p> sometimes top 2 layers, sometimes 2 sources</p> -->
                     </span>
                     <div id="results" class="results-container"></div>
@@ -50,6 +71,54 @@
                
             </div>
         </div>
+    </div>
+    <div class="centerText textHolder">
+        <h2>Data Sources & Limitations</h2>
+    </div>
+    <div class="textHolder">
+        <div style="width:50%">
+            <h1>Geologic field data: </h1>
+            ------------------
+            <h2>Outcrop mapped along buffalo bayou:</h2>  
+            <p><b>COLOR:</b> The brown lines are lineations mapped from outcrop observations and LIDAR. White lines are possible outcrops.</p>
+            <p><b>SOURCE:</b> This data was collected with the Midland Valley Clino structure geology app. All locations are preliminary. Jerry Kendall</p>
+            <p><b>LIMITATIONS: </b>
+                Lineations are not necessarily faults.
+            </p>  
+            ------------------
+            <h2>Regional fault mapping:</h2>  
+            <p><b>COLOR:</b> Regional faults are in black. </p>  
+            <p><b>LIMITATIONS: </b>These are mapped from subsurface seismic imagery. They are mostly not exposed in surface.
+                Geographic position should be interpreted as very approximate give they are not exposed at surface. 
+                They are shown here to indicate regional patterns of structural features.</p>
+            </p>
+        </div>
+        <div>  
+            <h1>Basemap sources: </h1>    
+            <p>Macrostrat data from the <a href="https://macrostrat.org/">Macrostrat API</a></p>
+            <p>Streetview data from the <a href="https://developers.google.com/maps/documentation/streetview/overview">Google Streetview API</a></p>
+            <p>Open Street Map data from <a href="https://www.openstreetmap.org/">https://www.openstreetmap.org/</a></p>
+            <p>ESRI world map and ESRI topo map <a href="https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9#!">ESRI</a></p>
+        </div>
+    </div>
+
+
+    <div class="textHolder">
+        <h2>For non-geologists</h2>
+    </div>
+    <div class="textHolder" style="margin-left:5rem;margin-right:5rem">
+        <p style="width:85%">You might be surprised by all the linear features that may be faults in places. 
+            First, the faults that exist in this part of the gulf coast are slow gradual moving 
+            <a href="https://wiki.aapg.org/Growth_fault">growth faults</a> rather than the types of faults in other part of the world 
+            that produce earthquakes.
+            Second, not all of the linear features are faults. Some are linear features that might be things other than faults. 
+            A map of active surface faults in the Houston area from can be found at this 
+            <a href="https://www.arcgis.com/home/webmap/viewer.html?webmap=e96a9e9e48824c2380c3a9b1e6a0a8c1">web map</a>
+             from the USGS publication 
+             <a href="https://www.arcgis.com/home/item.html?id=e96a9e9e48824c2380c3a9b1e6a0a8c1">Sachin D Shah & Jennifer Lanning Rush, 2005</a>.
+             However, even these move very slowly and it is only the most active parts of the faults that cause problems in the way of 
+             cracks to foundations.
+        </p>
     </div>
     
 
@@ -62,7 +131,7 @@
         if (window.location.port === '8000' || window.location.port === '8080') {
             // Retrieve the API key from the environmental variable
             //var apiKey = process.env.GOOGLE_STREETVIEW_KEY;
-            //// THIS KEY IS ONLY USED FOR LOCAL DEVELOPMENT AND WILL NOT WORK ELSEWHERE SO GET YOUR OWN
+            //// THIS KEY IS ONLY USED FOR LOCAL DEVELOPMENT AND WILL NOT WORK ELSEWHERE SO GET YOUR OWN //  http://127.0.0.1:8080
             var apiKey = `AIzaSyDBmBG64YBjYMNdGzPoQFxvD45G2Yw5OEw`;
 
             // Dynamically create the script tag with the API key

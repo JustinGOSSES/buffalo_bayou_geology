@@ -1,8 +1,9 @@
 latitude = 29.749907
-longitude = -95.358421
+longitude = -95.4584
 initialZoom = 10
 
 var geoData = L.map('geoData').setView([latitude, longitude], initialZoom );
+var geoDataLarge = L.map('geoDataLarge').setView([latitude, longitude], 15 );
 
 let myStyles = {
     "color": "rgb(50, 50, 50)",
@@ -47,12 +48,13 @@ var openstreet2 = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.pn
     zoomOffset: -1
 }).addTo(geoData);
 
+
 var esriTopo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
     attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
     tileSize: 512,
     zoomOffset: -1,
     maxZoom: 16
-}).addTo(geoData);
+}).addTo(geoDataLarge);
 
 var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     maxZoom: 18,
@@ -61,7 +63,12 @@ var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest
     zoomOffset: -1,
 }).addTo(geoData);
 
-
+var esriTopo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+    tileSize: 512,
+    zoomOffset: -1,
+    maxZoom: 16
+}).addTo(geoData);
 
 var macrostratMap = L.map('macrostrat-map').setView([latitude, longitude], initialZoom );
 
@@ -122,6 +129,28 @@ var fieldData = fetch('data/BB_Outcrops and_faults.kmz')
                     geoData.addLayer(track);
                 });
 
+var fieldData2 = fetch('data/BB_Outcrops and_faults.kmz')
+.then(function (response) {
+    if (response.status === 200 || response.status === 0) {
+        return Promise.resolve(response.blob());
+    } else {
+        return Promise.reject(new Error(response.statusText));
+    }
+    })
+    .then(JSZip.loadAsync)
+    .then(function (zip) {
+    console.log("zip",zip)
+    return zip.file("doc.kml").async("string");
+    })
+    .then(function success(kmltext) {
+                    kmltextMod = kmltext.replace(/\b(\d+_\d+\.jpg)\b/g, '/images/$1');
+                    // Create new kml overlay
+                    const parser = new DOMParser();
+                    const kml = parser.parseFromString(kmltextMod, 'text/xml');
+                    const track = new L.KML(kml);
+                    geoDataLarge.addLayer(track);
+                });
+
 // add the OpenTopoMap tile layer to the map
 topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
     maxZoom: 17,
@@ -165,6 +194,8 @@ function mapClick(e){
         radius: 50
     })
     circle.addTo(map);
+    // circle.addTo(macrostratMap);
+    // circle.addTo(macrostratMap);
     var circleClone = L.circle(e.latlng, {
         color: 'red',
         fillColor: '#f03',
@@ -178,7 +209,7 @@ function mapClick(e){
         radius: 50
     })
     circleClone.addTo(macrostratMap)
-    circleClone.addTo(geoData)
+    circleClone3.addTo(geoData)
 
     var streetview = new google.maps.StreetViewPanorama(document.getElementById("streetview"), {
         position: {lat: latlng.lat, lng: latlng.lng},
@@ -252,7 +283,7 @@ map.on('move', function(e) {
     if (!ignoreNextZoom) {
         var center = map.getCenter();
         macrostratMap.setView(center, map.getZoom(), { animate: false });
-        geoData.setView(center, macrostratMap.getZoom(), { animate: false });
+        geoData.setView(center, map.getZoom(), { animate: false });
     }
     ignoreNextZoom = false;
 });
@@ -261,7 +292,7 @@ macrostratMap.on('move', function(e) {
     if (!ignoreNextZoom) {
         var center = macrostratMap.getCenter();
         map.setView(center, macrostratMap.getZoom(), { animate: false });
-        geoData.setView(center, map.getZoom(), { animate: false });
+        geoData.setView(center, macrostratMap.getZoom(), { animate: false });
     }
     ignoreNextZoom = false;
 });
@@ -275,12 +306,11 @@ geoData.on('move', function(e) {
     ignoreNextZoom = false;
 });
 
+
+
+
 geoData.on('click', function(e) {
     mapClick(e)
-});
-
-geoData.on('zoomend', function(e) {
-    ignoreNextZoom = true;
 });
 
 map.on('click', function(e) {
@@ -289,6 +319,10 @@ map.on('click', function(e) {
 
 macrostratMap.on('click', function(e) {
     mapClick(e)
+});
+
+geoData.on('zoomend', function(e) {
+    ignoreNextZoom = true;
 });
 
 map.on('zoomend', function(e) {
