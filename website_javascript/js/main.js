@@ -2,6 +2,9 @@ latitude = 29.749907
 longitude = -95.4584
 initialZoom = 10
 
+var baseUrl = window.location.protocol + "//" + window.location.host + "/";
+var fullUrl = window.location.href;
+
 async function getGeologyData(lat, lng) {
     // const url = `https://macrostrat.org/api/v2/units/geom?lat=${lat}&lng=${lng}&format=json`;
     const url =  `https://macrostrat.org/api/geologic_units/map/?lat=${lat}&lng=${lng}&response=long`
@@ -132,7 +135,7 @@ var fieldData = fetch('data/BB_Outcrops and_faults.kmz')
     return zip.file("doc.kml").async("string");
     })
     .then(function success(kmltext) {
-                    kmltextMod = kmltext.replace(/\b(\d+_\d+\.jpg)\b/g, './images/$1');
+                    kmltextMod = kmltext.replace(/\b(\d+_\d+\.jpg)\b/g, fullUrl+'images/$1');
                     // Create new kml overlay
                     const parser = new DOMParser();
                     const kml = parser.parseFromString(kmltextMod, 'text/xml');
@@ -154,7 +157,7 @@ var fieldData2 = fetch('data/BB_Outcrops and_faults.kmz')
     return zip.file("doc.kml").async("string");
     })
     .then(function success(kmltext) {
-                    kmltextMod = kmltext.replace(/\b(\d+_\d+\.jpg)\b/g, '/images/$1');
+                    kmltextMod = kmltext.replace(/\b(\d+_\d+\.jpg)\b/g, fullUrl+'images/$1');
                     // Create new kml overlay
                     const parser = new DOMParser();
                     const kml = parser.parseFromString(kmltextMod, 'text/xml');
