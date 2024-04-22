@@ -81,7 +81,7 @@ L.Util.extend(L.KML, {
 	},
 
 	parseStyle: function (xml, kmlOptions) {
-		var style = {}, poptions = {}, ioptions = {}, el, id;
+		var style = {}, poptions = {}, ioptions = {}, el, id, heading = 120;
 
 		var attributes = {color: true, width: true, Icon: true, href: true, hotSpot: true};
 
@@ -124,10 +124,27 @@ L.Util.extend(L.KML, {
 		if (poptions.color) { style.fillColor = poptions.color; }
 		if (poptions.opacity) { style.fillOpacity = poptions.opacity; }
 		el = xml.getElementsByTagName('IconStyle');
-		if (el && el[0]) { ioptions = _parse(el[0]); }
+		console.log("el",el[0])
+		if (el && el[0]) { 
+			ioptions = _parse(el[0]); 
+			console.log(ioptions)
+			var headingElement = el[0].getElementsByTagName('heading');
+			if (headingElement && headingElement[0]) {
+				heading = parseFloat(headingElement[0].textContent);
+				console.log("heading", heading);
+			}
+		}
+		console.log("heading outside = ", heading);
+		
+		// console.log("ioptions", ioptions)
+		// if (el[0]?.heading){
+		// 	console.log("heading detected", ioptions.heading)
+		// 	heading = ioptions.heading
+		// }
 		if (ioptions.href) {
 			var iconOptions = {
 				iconUrl: ioptions.href,
+				rotation: heading,
 				shadowUrl: null,
 				anchorRef: {x: ioptions.x, y: ioptions.y},
 				anchorType:	{x: ioptions.xunits, y: ioptions.yunits}
@@ -139,6 +156,7 @@ L.Util.extend(L.KML, {
 
 			style.icon = new L.KMLIcon(iconOptions);
 		}
+		
 
 		id = xml.getAttribute('id');
 		if (id && style) {
@@ -428,9 +446,10 @@ L.KMLIcon = L.Icon.extend({
 	},
 	applyCustomStyles: function(img) {
 		var options = this.options;
+		options.iconSize = [32, 32]
+		options.iconAnchor = [16, 16]
 		var width = options.iconSize[0];
 		var height = options.iconSize[1];
-
 		this.options.popupAnchor = [0,(-0.83*height)];
 		if (options.anchorType.x === 'fraction')
 			img.style.marginLeft = (-options.anchorRef.x * width) + 'px';
@@ -440,6 +459,10 @@ L.KMLIcon = L.Icon.extend({
 			img.style.marginLeft = (-options.anchorRef.x) + 'px';
 		if (options.anchorType.y === 'pixels')
 			img.style.marginTop  = (options.anchorRef.y - height + 1) + 'px';
+		if (options.rotation) {
+			console.log(" options.heading", options.rotation)
+			img.style[L.DomUtil.TRANSFORM] += ' rotate(' + options.rotation + 'deg)';
+		}
 	}
 });
 
