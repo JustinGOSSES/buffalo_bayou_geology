@@ -11,11 +11,11 @@ The resulting maps consist of the following parts:
 
 
 ## Digital Elevation Model dataset download description
-
-## Summary 
+ 
 
 The digital elevation model or DEM used in this repository (most of which is only on local computer due to size of some of the files)
 came from [Open Topography's](https://opentopography.org/) topographic data locator and download tools. 
+
 
 The dataset itself is sourced from USGS (United Stats Geologic Survey), specifically the 
 USGS 1/3 arc-second Digital Elevation Model(USGS10m). More detailed information can be found in the metadata file
@@ -34,6 +34,9 @@ These are not all pushed into the remote repository on GitHub to avoid slowing d
 repository. However, all of these files can be found in 
 a [google drive folder](https://drive.google.com/drive/folders/1rsUcOLENkj3Mep1P0wf--2rS9FM__Kza?usp=drive_link).
 
-
-
+The job used to create the TIFF from the raw USGS data API is at: 
 https://portal.opentopography.org/rasterOutput?jobId=rt1716147037733
+
+```data citation
+United States Geological Survey (2021). United States Geological Survey 3D Elevation Program 1/3 arc-second Digital Elevation Model. Distributed by OpenTopography. https://doi.org/10.5069/G98K778D. Accessed: 2024-05-25
+```
