@@ -124,17 +124,17 @@ L.Util.extend(L.KML, {
 		if (poptions.color) { style.fillColor = poptions.color; }
 		if (poptions.opacity) { style.fillOpacity = poptions.opacity; }
 		el = xml.getElementsByTagName('IconStyle');
-		console.log("el",el[0])
+		//console.log("el",el[0])
 		if (el && el[0]) { 
 			ioptions = _parse(el[0]); 
-			console.log(ioptions)
+			//console.log(ioptions)
 			var headingElement = el[0].getElementsByTagName('heading');
 			if (headingElement && headingElement[0]) {
 				heading = parseFloat(headingElement[0].textContent);
-				console.log("heading", heading);
+				//console.log("heading", heading);
 			}
 		}
-		console.log("heading outside = ", heading);
+		//console.log("heading outside = ", heading);
 		
 		// console.log("ioptions", ioptions)
 		// if (el[0]?.heading){
@@ -460,7 +460,7 @@ L.KMLIcon = L.Icon.extend({
 		if (options.anchorType.y === 'pixels')
 			img.style.marginTop  = (options.anchorRef.y - height + 1) + 'px';
 		if (options.rotation) {
-			console.log(" options.heading", options.rotation)
+			//console.log(" options.heading", options.rotation)
 			img.style[L.DomUtil.TRANSFORM] += ' rotate(' + options.rotation + 'deg)';
 		}
 	}

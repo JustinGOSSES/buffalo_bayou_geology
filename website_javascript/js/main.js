@@ -5,6 +5,38 @@ initialZoom = 10
 var baseUrl = window.location.protocol + "//" + window.location.host + "/";
 var fullUrl = window.location.href;
 
+
+
+// Define the WGS84 projection
+var wgs84 = proj4('EPSG:4326');
+
+// Define the Web Mercator projection
+var webMercator = proj4('EPSG:3857');
+
+// Function to convert lat/lon to Web Mercator
+function convertLatLonToWebMercator(lat, lon) {
+    return proj4(wgs84, webMercator, [lon, lat]);
+}
+
+// Function to convert all points in a GeoJSON to Web Mercator
+function convertGeoJSONToWebMercator(geojson) {
+    geojson.features.forEach(function(feature) {
+        if (feature.geometry.type === "Point") {
+            var lat = feature.geometry.coordinates[1];
+            var lon = feature.geometry.coordinates[0];
+            var convertedCoords = convertLatLonToWebMercator(lon, lat);
+            //var convertedCoords = [lon, lat];
+            feature.geometry.coordinates = convertedCoords;
+        }
+    });
+    return geojson;
+}
+
+
+
+
+
+
 async function getGeologyData(lat, lng) {
     // const url = `https://macrostrat.org/api/v2/units/geom?lat=${lat}&lng=${lng}&format=json`;
     const url =  `https://macrostrat.org/api/geologic_units/map/?lat=${lat}&lng=${lng}&response=long`
@@ -164,6 +196,45 @@ var fieldData2 = fetch('data/BB_Outcrops and_faults.kmz')
                     const track = new L.KML(kml);
                     geoDataLarge.addLayer(track);
                 });
+
+var wellData1 = fetch('data/wells_v1.geojson')
+                .then(response => response.json())
+                .then(data => {
+                    const wells = new L.geoJSON(data, {
+                        pointToLayer: function(feature, latlng) {
+                            return L.circleMarker(latlng, {
+                                radius: 5, // Adjust the radius to make the circle smaller
+                                color: '#800080', // Optional: set the color of the circle
+                                fillColor: '#3388ff', // Optional: set the fill color of the circle
+                                fillOpacity: 0.5 // Optional: set the fill opacity
+                            }).bindPopup("name: " + feature.properties.name + ", ground_level: " + feature.properties.ground_level_feet + " in Ft.");
+                        }
+                    });
+                    geoData.addLayer(wells);
+                })
+                .catch(error => {
+                    console.error('Error:', error, "error was related to wellData1");
+                });
+
+var wellData2 = fetch('data/wells_v1.geojson')
+                .then(response => response.json())
+                .then(data => {
+                    const wells = new L.geoJSON(data, {
+                        pointToLayer: function(feature, latlng) {
+                            return L.circleMarker(latlng, {
+                                radius: 5, // Adjust the radius to make the circle smaller
+                                color: '#800080', // Optional: set the color of the circle
+                                fillColor: '#3388ff', // Optional: set the fill color of the circle
+                                fillOpacity: 0.5 // Optional: set the fill opacity
+                            }).bindPopup("name: " + feature.properties.name + ", ground_level: " + feature.properties.ground_level_feet + " in Ft.");
+                        }
+                    });
+                    geoDataLarge.addLayer(wells);
+                })
+                .catch(error => {
+                    console.error('Error:', error, "error was related to wellData1");
+                });
+
 
 // add the OpenTopoMap tile layer to the map
 topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
