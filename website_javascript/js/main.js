@@ -8,39 +8,44 @@ var fullUrl = window.location.href;
 
 
 // Define the WGS84 projection
-var wgs84 = proj4('EPSG:4326');
+// var wgs84 = proj4('EPSG:4326');
 
 // Define the Web Mercator projection
-var webMercator = proj4('EPSG:3857');
+// var webMercator = proj4('EPSG:3857');
 
 // Function to convert lat/lon to Web Mercator
-function convertLatLonToWebMercator(lat, lon) {
-    return proj4(wgs84, webMercator, [lon, lat]);
-}
+// function convertLatLonToWebMercator(lat, lon) {
+//     return proj4(wgs84, webMercator, [lon, lat]);
+// }
 
 // Function to convert all points in a GeoJSON to Web Mercator
-function convertGeoJSONToWebMercator(geojson) {
-    geojson.features.forEach(function(feature) {
-        if (feature.geometry.type === "Point") {
-            var lat = feature.geometry.coordinates[1];
-            var lon = feature.geometry.coordinates[0];
-            var convertedCoords = convertLatLonToWebMercator(lon, lat);
-            //var convertedCoords = [lon, lat];
-            feature.geometry.coordinates = convertedCoords;
-        }
-    });
-    return geojson;
-}
+// function convertGeoJSONToWebMercator(geojson) {
+//     geojson.features.forEach(function(feature) {
+//         if (feature.geometry.type === "Point") {
+//             var lat = feature.geometry.coordinates[1];
+//             var lon = feature.geometry.coordinates[0];
+//             var convertedCoords = convertLatLonToWebMercator(lon, lat);
+//             //var convertedCoords = [lon, lat];
+//             feature.geometry.coordinates = convertedCoords;
+//         }
+//     });
+//     return geojson;
+// }
 
-
-
-
+//////// HIDING THIS AS NOT CONVERTED TO LAT LONG BUT IN [3211684.2419351456, 13851777.147710562]
+// fetch('data/topoElevationBuffaloBayouShapeNad834204_geojson.json')
+//     .then(response => response.json())
+//     .then(data => {
+//         L.geoJSON(data, { style: myStyles }).addTo(geoData);
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//     });
+    
 
 
 async function getGeologyData(lat, lng) {
-    // const url = `https://macrostrat.org/api/v2/units/geom?lat=${lat}&lng=${lng}&format=json`;
     const url =  `https://macrostrat.org/api/geologic_units/map/?lat=${lat}&lng=${lng}&response=long`
-    
     return fetch(url)
       .then(
         response => response.json()
@@ -57,25 +62,27 @@ let myStyles = {
     "opacity": 0.76,
   };
 
+
+  var fieldData_layer_largeMap = L.layerGroup();
+  var wells_layer_largeMap = L.layerGroup();
+  
+  var fieldData_layer_smallMap = L.layerGroup();
+  var wells_layer_smallMap = L.layerGroup();
+  var faults_layer_smallMap = L.layerGroup();
+  
+
 fetch('data/texas_faults.json')
     .then(response => response.json())
     .then(data => {
-        L.geoJSON(data, { style: myStyles }).addTo(geoData);
+        var faults = L.geoJSON(data, { style: myStyles }) //.addTo(geoData);
+        geoData.addLayer(faults);
+        faults_layer_smallMap.addLayer(faults);
+
     })
     .catch(error => {
         console.error('Error:', error);
     });
 
-//////// HIDING THIS AS NOT CONVERTED TO LAT LONG BUT IN [3211684.2419351456, 13851777.147710562]
-// fetch('data/topoElevationBuffaloBayouShapeNad834204_geojson.json')
-//     .then(response => response.json())
-//     .then(data => {
-//         L.geoJSON(data, { style: myStyles }).addTo(geoData);
-//     })
-//     .catch(error => {
-//         console.error('Error:', error);
-//     });
-    
 
 
 var map = L.map('map').setView([latitude, longitude], initialZoom );
@@ -145,12 +152,14 @@ attribution: 'Street Map &copy; <a href="https://www.openstreetmap.org/">OpenStr
 
 
 var overlayMaps = {
-"StreetsLight": streetsLight,
-"streetsBold": streetsBold,
+    "streets Bold transparency": streetsBold,
+"Streets Light transparency": streetsLight,
+"macrostratMap": macrostratMap
 };
 
+L.control.layers(overlayMaps).addTo(macrostratMap);
 
-L.control.layers(null, overlayMaps).addTo(macrostratMap);
+
 
 
 var fieldData = fetch('data/BB_Outcrops and_faults.kmz')
@@ -173,6 +182,7 @@ var fieldData = fetch('data/BB_Outcrops and_faults.kmz')
                     const kml = parser.parseFromString(kmltextMod, 'text/xml');
                     const track = new L.KML(kml);
                     geoData.addLayer(track);
+                    fieldData_layer_smallMap.addLayer(track);
                 });
 
 var fieldData2 = fetch('data/BB_Outcrops and_faults.kmz')
@@ -195,6 +205,7 @@ var fieldData2 = fetch('data/BB_Outcrops and_faults.kmz')
                     const kml = parser.parseFromString(kmltextMod, 'text/xml');
                     const track = new L.KML(kml);
                     geoDataLarge.addLayer(track);
+                    fieldData_layer_largeMap.addLayer(track);
                 });
 
 var wellData1 = fetch('data/wells_v1.geojson')
@@ -211,6 +222,7 @@ var wellData1 = fetch('data/wells_v1.geojson')
                         }
                     });
                     geoData.addLayer(wells);
+                    wells_layer_smallMap.addLayer(wells)
                 })
                 .catch(error => {
                     console.error('Error:', error, "error was related to wellData1");
@@ -230,11 +242,43 @@ var wellData2 = fetch('data/wells_v1.geojson')
                         }
                     });
                     geoDataLarge.addLayer(wells);
+                    wells_layer_largeMap.addLayer(wells);
                 })
                 .catch(error => {
                     console.error('Error:', error, "error was related to wellData1");
                 });
 
+
+
+// Add the layer control to the map
+var overlayData = {
+    "fieldData_layer_largeMap": fieldData_layer_largeMap,
+    "wells_layer_largeMap": wells_layer_largeMap
+};
+
+L.control.layers(null, overlayData).addTo(geoDataLarge);
+
+// var fieldData_layer_smallMap = L.layerGroup();
+// var wells_layer_smallMap = L.layerGroup();
+
+var overlayDataSmallMap = {
+    "fieldData": fieldData_layer_smallMap,
+    "wells": wells_layer_smallMap,
+    "faults": faults_layer_smallMap
+};
+
+L.control.layers(null, overlayDataSmallMap).addTo(geoData);
+
+
+//.var data_layers_group = L.layerGroup([fieldData_layer_largeMap, wells_layer_largeMap]);
+
+// var overlayMaps = {
+//     "data_layers_group": data_layers_group
+// };
+
+//var layerControl = L.control.layers(overlayMaps).addTo(geoData);
+
+//L.control.layers(null, overlayData).addTo(geoData);
 
 // add the OpenTopoMap tile layer to the map
 topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
@@ -260,10 +304,6 @@ topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
   }).addTo(geoData);
 
   Esri_WorldImagery.addTo(geoData)
-
-
-
-
 
 function mapClick(e){
     var latlng = e.latlng;
