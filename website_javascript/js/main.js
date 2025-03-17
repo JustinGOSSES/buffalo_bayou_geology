@@ -160,53 +160,37 @@ var overlayMaps = {
 L.control.layers(overlayMaps).addTo(macrostratMap);
 
 
+var url_main_kml_field_data = "data/BB_outcrops_022025_kmz_unzipped_images/doc.kml";
 
+fetch(url_main_kml_field_data)
+    .then(response => response.text())
+    .then(function (kmltext) {
+        // Rewrite image URLs
+        const kmltextMod = kmltext.replace(/\b([\w\-]+\.(jpg|png))\b/gi, fullUrl + '/data/BB_outcrops_022025_kmz_unzipped_images/$1');
+        const parser = new DOMParser();
+        const kml = parser.parseFromString(kmltextMod, 'text/xml');
+        const track = new L.KML(kml);
+        geoData.addLayer(track);
+        fieldData_layer_smallMap.addLayer(track);
+    })
+    .catch(error => {
+        console.error('Error loading KML:', error);
+    });
 
-var fieldData = fetch('data/BB_Outcrops and_faults.kmz')
-.then(function (response) {
-    if (response.status === 200 || response.status === 0) {
-        return Promise.resolve(response.blob());
-    } else {
-        return Promise.reject(new Error(response.statusText));
-    }
+fetch(url_main_kml_field_data)
+    .then(response => response.text())
+    .then(function (kmltext) {
+        // Rewrite image URLs
+        const kmltextMod = kmltext.replace(/\b([\w\-]+\.(jpg|png))\b/gi, fullUrl + '/data/BB_outcrops_022025_kmz_unzipped_images/$1');
+        const parser = new DOMParser();
+        const kml = parser.parseFromString(kmltextMod, 'text/xml');
+        const track = new L.KML(kml);
+        geoDataLarge.addLayer(track);
+        fieldData_layer_largeMap.addLayer(track);
     })
-    .then(JSZip.loadAsync)
-    .then(function (zip) {
-    console.log("zip",zip)
-    return zip.file("doc.kml").async("string");
-    })
-    .then(function success(kmltext) {
-                    kmltextMod = kmltext.replace(/\b(\d+_\d+\.jpg)\b/g, fullUrl+'images/$1');
-                    // Create new kml overlay
-                    const parser = new DOMParser();
-                    const kml = parser.parseFromString(kmltextMod, 'text/xml');
-                    const track = new L.KML(kml);
-                    geoData.addLayer(track);
-                    fieldData_layer_smallMap.addLayer(track);
-                });
-
-var fieldData2 = fetch('data/BB_Outcrops and_faults.kmz')
-.then(function (response) {
-    if (response.status === 200 || response.status === 0) {
-        return Promise.resolve(response.blob());
-    } else {
-        return Promise.reject(new Error(response.statusText));
-    }
-    })
-    .then(JSZip.loadAsync)
-    .then(function (zip) {
-    console.log("zip",zip)
-    return zip.file("doc.kml").async("string");
-    })
-    .then(function success(kmltext) {
-                    kmltextMod = kmltext.replace(/\b(\d+_\d+\.jpg)\b/g, fullUrl+'images/$1');
-                    // Create new kml overlay
-                    const parser = new DOMParser();
-                    const kml = parser.parseFromString(kmltextMod, 'text/xml');
-                    const track = new L.KML(kml);
-                    geoDataLarge.addLayer(track);
-                    fieldData_layer_largeMap.addLayer(track);
-                });
+    .catch(error => {
+        console.error('Error loading KML:', error);
+    });
 
 var wellData1 = fetch('data/wells_v1.geojson')
                 .then(response => response.json())
@@ -218,7 +202,7 @@ var wellData1 = fetch('data/wells_v1.geojson')
                                 color: '#800080', // Optional: set the color of the circle
                                 fillColor: '#3388ff', // Optional: set the fill color of the circle
                                 fillOpacity: 0.5 // Optional: set the fill opacity
-                            }).bindPopup("name: " + feature.properties.name + ", ground_level: " + feature.properties.ground_level_feet + " in Ft.");
+                            }).bindPopup("well pseudoname: " + feature.properties.name + ", ground_level: " + feature.properties.ground_level_feet + " in Ft.");
                         }
                     });
                     geoData.addLayer(wells);
