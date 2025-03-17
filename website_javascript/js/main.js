@@ -160,9 +160,10 @@ var overlayMaps = {
 L.control.layers(overlayMaps).addTo(macrostratMap);
 
 
+var url_main_kmz_field_data = "data/BB_outcrops022025.kmz"
 
-
-var fieldData = fetch('data/BB_Outcrops and_faults.kmz')
+var fieldData = fetch(url_main_kmz_field_data)
+//var fieldData = fetch('data/BB_Outcrops and_faults.kmz')
 .then(function (response) {
     if (response.status === 200 || response.status === 0) {
         return Promise.resolve(response.blob());
@@ -176,7 +177,8 @@ var fieldData = fetch('data/BB_Outcrops and_faults.kmz')
     return zip.file("doc.kml").async("string");
     })
     .then(function success(kmltext) {
-                    kmltextMod = kmltext.replace(/\b(\d+_\d+\.jpg)\b/g, fullUrl+'images/$1');
+                    //kmltextMod = kmltext.replace(/\b(\d+_\d+\.jpg)\b/g, fullUrl+'/data/BB_outcrops_022025_kmz_unzipped_images/$1');
+                    kmltextMod = kmltext.replace(/\b([\w\-]+\.(jpg|png))\b/gi, fullUrl + '/data/BB_outcrops_022025_kmz_unzipped_images/$1');
                     // Create new kml overlay
                     const parser = new DOMParser();
                     const kml = parser.parseFromString(kmltextMod, 'text/xml');
@@ -185,7 +187,8 @@ var fieldData = fetch('data/BB_Outcrops and_faults.kmz')
                     fieldData_layer_smallMap.addLayer(track);
                 });
 
-var fieldData2 = fetch('data/BB_Outcrops and_faults.kmz')
+var fieldData2 = fetch(url_main_kmz_field_data)
+// var fieldData2 = fetch('data/BB_Outcrops and_faults.kmz')
 .then(function (response) {
     if (response.status === 200 || response.status === 0) {
         return Promise.resolve(response.blob());
@@ -199,7 +202,8 @@ var fieldData2 = fetch('data/BB_Outcrops and_faults.kmz')
     return zip.file("doc.kml").async("string");
     })
     .then(function success(kmltext) {
-                    kmltextMod = kmltext.replace(/\b(\d+_\d+\.jpg)\b/g, fullUrl+'images/$1');
+                    //kmltextMod = kmltext.replace(/\b(\d+_\d+\.jpg)\b/g, fullUrl+'/data/BB_outcrops_022025_kmz_unzipped_images/$1');
+                    kmltextMod = kmltext.replace(/\b([\w\-]+\.(jpg|png))\b/gi, fullUrl + '/data/BB_outcrops_022025_kmz_unzipped_images/$1');
                     // Create new kml overlay
                     const parser = new DOMParser();
                     const kml = parser.parseFromString(kmltextMod, 'text/xml');
@@ -218,7 +222,7 @@ var wellData1 = fetch('data/wells_v1.geojson')
                                 color: '#800080', // Optional: set the color of the circle
                                 fillColor: '#3388ff', // Optional: set the fill color of the circle
                                 fillOpacity: 0.5 // Optional: set the fill opacity
-                            }).bindPopup("name: " + feature.properties.name + ", ground_level: " + feature.properties.ground_level_feet + " in Ft.");
+                            }).bindPopup("well pseudoname: " + feature.properties.name + ", ground_level: " + feature.properties.ground_level_feet + " in Ft.");
                         }
                     });
                     geoData.addLayer(wells);
