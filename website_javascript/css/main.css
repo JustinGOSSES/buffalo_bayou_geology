@@ -200,3 +200,31 @@ p {
     color:darkblue
 }
 
+.gallery-item {
+    display: flex; /* Make it a flex container */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically (if needed) */
+    gap: 1rem; /* Space between items */
+    outline: 1px solid black; /* Add an outline */
+}
+
+.gallery-item img {
+    width: 55%;
+    height: auto;
+    /* margin-top: 0rem; */
+    margin-bottom: 1rem;
+    float: top;
+}
+
+.map-container {
+    width: 200px; /* Or a specific width, e.g., 300px */
+    height: 200px; /* Ensure height is explicitly set */
+    /* margin-top: 10px; */
+    position: relative; /* Required for Leaflet maps */
+}
+
+.gallery-item h3,
+.gallery-item p,
+.gallery-item .map-container {
+    margin: 10px 0;
+}
