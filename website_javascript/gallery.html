@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.6.2/proj4.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="css/main.css"> <!-- Optional: Add your CSS file -->
+</head>
+<body>
+    <div>
+        <h1 class="title">Column View of Geologic Data Points Along Buffalo Bayou</h1>
+    </div>
+    <div class="textHolder">
+        <p style="color:red;"> NOTE that this view is in development! Please note that data points are not yet in order of downstream.</p>
+    </div>
+    <div class="textHolder">
+        <p>Information on data collection is available on the <a href="/index.html">map view</a></p>
+    </div>
+    <!-- <h1>Photo Gallery</h1>
+    <h2>This view is in development</h2> -->
+    
+    <div id="gallery-container">
+        <!-- Photos and metadata will be dynamically added here -->
+    </div>
+    <script src="js/gallery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+    <!-- <script src="./js/macroStratFetch.js"></script>
+    <script src="./js/jszip.js"></script> -->
+    <script src="./js/L.KML.js"></script>
+    <!-- <script src="./js/main.js"></script> -->
+</body>
+</html>
