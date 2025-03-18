@@ -5,7 +5,13 @@ initialZoom = 10
 var baseUrl = window.location.protocol + "//" + window.location.host + "/";
 var fullUrl = window.location.href;
 
+// var fullUrl = window.location.href.includes("justingosses.github.io")
+// ? window.location.origin + "/website_javascript/"
+// : window.location.origin + "/";
 
+// if (window.location.href.includes("justingosses.github.io")){
+    
+// }
 
 // Define the WGS84 projection
 // var wgs84 = proj4('EPSG:4326');
