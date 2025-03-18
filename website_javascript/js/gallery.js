@@ -5,9 +5,9 @@ var baseUrl = window.location.protocol + "//" + window.location.host + "/";
 var fullUrl = window.location.href;
 
     // Adjust fullUrl for GitHub Pages deployment
-    var fullUrl = window.location.href.includes("justingosses.github.io")
-    ? window.location.origin + "/website_javascript/"
-    : window.location.origin + "/";
+    fullUrl = window.location.href.includes("github.io")
+    ? fullUrl + "/website_javascript/"
+    : fullUrl + "/";
 
 fetch(kmlFilePath)
     .then(response => response.text())
