@@ -1,13 +1,16 @@
-const kmlFilePath = "../data/BB_outcrops_022025_kmz_unzipped_images/doc.kml";
-const galleryContainer = document.getElementById("gallery-container");
+
+var kmlFilePath = "/data/BB_outcrops_022025_kmz_unzipped_images/doc.kml";
 
 var baseUrl = window.location.protocol + "//" + window.location.host + "/";
 var fullUrl = window.location.href;
 
-    // Adjust fullUrl for GitHub Pages deployment
-    fullUrl = window.location.href.includes("github.io")
-    ? fullUrl + "/website_javascript/"
-    : fullUrl + "/";
+// Adjust fullUrl for GitHub Pages deployment
+kmlFilePath  = window.location.href.includes("github.io")
+? "https://justingosses.github.io/buffalo_bayou_geology/website_javascript/data/BB_outcrops_022025_kmz_unzipped_images/doc.kml"
+: kmlFilePath
+
+
+const galleryContainer = document.getElementById("gallery-container");
 
 fetch(kmlFilePath)
     .then(response => response.text())
