@@ -9,6 +9,10 @@ kmlFilePath  = window.location.href.includes("github.io")
 ? "https://justingosses.github.io/buffalo_bayou_geology/website_javascript/data/BB_outcrops_022025_kmz_unzipped_images/doc.kml"
 : kmlFilePath
 
+baseUrl  = window.location.href.includes("github.io")
+? "https://justingosses.github.io/buffalo_bayou_geology/website_javascript/"
+: baseUrl
+
 
 const galleryContainer = document.getElementById("gallery-container");
 
