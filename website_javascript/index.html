@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exploration of datasets related to Buffalo Bayou</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
     <link rel="stylesheet" href="./css/main.css">
@@ -14,17 +15,17 @@
 </head>
 <body>
     <div>
-        <h1 class="title">Exploration of datasets related to Buffalo Bayou</h1>
+        <h1 class="title">Geologic datasets and maps related to Buffalo Bayou</h1>
     </div>
     <div class="textHolder">
-        <p style="color:red;"> NOTE: This page is in development and meant only for use by the Houston Geology Society working group on Buffalo Bayou at this time. Icons for strike and flow direction are not orientated properly but clicking on them brings up accurate numbers.</p>
+        <p style="color:red;"> NOTE: Icons for strike and flow direction are not orientated properly but clicking on them brings up accurate numbers.</p>
     </div>
-    <div class="textHolder">
-        <p> Please scroll down the page for important information on data limitations and references. Data in zip form (KMZ) will take 20-40 seconds to load as it must be unzipped.</p>
-    </div>
+    <!-- <div class="textHolder">
+        <p> Please scroll down the page for important information on data limitations and references.</p>
+    </div> -->
     <div id="geoDataLarge" class="mapHolderLarge"></div>
     <div class="centerText">
-        <h2>The maps below will move in sync with one another.</h2>
+        <h2>While the maps below will move in sync with one another, the map above move independently.</h2>
     </div>
     <div>
         
@@ -41,16 +42,9 @@
         <div id="map" class="mapHolder">
             <h3 class="mapTitles fontDark" style="max-width: 50%;">Open Street Map</h3>
         </div>
-        <div id="geoDataB" class="mapHolder">
-            <h3 class="mapTitles fontDark">.....Additional material will go here such as georeferenced images of soil maps</h3>
-        </div>
-        
-    </div>
-    <div>
-        
-    </div>
-    <div >
-        <div id="streetview" style="height:500px" class="mapHolder"><p style="margin-left:1rem;">A Streetview image will appear here once a click is registered near a photo location. Click near major roads.</p></div>
+        <!-- <div id="geoDataB" class="mapHolder">
+                <h3 class="mapTitles fontDark">.....Additional material will go here such as georeferenced images of soil maps</h3>
+        </div> -->
             <div id="clickedDiv" class="mapHolder">
 
                 <div id="lastLatLongClicked" >
@@ -74,6 +68,39 @@
             </div>
         </div>
     </div>
+        
+    </div>
+        <div>
+        
+        </div>
+    <div >
+        <div id="streetview" style="height:500px" class="mapHolder">
+            <p style="margin-left:1rem;">
+                A Streetview image will appear here once a click is registered near a photo location. Click near major roads.
+            </p>
+        </div>
+        <!-- <div id="clickedDiv" class="mapHolder">
+
+            <div id="lastLatLongClicked" >
+                <h3>Last Clicked Point on Map</h3>
+                <span >
+                    <p style=" display: inline; " >Latitude:</p>
+                    <p style=" display: inline; " id="latP">null</p>
+                    <p style=" display: inline; " >Longitude:</p>
+                    <p style=" display: inline; " id="lngP">null</p>
+                </span> 
+            </div>
+            <div style="display:inline">
+                <div id="RocksAtSurfaceDiv" >
+                    <span style="display:inline">
+                        <h3>Rocks at clicked point based on <a href="https://macrostrat.org/">Macrostrat</a> geologic map API</h3>
+                    </span>
+                    <div id="results" class="results-container"></div>
+                </div>
+            
+            </div>
+        </div> -->
+    </div>
     <div class="centerText textHolder">
         <h2>Data Sources & Limitations</h2>
     </div>
@@ -87,7 +114,7 @@
             <p><b>LIMITATIONS: </b>
                 The brown lines on the top map (from the KMZ file) are all topographic alignments ( lineaments),  only 2 of which are associated with known active faults.
                 This dataset is originally in KMZ form, which a zip file format that must be unzipped to be used, 
-                so it can take a few tens of seconds to appear on the page.
+                so it can take a few seconds to appear on the page.
             </p>  
             ------------------
             <h2>Regional fault mapping:</h2>  
@@ -109,6 +136,13 @@
             <p>Streetview data from the <a href="https://developers.google.com/maps/documentation/streetview/overview">Google Streetview API</a></p>
             <p>Open Street Map data from <a href="https://www.openstreetmap.org/">https://www.openstreetmap.org/</a></p>
             <p>ESRI world map and ESRI topo map <a href="https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9#!">ESRI</a></p>
+            <h1>Status of this page:</h1>
+            <!-- <div class="textHolder"> -->
+                <p style="color:red;"> This page is in development.</p>
+            <!-- </div> -->
+             <h1>Created by</h1>
+             <p>Created by Justin Gosses for use by</p>
+             <p>the Houston Geology Society working group on Buffalo Bayou.</p>
         </div>
     </div>
 
@@ -133,7 +167,7 @@
     </div>
     
 
-   <i class="centerText">Web map by Justin Gosses as part of Houston Geology Society Buffalo Bayou Working Group. Code repository at <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology">https://github.com/JustinGOSSES/buffalo_bayou_geology</a></i>
+   <i class="centerText">Code repository at <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology">https://github.com/JustinGOSSES/buffalo_bayou_geology</a></i>
     
 
   
