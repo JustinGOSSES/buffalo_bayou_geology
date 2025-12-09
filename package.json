@@ -1,0 +1,20 @@
+{
+  "name": "buffalo_bayou_geology_map",
+  "version": "1.0.0",
+  "description": "various geology data on maps about buffalo bayou",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "n"
+  },
+  "keywords": [
+    "maps",
+    "geology",
+    "bayou"
+  ],
+  "author": "JustinGOSSES",
+  "license": "MIT"
+}

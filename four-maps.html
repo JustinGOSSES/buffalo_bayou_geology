@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffalo Bayou Geology - Four Linked Maps</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: "Roboto Condensed", sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem 2rem;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-content {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: #a8d8ea;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a:hover {
+            background: rgba(168, 216, 234, 0.3);
+            transform: translateY(-2px);
+        }
+
+        nav a.active {
+            background: rgba(168, 216, 234, 0.4);
+            font-weight: 600;
+        }
+
+        .notice {
+            background: rgba(255, 193, 7, 0.15);
+            border-left: 4px solid #ffc107;
+            padding: 0.75rem 1rem;
+            margin: 1rem 2rem;
+            border-radius: 0 8px 8px 0;
+            color: #ffc107;
+            max-width: 1800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .info-banner {
+            background: rgba(168, 216, 234, 0.15);
+            border-left: 4px solid #a8d8ea;
+            padding: 0.75rem 1rem;
+            margin: 0.5rem 2rem 1rem;
+            border-radius: 0 8px 8px 0;
+            color: #a8d8ea;
+            max-width: 1800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        main {
+            padding: 1rem 2rem;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .maps-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 30rem 30rem;
+            gap: 1rem;
+        }
+
+        .map-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 0.75rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .map-title {
+            font-size: 1rem;
+            color: #a8d8ea;
+            margin-bottom: 0.5rem;
+            padding-left: 0.5rem;
+            font-weight: 600;
+        }
+
+        .map-wrapper {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .map-wrapper > div {
+            width: 100%;
+            height: 100%;
+        }
+
+        .info-panel {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+        }
+
+        .streetview-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 1rem;
+        }
+
+        .streetview-section h3 {
+            color: #a8d8ea;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        #streetview {
+            width: 100%;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .streetview-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: rgba(255, 255, 255, 0.5);
+            font-style: italic;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .info-panel h3 {
+            color: #a8d8ea;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .clicked-info {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .clicked-info p {
+            margin: 0.25rem 0;
+            font-size: 0.9rem;
+        }
+
+        .clicked-info .label {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .clicked-info .value {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .geology-results {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .result-card {
+            background: rgba(46, 139, 87, 0.2);
+            border: 1px solid rgba(46, 139, 87, 0.4);
+            border-radius: 8px;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-card h4 {
+            color: #90EE90;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .result-card p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0.25rem 0;
+            line-height: 1.4;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #a8d8ea;
+        }
+
+        @media (max-width: 1024px) {
+            .maps-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, 1fr);
+                height: auto;
+            }
+
+            .map-container {
+                min-height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>🗺️ Buffalo Bayou Geology - Four Linked Maps</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="large-map.html">Large Map</a>
+                <a href="four-maps.html" class="active">Four Maps</a>
+                <a href="gallery.html">Gallery</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="notice">
+        ⚠️ Note: Icons for strike and flow direction are not oriented properly, but clicking on them displays accurate measurements.
+    </div>
+
+    <div class="info-banner">
+        🔗 <strong>Linked Maps:</strong> Pan or zoom any map and the others will follow. Click anywhere to see a red marker appear on all maps and view geologic information.
+    </div>
+
+    <main>
+        <div class="maps-grid">
+            <div class="map-container">
+                <div class="map-title">📍 Topo Map with Field Data</div>
+                <div class="map-wrapper">
+                    <div id="topoMap"></div>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div class="map-title">🗺️ Macrostrat Geologic Map</div>
+                <div class="map-wrapper">
+                    <div id="macrostratMap"></div>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div class="map-title">🛣️ OpenStreetMap</div>
+                <div class="map-wrapper">
+                    <div id="streetMap"></div>
+                </div>
+            </div>
+
+            <div class="info-panel">
+                <h3>📊 Clicked Location Information</h3>
+                <div class="clicked-info">
+                    <p><span class="label">Latitude:</span> <span class="value" id="latValue">--</span></p>
+                    <p><span class="label">Longitude:</span> <span class="value" id="lngValue">--</span></p>
+                </div>
+                <h3>🪨 Geology at Clicked Point (<a href="https://macrostrat.org/" target="_blank" style="color: #a8d8ea;">Macrostrat</a>)</h3>
+                <div class="geology-results" id="geologyResults">
+                    <p style="color: rgba(255,255,255,0.5); font-style: italic;">Click on any map to see geologic information...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="streetview-section">
+            <h3>📸 Google Street View at Clicked Location</h3>
+            <div id="streetview">
+                <div class="streetview-placeholder">
+                    Click on any map to load Street View for that location.<br>
+                    (Works best when clicking near roads)
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Created by Justin Gosses for the Houston Geological Society | <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology">GitHub</a></p>
+    </footer>
+
+    <script>
+        // Google Maps API for Street View
+        // THIS KEY ONLY WORKS ON https://justingosses.github.io/buffalo_bayou_geology/
+        var apiKey = 'AIzaSyDBmBG64YBjYMNdGzPoQFxvD45G2Yw5OEw';
+        var script = document.createElement('script');
+        script.src = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey + '&v=weekly';
+        document.head.appendChild(script);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+    <script src="./js/jszip.js"></script>
+    <script src="./js/L.KML.js"></script>
+    <script>
+        var latitude = 29.749907;
+        var longitude = -95.4584;
+        var initialZoom = 14;
+
+        var baseUrl = window.location.protocol + "//" + window.location.host + "/";
+        var fullUrl = window.location.href;
+
+        // Initialize maps
+        var topoMap = L.map('topoMap').setView([latitude, longitude], initialZoom);
+        var macrostratMap = L.map('macrostratMap').setView([latitude, longitude], initialZoom);
+        var streetMap = L.map('streetMap').setView([latitude, longitude], initialZoom);
+
+        // Add basemaps
+        var esriTopo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri',
+            tileSize: 512,
+            zoomOffset: -1,
+            maxZoom: 16
+        }).addTo(topoMap);
+
+        var openTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+            maxZoom: 17,
+            attribution: 'Map data: &copy; OpenStreetMap contributors, SRTM | Rendering: &copy; OpenTopoMap'
+        });
+
+        var esriImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            maxZoom: 18,
+            attribution: 'Tiles &copy; Esri',
+            tileSize: 512,
+            zoomOffset: -1,
+        });
+
+        // Topo map layer control
+        var topoBaseMaps = {
+            "ESRI Topo": esriTopo,
+            "OpenTopoMap": openTopoMap,
+            "ESRI Imagery": esriImagery
+        };
+        L.control.layers(topoBaseMaps, null, { collapsed: false }).addTo(topoMap);
+
+        // Macrostrat map basemaps
+        var macrostratBase = L.tileLayer('https://tiles.macrostrat.org/carto/{z}/{x}/{y}.png', {
+            attribution: '<a href="https://macrostrat.org/">Macrostrat</a>',
+            maxZoom: 18,
+            tileSize: 512,
+            zoomOffset: -1
+        }).addTo(macrostratMap);
+
+        var streetsLightOverlay = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            tileSize: 512,
+            zoomOffset: -1,
+            opacity: 0.25,
+            attribution: 'Street Map &copy; OpenStreetMap contributors'
+        });
+
+        var streetsBoldOverlay = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            tileSize: 512,
+            zoomOffset: -1,
+            opacity: 0.65,
+            attribution: 'Street Map &copy; OpenStreetMap contributors'
+        });
+
+        // Macrostrat map overlay control
+        var macrostratOverlays = {
+            "Streets Bold": streetsBoldOverlay,
+            "Streets Light": streetsLightOverlay
+        };
+        L.control.layers(null, macrostratOverlays, { collapsed: false }).addTo(macrostratMap);
+
+        // Street map basemaps
+        var openStreetMap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; OpenStreetMap contributors',
+            tileSize: 512,
+            zoomOffset: -1
+        }).addTo(streetMap);
+
+        var openTopoMapStreet = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+            maxZoom: 17,
+            attribution: 'Map data: &copy; OpenStreetMap contributors, SRTM | Rendering: &copy; OpenTopoMap'
+        });
+
+        // Street map layer control
+        var streetBaseMaps = {
+            "OpenStreetMap": openStreetMap,
+            "OpenTopoMap": openTopoMapStreet
+        };
+        L.control.layers(streetBaseMaps, null, { collapsed: false }).addTo(streetMap);
+
+        // Load KML data on topo map
+        var url_main_kml_field_data = "data/BB_outcrops_022025_kmz_unzipped_images/doc.kml";
+
+        fetch(url_main_kml_field_data)
+            .then(response => response.text())
+            .then(function (kmltext) {
+                const kmltextMod = kmltext.replace(/\b([\w\-]+\.(jpg|png))\b/gi, fullUrl.substring(0, fullUrl.lastIndexOf('/') + 1) + 'data/BB_outcrops_022025_kmz_unzipped_images/$1');
+                const parser = new DOMParser();
+                const kml = parser.parseFromString(kmltextMod, 'text/xml');
+                const track = new L.KML(kml);
+                topoMap.addLayer(track);
+            })
+            .catch(error => {
+                console.error('Error loading KML:', error);
+            });
+
+        // Load faults
+        let myStyles = {
+            "color": "rgb(50, 50, 50)",
+            "fillColor": "rgb(100, 100, 100)",
+            "opacity": 0.76,
+        };
+
+        fetch('data/texas_faults.json')
+            .then(response => response.json())
+            .then(data => {
+                L.geoJSON(data, { style: myStyles }).addTo(topoMap);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+        // Load wells
+        fetch('data/wells_v1.geojson')
+            .then(response => response.json())
+            .then(data => {
+                const wells = new L.geoJSON(data, {
+                    pointToLayer: function(feature, latlng) {
+                        return L.circleMarker(latlng, {
+                            radius: 5,
+                            color: '#800080',
+                            fillColor: '#3388ff',
+                            fillOpacity: 0.5
+                        }).bindPopup("Well: " + feature.properties.name + "<br>Ground level: " + feature.properties.ground_level_feet + " ft");
+                    }
+                });
+                topoMap.addLayer(wells);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+        // Sync maps on move
+        var ignoreNextMove = false;
+
+        function syncMaps(sourceMap, targetMaps) {
+            if (!ignoreNextMove) {
+                ignoreNextMove = true;
+                var center = sourceMap.getCenter();
+                var zoom = sourceMap.getZoom();
+                targetMaps.forEach(function(map) {
+                    map.setView(center, zoom, { animate: false });
+                });
+                setTimeout(function() { ignoreNextMove = false; }, 10);
+            }
+        }
+
+        topoMap.on('move', function() {
+            syncMaps(topoMap, [macrostratMap, streetMap]);
+        });
+
+        macrostratMap.on('move', function() {
+            syncMaps(macrostratMap, [topoMap, streetMap]);
+        });
+
+        streetMap.on('move', function() {
+            syncMaps(streetMap, [topoMap, macrostratMap]);
+        });
+
+        // Click handling
+        var clickMarkers = { topo: null, macrostrat: null, street: null };
+
+        async function getGeologyData(lat, lng) {
+            const url = `https://macrostrat.org/api/geologic_units/map/?lat=${lat}&lng=${lng}&response=long`;
+            return fetch(url).then(response => response.json());
+        }
+
+        function handleMapClick(e) {
+            var latlng = e.latlng;
+
+            // Update clicked info
+            document.getElementById('latValue').textContent = latlng.lat.toFixed(6);
+            document.getElementById('lngValue').textContent = latlng.lng.toFixed(6);
+
+            // Remove old markers
+            if (clickMarkers.topo) topoMap.removeLayer(clickMarkers.topo);
+            if (clickMarkers.macrostrat) macrostratMap.removeLayer(clickMarkers.macrostrat);
+            if (clickMarkers.street) streetMap.removeLayer(clickMarkers.street);
+
+            // Add new markers
+            var markerOptions = {
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.5,
+                radius: 50
+            };
+
+            clickMarkers.topo = L.circle(latlng, markerOptions).addTo(topoMap);
+            clickMarkers.macrostrat = L.circle(latlng, markerOptions).addTo(macrostratMap);
+            clickMarkers.street = L.circle(latlng, markerOptions).addTo(streetMap);
+
+            // Update Street View
+            if (typeof google !== 'undefined' && google.maps) {
+                var streetviewDiv = document.getElementById('streetview');
+                streetviewDiv.innerHTML = ''; // Clear placeholder
+                new google.maps.StreetViewPanorama(streetviewDiv, {
+                    position: { lat: latlng.lat, lng: latlng.lng },
+                    pov: { heading: 165, pitch: 0 },
+                    zoom: 1
+                });
+            }
+
+            // Fetch geology data
+            var resultsDiv = document.getElementById('geologyResults');
+            resultsDiv.innerHTML = '<p style="color: rgba(255,255,255,0.5);">Loading...</p>';
+
+            getGeologyData(latlng.lat, latlng.lng).then(data => {
+                resultsDiv.innerHTML = '';
+                var results = data.success?.data || [];
+
+                if (results.length === 0) {
+                    resultsDiv.innerHTML = '<p style="color: rgba(255,255,255,0.5);">No geologic data available for this location.</p>';
+                    return;
+                }
+
+                // Show first result (or second if available, as in original code)
+                var displayResults = results.length > 1 ? results.slice(1, 2) : results.slice(0, 1);
+
+                displayResults.forEach(function(result) {
+                    var card = document.createElement('div');
+                    card.className = 'result-card';
+                    card.innerHTML = `
+                        <h4>${result.name || 'Unknown Unit'}</h4>
+                        <p><strong>Age:</strong> ${result.t_int_name || '?'} to ${result.b_int_name || '?'}</p>
+                        <p><strong>Age Range:</strong> ${result.t_age || '?'} - ${result.b_age || '?'} Ma</p>
+                        <p><strong>Lithology:</strong> ${result.lith || 'Unknown'}</p>
+                        ${result.descrip ? `<p><strong>Description:</strong> ${result.descrip}</p>` : ''}
+                        <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5);">Source ID: ${result.source_id || 'N/A'}</p>
+                    `;
+                    resultsDiv.appendChild(card);
+                });
+            }).catch(error => {
+                resultsDiv.innerHTML = '<p style="color: #ff6b6b;">Error fetching geology data.</p>';
+                console.error('Error:', error);
+            });
+        }
+
+        topoMap.on('click', handleMapClick);
+        macrostratMap.on('click', handleMapClick);
+        streetMap.on('click', handleMapClick);
+    </script>
+</body>
+</html>
