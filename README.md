@@ -16,6 +16,8 @@ The outcrop photos along Buffalo Bayou were used in the following publication:
 The GitHub repository will be given a DOI and an entrace on
 [https://zenodo.org/](https://zenodo.org/).
 
+## LIVE SITE: https://justingosses.github.io/buffalo_bayou_geology/index.html
+
 ## Visualization of where the photos occur 
 
 The photos and locations of faults and wells nearby are visualized in a couple different ways
