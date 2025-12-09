@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffalo Bayou Geology</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: "Roboto Condensed", sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem 2rem;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: #a8d8ea;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a:hover {
+            background: rgba(168, 216, 234, 0.3);
+            transform: translateY(-2px);
+        }
+
+        nav a.active {
+            background: rgba(168, 216, 234, 0.4);
+            font-weight: 600;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #a8d8ea;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .publication-box {
+            background: rgba(168, 216, 234, 0.15);
+            border: 1px solid rgba(168, 216, 234, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 900px;
+        }
+
+        .publication-box h3 {
+            color: #a8d8ea;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .publication-box p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .publication-box a {
+            color: #a8d8ea;
+        }
+
+        .view-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .view-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .view-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .view-card h3 {
+            color: #a8d8ea;
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .view-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .view-card a.btn {
+            display: inline-block;
+            background: rgba(168, 216, 234, 0.3);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .view-card a.btn:hover {
+            background: rgba(168, 216, 234, 0.5);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .section h3 {
+            color: #a8d8ea;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.5rem;
+        }
+
+        .section p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .section a {
+            color: #a8d8ea;
+        }
+
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .section ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .section ul li::before {
+            content: "•";
+            color: #a8d8ea;
+            position: absolute;
+            left: 0;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #a8d8ea;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>🪨 Buffalo Bayou Geology</h1>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <a href="large-map.html">Large Map</a>
+                <a href="four-maps.html">Four Maps</a>
+                <a href="gallery.html">Gallery</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Exploring the Geology of Buffalo Bayou</h2>
+            <p>
+                This site provides interactive visualizations of geologic field data collected along Buffalo Bayou in Houston, Texas. 
+                Browse outcrop photos, bedding plane measurements, fault locations, and well data through multiple map views.
+            </p>
+        </section>
+
+        <div class="publication-box">
+            <h3>📄 Associated Publication</h3>
+            <p>
+                The outcrop photos and data visualized here were used in:<br><br>
+                Patterson, P., Kendall, J., Schwartz, A., Novello, J., Gaston, W., Lang, R., West, D., Gosses, J., &amp; Wachtman, C. (2025). 
+                <em>Sedimentology, Sequence Stratigraphy, Diagenesis, and Paleogeographic Reconstruction of the Beaumont Formation, 
+                Late Pleistocene, Buffalo Bayou, Houston, Texas.</em> Houston Geological Society Bulletin, June 2025. 
+                <a href="https://www.newhgs.org/documents/bulletin_archives/Final%20-6_2_25%20June%20Bulletin.pdf" target="_blank" rel="noopener">[PDF]</a>
+            </p>
+        </div>
+
+        <h2 style="text-align: center; margin: 2rem 0 1rem; color: #a8d8ea;">Choose a View</h2>
+
+        <div class="view-cards">
+            <div class="view-card">
+                <h3>🗺️ Large Map View</h3>
+                <p>
+                    A single large interactive map showing all data layers. Click on icons to see outcrop images, 
+                    bedding plane strike/dip measurements, and field notes as pop-ups.
+                </p>
+                <a href="large-map.html" class="btn">Open Large Map →</a>
+            </div>
+
+            <div class="view-card">
+                <h3>🔗 Four Linked Maps</h3>
+                <p>
+                    Four synchronized maps (topo, geologic, street) that pan and zoom together. 
+                    Click anywhere to see the location across all maps and get geologic unit info from Macrostrat.
+                </p>
+                <a href="four-maps.html" class="btn">Open Four Maps →</a>
+            </div>
+
+            <div class="view-card">
+                <h3>📷 Photo Gallery</h3>
+                <p>
+                    A scrollable gallery of all outcrop photos with descriptions and mini location maps. 
+                    Great for viewing photo details without needing to click through map popups.
+                </p>
+                <a href="gallery.html" class="btn">Open Gallery →</a>
+            </div>
+        </div>
+
+        <div class="two-col">
+            <div class="section">
+                <h3>About the Data</h3>
+                <p>
+                    This repository serves as both a visualization tool and a data archive for geologic observations 
+                    along Buffalo Bayou collected by the Houston Geological Society working group.
+                </p>
+                <p><strong>Data includes:</strong></p>
+                <ul>
+                    <li>Outcrop photos with location coordinates</li>
+                    <li>Bedding plane strike and dip measurements</li>
+                    <li>Lineament mapping from field observations and LIDAR</li>
+                    <li>Regional fault traces (from subsurface seismic)</li>
+                    <li>Nearby well locations</li>
+                </ul>
+                <p>
+                    You can also <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology" target="_blank" rel="noopener">download or fork the GitHub repository</a> 
+                    to work with the data directly.
+                </p>
+            </div>
+
+            <div class="section">
+                <h3>Data Sources &amp; Credits</h3>
+                <p><strong>Geologic Field Data:</strong> Collected using the Midland Valley Clino app by Jerry Kendall and the HGS Buffalo Bayou working group.</p>
+                <p><strong>Base Maps:</strong></p>
+                <ul>
+                    <li><a href="https://macrostrat.org/" target="_blank" rel="noopener">Macrostrat</a> geologic map API</li>
+                    <li><a href="https://www.openstreetmap.org/" target="_blank" rel="noopener">OpenStreetMap</a></li>
+                    <li>ESRI World Imagery and Topographic maps</li>
+                </ul>
+                <p><strong>Note:</strong> Regional fault traces shown are mapped from subsurface seismic and are mostly not exposed at the surface. 
+                Their geographic positions should be considered approximate.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Related Resources</h3>
+            <p>
+                The Python code for creating Relative Elevation Maps (REM) that was originally part of this repository 
+                has moved to a separate project: 
+                <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology_REM" target="_blank" rel="noopener">buffalo_bayou_geology_REM</a>
+            </p>
+            <p>
+                That work formed the basis of the blog post: 
+                <a href="https://justingosses.com/blog/why-buffalo-bayou-does-not-drain-to-the-sea" target="_blank" rel="noopener">
+                    "Houston has topography: Looking at why Buffalo Bayou does not drain to the sea, directly"
+                </a>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Created by Justin Gosses for the Houston Geological Society working group on Buffalo Bayou</p>
+        <p>Code repository: <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology" target="_blank" rel="noopener">GitHub</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffalo Bayou Geology - Photo Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.6.2/proj4.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Roboto Condensed", sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem 2rem;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: #a8d8ea;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a:hover {
+            background: rgba(168, 216, 234, 0.3);
+        }
+
+        nav a.active {
+            background: rgba(168, 216, 234, 0.4);
+            font-weight: 600;
+        }
+
+        .notice {
+            background: rgba(255, 193, 7, 0.15);
+            border-left: 4px solid #ffc107;
+            padding: 0.75rem 1rem;
+            margin: 1rem 2rem;
+            border-radius: 0 8px 8px 0;
+            color: #ffc107;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .info-banner {
+            background: rgba(168, 216, 234, 0.15);
+            border-left: 4px solid #a8d8ea;
+            padding: 0.75rem 1rem;
+            margin: 0.5rem 2rem 1rem;
+            border-radius: 0 8px 8px 0;
+            color: #a8d8ea;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .info-banner a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 1rem 2rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        #gallery-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            gap: 2rem;
+        }
+
+        .gallery-item img {
+            width: 45%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .content-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .gallery-item h3 {
+            color: #a8d8ea;
+            font-size: 1.3rem;
+            margin: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.5rem;
+        }
+
+        .gallery-item p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .gallery-item .coordinates {
+            color: #90EE90;
+            font-weight: 600;
+            background: rgba(46, 139, 87, 0.2);
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            display: inline-block;
+            width: fit-content;
+        }
+
+     
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #a8d8ea;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .gallery-item {
+                flex-direction: column;
+            }
+
+            .gallery-item img {
+                width: 100%;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>📷 Buffalo Bayou Geology - Photo Gallery</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="large-map.html">Large Map</a>
+                <a href="four-maps.html">Four Maps</a>
+                <a href="gallery.html" class="active">Gallery</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="notice">
+        ⚠️ Note: This gallery view is in development. Data points are not yet ordered by downstream position.
+    </div>
+
+    <div class="info-banner">
+        📍 <strong>Gallery View:</strong> Scroll through all field data points with photos and location maps. For interactive map exploration, visit the <a href="large-map.html">Large Map</a> or <a href="four-maps.html">Four Maps</a> view.
+    </div>
+
+    <main>
+        <div id="gallery-container">
+            <!-- Photos and metadata will be dynamically added here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>Created by Justin Gosses for the Houston Geological Society working group on Buffalo Bayou</p>
+        <p>Code repository: <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology">GitHub</a></p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+    <!-- <script src="./js/macroStratFetch.js"></script>
+    <script src="./js/jszip.js"></script> -->
+    <script src="./js/L.KML.js"></script>
+    <script src="js/gallery.js"></script>
+    <!-- <script src="./js/main.js"></script> -->
+</body>
+</html>

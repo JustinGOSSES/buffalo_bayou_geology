@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffalo Bayou Geology - Large Map View</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: "Roboto Condensed", sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem 2rem;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-content {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: #a8d8ea;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a:hover {
+            background: rgba(168, 216, 234, 0.3);
+            transform: translateY(-2px);
+        }
+
+        nav a.active {
+            background: rgba(168, 216, 234, 0.4);
+            font-weight: 600;
+        }
+
+        .notice {
+            background: rgba(255, 193, 7, 0.15);
+            border-left: 4px solid #ffc107;
+            padding: 0.75rem 1rem;
+            margin: 1rem 2rem;
+            border-radius: 0 8px 8px 0;
+            color: #ffc107;
+            max-width: 1800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        main {
+            padding: 1.5rem 2rem;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .map-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .map-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .map-header h2 {
+            font-size: 1.4rem;
+            color: #a8d8ea;
+        }
+
+        .map-legend {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 4px;
+            border-radius: 2px;
+        }
+
+        .legend-color.brown { background: #8B4513; }
+        .legend-color.white { background: #fff; border: 1px solid #ccc; }
+        .legend-color.black { background: #333; }
+        .legend-color.purple { background: #800080; }
+
+        #geoDataLarge {
+            width: 100%;
+            height: 70vh;
+            min-height: 500px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .info-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .info-card h3 {
+            color: #a8d8ea;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.5rem;
+        }
+
+        .info-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .info-card a {
+            color: #a8d8ea;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #a8d8ea;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            #geoDataLarge {
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>🏔️ Buffalo Bayou Geology - Large Map View</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="large-map.html" class="active">Large Map</a>
+                <a href="four-maps.html">Four Maps</a>
+                <a href="gallery.html">Gallery</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="notice">
+        ⚠️ Note: Icons for strike and flow direction are not oriented properly, but clicking on them displays accurate measurements.
+    </div>
+
+    <main>
+        <section class="map-section">
+            <div class="map-header">
+                <h2>Interactive Geologic Data Map</h2>
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <span class="legend-color brown"></span>
+                        <span>Mapped Lineations</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color white"></span>
+                        <span>Possible Outcrops</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color black"></span>
+                        <span>Regional Faults</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color purple"></span>
+                        <span>Wells</span>
+                    </div>
+                </div>
+            </div>
+            <div id="geoDataLarge"></div>
+        </section>
+
+        <section class="info-section">
+            <div class="info-card">
+                <h3>📍 Geologic Field Data</h3>
+                <p><strong>Outcrop mapped along Buffalo Bayou:</strong> Brown lines are lineations mapped from outcrop observations and LIDAR. White lines are possible outcrops.</p>
+                <p><strong>Source:</strong> Data collected with the Midland Valley Clino structure geology app by Jerry Kendall.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>🔗 Regional Faults</h3>
+                <p>Regional faults (black lines) are mapped from subsurface seismic imagery. They are mostly not exposed at surface.</p>
+                <p>Geographic position should be interpreted as approximate given they are not exposed at surface.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>💧 Wells</h3>
+                <p>Purple markers with blue fill indicate wells, mostly near-surface wells drilled for water and geotechnical purposes.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>📚 Data Sources</h3>
+                <p>Basemap: <a href="https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9">ESRI Topo Map</a></p>
+                <p>Geologic map: <a href="https://macrostrat.org/">Macrostrat</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created by Justin Gosses for the Houston Geological Society working group on Buffalo Bayou</p>
+        <p>Code repository: <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology">GitHub</a></p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+    <script src="./js/jszip.js"></script>
+    <script src="./js/L.KML.js"></script>
+    <script>
+        var latitude = 29.749907;
+        var longitude = -95.4584;
+        var initialZoom = 15;
+
+        var baseUrl = window.location.protocol + "//" + window.location.host + "/";
+        var fullUrl = window.location.href;
+
+        var geoDataLarge = L.map('geoDataLarge').setView([latitude, longitude], initialZoom);
+
+        // Add ESRI Topo basemap
+        var esriTopo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ',
+            tileSize: 512,
+            zoomOffset: -1,
+            maxZoom: 16
+        }).addTo(geoDataLarge);
+
+        var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            maxZoom: 18,
+            attribution: 'Tiles &copy; Esri',
+            tileSize: 512,
+            zoomOffset: -1,
+        });
+
+        var openstreet = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; OpenStreetMap contributors',
+            tileSize: 512,
+            zoomOffset: -1
+        });
+
+        // Layer groups
+        var fieldData_layer = L.layerGroup();
+        var wells_layer = L.layerGroup();
+        var faults_layer = L.layerGroup();
+
+        // Load KML data
+        var url_main_kml_field_data = "data/BB_outcrops_022025_kmz_unzipped_images/doc.kml";
+
+        fetch(url_main_kml_field_data)
+            .then(response => response.text())
+            .then(function (kmltext) {
+                const kmltextMod = kmltext.replace(/\b([\w\-]+\.(jpg|png))\b/gi, fullUrl.substring(0, fullUrl.lastIndexOf('/') + 1) + 'data/BB_outcrops_022025_kmz_unzipped_images/$1');
+                const parser = new DOMParser();
+                const kml = parser.parseFromString(kmltextMod, 'text/xml');
+                const track = new L.KML(kml);
+                geoDataLarge.addLayer(track);
+                fieldData_layer.addLayer(track);
+            })
+            .catch(error => {
+                console.error('Error loading KML:', error);
+            });
+
+        // Load faults
+        let myStyles = {
+            "color": "rgb(50, 50, 50)",
+            "fillColor": "rgb(100, 100, 100)",
+            "opacity": 0.76,
+        };
+
+        fetch('data/texas_faults.json')
+            .then(response => response.json())
+            .then(data => {
+                var faults = L.geoJSON(data, { style: myStyles });
+                geoDataLarge.addLayer(faults);
+                faults_layer.addLayer(faults);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+        // Load wells
+        fetch('data/wells_v1.geojson')
+            .then(response => response.json())
+            .then(data => {
+                const wells = new L.geoJSON(data, {
+                    pointToLayer: function(feature, latlng) {
+                        return L.circleMarker(latlng, {
+                            radius: 5,
+                            color: '#800080',
+                            fillColor: '#3388ff',
+                            fillOpacity: 0.5
+                        }).bindPopup("Well: " + feature.properties.name + "<br>Ground level: " + feature.properties.ground_level_feet + " ft");
+                    }
+                });
+                geoDataLarge.addLayer(wells);
+                wells_layer.addLayer(wells);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+        // Layer control
+        var baseMaps = {
+            "ESRI Topo": esriTopo,
+            "ESRI Imagery": Esri_WorldImagery,
+            "OpenStreetMap": openstreet
+        };
+
+        var overlayMaps = {
+            "Field Data": fieldData_layer,
+            "Wells": wells_layer,
+            "Faults": faults_layer
+        };
+
+        L.control.layers(baseMaps, overlayMaps).addTo(geoDataLarge);
+    </script>
+</body>
+</html>
