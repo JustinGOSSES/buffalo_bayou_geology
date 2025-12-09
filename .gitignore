@@ -1,3 +1,13 @@
+.DS_Store
+
+*/output_rem_data/v1/*
+*/output_rem_data/v2/*
+*.cache*
+*.osm_cache*
+*.cache
+*.osm_cache
+*/rasters_USGS10m.tar.gz
+
 # Logs
 logs
 *.log
