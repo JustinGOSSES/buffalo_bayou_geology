@@ -23,10 +23,27 @@ fetch(kmlFilePath)
         const kml = parser.parseFromString(kmlText, "text/xml");
         const placemarks = kml.getElementsByTagName("Placemark");
 
+        // Convert to array and extract data with coordinates for sorting
+        const placemarkData = [];
         for (let i = 0; i < placemarks.length; i++) {
             const placemark = placemarks[i];
             const name = placemark.getElementsByTagName("name")[0]?.textContent || "Unnamed";
             const description = placemark.getElementsByTagName("description")[0]?.textContent || "No description available";
+            
+            // Extract coordinates
+            const coordinatesElement = placemark.getElementsByTagName("coordinates")[0];
+            const coordinates = coordinatesElement?.textContent.trim().split(",") || [];
+            const [lng, lat] = coordinates.map(coord => parseFloat(coord));
+            
+            placemarkData.push({ name, description, lat, lng, index: i });
+        }
+
+        // Sort by longitude west to east (ascending, since more negative = further west)
+        placemarkData.sort((a, b) => a.lng - b.lng);
+
+        // Process sorted placemarks
+        placemarkData.forEach((data, i) => {
+            const { name, description, lat, lng } = data;
 
             var imageUrls = [];
             if (name == "Image") {
@@ -43,11 +60,7 @@ fetch(kmlFilePath)
             var constDescriptionWithNoImages = description.replace(/<img.*?src=["'](.*?)["'].*?>/g, "");
             constDescriptionWithNoImages = constDescriptionWithNoImages.replace(/height=["']300["']/g, "");
 
-            // Extract coordinates
-            const coordinatesElement = placemark.getElementsByTagName("coordinates")[0];
-            const coordinates = coordinatesElement?.textContent.trim().split(",") || [];
-            const [lng, lat] = coordinates.map(coord => parseFloat(coord));
-            console.log("Extracted coordinates:", lat, lng);
+            console.log("Sorted coordinates:", lat, lng);
 
             // Create a gallery item
             const galleryItem = document.createElement("div");
@@ -123,7 +136,7 @@ fetch(kmlFilePath)
                 galleryItem.appendChild(contentContainer);
                 galleryContainer.appendChild(galleryItem);
             }
-        }
+        });
     })
     .catch(error => {
         console.error("Error loading KML file:", error);
