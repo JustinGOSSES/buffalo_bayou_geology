@@ -13,6 +13,13 @@ The outcrop photos from along Buffalo Bayou in this repository were used in the 
 
 > Patterson, P., Kendall, J., Schwartz, A., Novello, J., Gaston, W., Lang, R., West, D., Gosses, J., & Wachtman, C. (2025). Sedimentology, Sequence Stratigraphy, Diagenesis, and Paleogeographic Reconstruction of the Beaumont Formation, Late Pleistocene, Buffalo Bayou, Houston, Texas. *Houston Geological Society Bulletin*, June 2025. [PDF](https://www.newhgs.org/documents/bulletin_archives/Final%20-6_2_25%20June%20Bulletin.pdf)
 
+## LIVE SITE: https://justingosses.github.io/buffalo_bayou_geology/index.html
+
+## DOI
+
+The GitHub repository will be given a DOI and an entrace on
+[https://zenodo.org/](https://zenodo.org/). This is in progress.
+
 ## Visualization of where the photos occur 
 
 The photos and locations of faults and wells nearby are visualized in a couple different ways
@@ -54,11 +61,6 @@ and puts less emphasis on their spatial location.
 link: https://justingosses.github.io/buffalo_bayou_geology/gallery.html
 
 # Data 
-
-## DOI
-
-The GitHub repository will be given a DOI and an entrace on
-[https://zenodo.org/](https://zenodo.org/). This is in progress.
 
 ## Data structure
 
