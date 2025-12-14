@@ -82,13 +82,13 @@
 
         .hero {
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 1rem 1rem;
             margin-bottom: 2rem;
         }
 
         .hero h2 {
             font-size: 2.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0rem;
             color: #a8d8ea;
         }
 
@@ -237,6 +237,65 @@
             color: #a8d8ea;
         }
 
+        .gage-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .current-level {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .level-label {
+            display: block;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .level-value {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #a8d8ea;
+        }
+
+        .level-time {
+            display: block;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+        }
+
+        .level-status {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        #gageChart {
+            max-height: 250px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: rgba(168, 216, 234, 0.3);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: rgba(168, 216, 234, 0.5);
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 1.4rem;
@@ -280,21 +339,11 @@
             <h2>Rock Outcrops Along Buffalo Bayou</h2>
             <p>
                 This site provides interactive visualizations of geologic field data collected along Buffalo Bayou in Houston, Texas. 
-            </p>
+           While there are many geologists in Houston, there are few rock outcrops. This website details some of Houston's limited rock outcrops that appear during low water levels.</p>
         </section>
 
-        <div class="publication-box">
-            <h3>📄 Associated Publication</h3>
-            <p>
-                The outcrop photos and data visualized here were used in:<br><br>
-                Patterson, P., Kendall, J., Schwartz, A., Novello, J., Gaston, W., Lang, R., West, D., Gosses, J., &amp; Wachtman, C. (2025). 
-                <em>Sedimentology, Sequence Stratigraphy, Diagenesis, and Paleogeographic Reconstruction of the Beaumont Formation, 
-                Late Pleistocene, Buffalo Bayou, Houston, Texas.</em> Houston Geological Society Bulletin, June 2025. 
-                <a href="https://www.newhgs.org/documents/bulletin_archives/Final%20-6_2_25%20June%20Bulletin.pdf" target="_blank" rel="noopener">[PDF]</a>
-            </p>
-        </div>
 
-        <h2 style="text-align: center; margin: 2rem 0 1rem; color: #a8d8ea;">Choose a View</h2>
+        <h2 style="text-align: center; margin: 1rem 0 1rem; color: #a8d8ea;">Choose a View</h2>
 
         <div class="view-cards">
             <div class="view-card">
@@ -325,6 +374,7 @@
             </div>
         </div>
 
+
         <div class="two-col">
             <div class="section">
                 <h3>About the Data</h3>
@@ -340,28 +390,52 @@
                     <li>Regional fault traces (from subsurface seismic)</li>
                     <li>Nearby well locations</li>
                 </ul>
-                <p>
-                    You can also <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology" target="_blank" rel="noopener">download or fork the GitHub repository</a> 
+            <br></br>
+                <p><strong>Note:</strong> Regional fault traces shown are mapped from subsurface seismic and are mostly not exposed at the surface. 
+                Their geographic positions should be considered approximate.</p>
+                <strong>How to use data</strong>:
+                  <p>
+                    You can <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology" target="_blank" rel="noopener">download or fork the GitHub repository</a> 
                     to work with the data directly.
                 </p>
             </div>
 
             <div class="section">
                 <h3>Data Sources &amp; Credits</h3>
-                <p><strong>Geologic Field Data:</strong> Collected using the Midland Valley Clino app by Jerry Kendall and the HGS Buffalo Bayou working group.</p>
+                <p><strong>Geologic Field Data:</strong> 
+                    <ul>
+                        <li>
+                            Photos, strike dips, and other field observations collected using the Midland Valley Clino app by Jerry Kendall and the HGS Buffalo Bayou working group.
+                        </li>
+
+                    </ul>
                 <p><strong>Base Maps:</strong></p>
                 <ul>
-                    <li><a href="https://macrostrat.org/" target="_blank" rel="noopener">Macrostrat</a> geologic map API</li>
+                    <li><a href="https://macrostrat.org/" target="_blank" rel="noopener">Macrostrat</a> - Geologic map tiles and API. Citation: Peters, S.E., Husson, J.M., &amp; Czaplewski, J. (2018). Macrostrat: A Platform for Geological Data Integration and Deep-Time Earth Crust Research. <em>Geochemistry, Geophysics, Geosystems</em>, 19(4), 1393-1409.</li>
                     <li><a href="https://www.openstreetmap.org/" target="_blank" rel="noopener">OpenStreetMap</a></li>
-                    <li>ESRI World Imagery and Topographic maps</li>
+                    <li><a href="https://opentopomap.org/" target="_blank" rel="noopener">OpenTopoMap</a> - Topographic maps from OpenStreetMap and SRTM data (CC-BY-SA 3.0)</li>
+                    <li>ESRI <a href="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer" target="_blank" rel="noopener">World Imagery</a> and <a href="https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer" target="_blank" rel="noopener">National Geographic World Map</a></li>
+                    <li><a href="https://developers.google.com/maps/documentation/streetview/overview" target="_blank" rel="noopener">Google Street View</a> for street-level imagery</li>
                 </ul>
-                <p><strong>Note:</strong> Regional fault traces shown are mapped from subsurface seismic and are mostly not exposed at the surface. 
-                Their geographic positions should be considered approximate.</p>
+                <br></br>
+                <p>For more information on data, see the <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology">The GitHub repository for this website.</a></p>
             </div>
         </div>
 
+
+         <div class="publication-box">
+            <h3>📄 Associated Publication</h3>
+            <p>
+                The outcrop photos and data visualized here were used in:<br><br>
+                Patterson, P., Kendall, J., Schwartz, A., Novello, J., Gaston, W., Lang, R., West, D., Gosses, J., &amp; Wachtman, C. (2025). 
+                <em>Sedimentology, Sequence Stratigraphy, Diagenesis, and Paleogeographic Reconstruction of the Beaumont Formation, 
+                Late Pleistocene, Buffalo Bayou, Houston, Texas.</em> Houston Geological Society Bulletin, June 2025. 
+                <a href="https://www.newhgs.org/documents/bulletin_archives/Final%20-6_2_25%20June%20Bulletin.pdf" target="_blank" rel="noopener">[PDF]</a>
+            </p>
+        </div>
+
         <div class="section">
-            <h3>Related Resources (digital elevation models)</h3>
+            <h3>Closely Related Resources Elsewhere (digital elevation models)</h3>
             <p>
                 The Python code for creating Relative Elevation Maps (REM) that was originally part of this repository 
                 has moved to a separate project: 
@@ -378,8 +452,32 @@
             <img src="screen_captures/buffaloBayouREM.png" alt="Relative Elevation Map with elevation profile" style="width: 100%; border-radius: 8px; margin-top: 1rem;">
         </div>
 
+
          <div class="section">
-            <h3>Field trip safety</h3>
+            <h3>📊 Current Water Level - Buffalo Bayou at Houston (USGS Gage 08074000)</h3>
+            <p>
+                Check the current gage height before planning a field visit. Most outcrop photos were taken when 
+                the water level was between 1-2 feet. Higher water levels will submerge the outcrops.
+            </p>
+            <div class="gage-container">
+                <div class="current-level">
+                    <span class="level-label">Current Gage Height:</span>
+                    <span class="level-value" id="currentLevel">Loading...</span>
+                    <span class="level-time" id="levelTime"></span>
+                </div>
+                <div class="level-status" id="levelStatus"></div>
+                <canvas id="gageChart" height="200"></canvas>
+            </div>
+            <p style="text-align: center; margin-top: 1rem;">
+                <a href="https://waterdata.usgs.gov/monitoring-location/USGS-08074000/#period=P1Y&dataTypeId=daily-00065-0" target="_blank" rel="noopener" class="btn">
+                    View Full USGS Gage Data →
+                </a>
+            </p>
+            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 1rem;">
+                Data provided by <a href="https://www.usgs.gov/" target="_blank" rel="noopener">U.S. Geological Survey</a>. 
+                Gage operated in cooperation with Harris County Flood Control District.
+            </p>
+            <h4>Field trip safety</h4>
             <p>
                 Although outcrops along Buffalo Bayou may be of interest to the many geologists
                 in Houston due to the scarcity of outcrops along the Texas coastal plain, please remember
@@ -390,10 +488,118 @@
                 Access by foot is often not posssible and when possible involves traversing slippery slopes
                 next to water, which would require use of a PFD and may be too much of a an atheltic
                 challenge for some individuals. Most photos were taken when the USGS guage at Shepard street
-                was near 1-2 feet.
+                was slightly above 1 foot.
             </p>
          </div>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // USGS Water Services API for Buffalo Bayou at Houston (Site 08074000)
+        const siteId = '08074000';
+        const parameterCode = '00065'; // Gage height in feet
+        
+        // Calculate date range (last 14 days)
+        const endDate = new Date().toISOString().slice(0, 10);
+        const startDate = new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+        
+        const apiUrl = `https://waterservices.usgs.gov/nwis/iv/?format=json&sites=${siteId}&parameterCd=${parameterCode}&startDT=${startDate}&endDT=${endDate}`;
+        
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const timeSeries = data.value.timeSeries[0];
+                const values = timeSeries.values[0].value;
+                
+                // Get current (most recent) value
+                const currentValue = values[values.length - 1];
+                const currentHeight = parseFloat(currentValue.value);
+                const currentTime = new Date(currentValue.dateTime);
+                
+                // Update current level display
+                document.getElementById('currentLevel').textContent = `${currentHeight.toFixed(2)} ft`;
+                document.getElementById('levelTime').textContent = `as of ${currentTime.toLocaleString()}`;
+                
+                // Set status based on level
+                const statusEl = document.getElementById('levelStatus');
+                if (currentHeight <= 1.5) {
+                    statusEl.textContent = '✅ Outcrops likely visible';
+                    statusEl.style.color = '#90EE90';
+                } else if (currentHeight <= 2.0) {
+                    statusEl.textContent = '⚠️ Some outcrops may be submerged while others visible';
+                    statusEl.style.color = '#ffc107';
+                } else if (currentHeight <= 2.2) {
+                    statusEl.textContent = '⚠️ Most outcrops may be submerged';
+                    statusEl.style.color = '#ffc107';
+                } else {
+                    statusEl.textContent = '🚫 Outcrops likely submerged';
+                    statusEl.style.color = '#ff6b6b';
+                }
+                
+                // Prepare chart data (sample every 6 hours for cleaner chart)
+                const chartData = [];
+                const chartLabels = [];
+                for (let i = 0; i < values.length; i += 6) {
+                    const val = values[i];
+                    chartLabels.push(new Date(val.dateTime).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
+                    chartData.push(parseFloat(val.value));
+                }
+                
+                // Create chart
+                const ctx = document.getElementById('gageChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: chartLabels,
+                        datasets: [{
+                            label: 'Gage Height (ft)',
+                            data: chartData,
+                            borderColor: '#a8d8ea',
+                            backgroundColor: 'rgba(168, 216, 234, 0.1)',
+                            fill: true,
+                            tension: 0.3,
+                            pointRadius: 0
+                        }, {
+                            label: 'Optimal for viewing (<1.5 ft)',
+                            data: Array(chartLabels.length).fill(1.5),
+                            borderColor: '#90EE90',
+                            borderDash: [5, 5],
+                            pointRadius: 0,
+                            fill: false
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                labels: { color: 'rgba(255,255,255,0.8)' }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                ticks: { color: 'rgba(255,255,255,0.6)' },
+                                grid: { color: 'rgba(255,255,255,0.1)' }
+                            },
+                            y: {
+                                ticks: { color: 'rgba(255,255,255,0.6)' },
+                                grid: { color: 'rgba(255,255,255,0.1)' },
+                                title: {
+                                    display: true,
+                                    text: 'Gage Height (ft)',
+                                    color: 'rgba(255,255,255,0.8)'
+                                }
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching USGS data:', error);
+                document.getElementById('currentLevel').textContent = 'Unable to load';
+                document.getElementById('levelStatus').textContent = 'Visit USGS website for current data';
+            });
+    </script>
 
     <footer>
         <p>Created by Justin Gosses for the Houston Geological Society working group on Buffalo Bayou</p>
