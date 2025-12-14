@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.6.2/proj4.js"></script>
     <style>
         * {
@@ -162,6 +162,47 @@
 
      
 
+        .filter-controls {
+            max-width: 1400px;
+            margin: 0 auto 1rem;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .filter-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            color: #a8d8ea;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .filter-checkbox:hover {
+            background: rgba(168, 216, 234, 0.2);
+        }
+
+        .filter-checkbox input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #a8d8ea;
+        }
+
+        .item-count {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .gallery-item.hidden {
+            display: none;
+        }
+
         footer {
             text-align: center;
             padding: 2rem;
@@ -213,12 +254,16 @@
         </div>
     </header>
 
-    <div class="notice">
-        ⚠️ Note: This gallery view is in development. Data points are not yet ordered by downstream position.
-    </div>
-
     <div class="info-banner">
         📍 <strong>Gallery View:</strong> Scroll through all field data points with photos and location maps. For interactive map exploration, visit the <a href="large-map.html">Large Map</a> or <a href="four-maps.html">Four Maps</a> view.
+    </div>
+
+    <div class="filter-controls">
+        <label class="filter-checkbox">
+            <input type="checkbox" id="images-only-toggle">
+            <span>Show only items with images</span>
+        </label>
+        <span id="item-count" class="item-count"></span>
     </div>
 
     <main>
