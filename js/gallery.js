@@ -65,6 +65,10 @@ fetch(kmlFilePath)
             // Create a gallery item
             const galleryItem = document.createElement("div");
             galleryItem.classList.add("gallery-item");
+            
+            // Mark whether this item has images
+            const hasImages = imageUrls.length > 0;
+            galleryItem.dataset.hasImages = hasImages;
 
             if (imageUrls.length > 0) {
                 imageUrls.forEach(imageUrl => {
@@ -137,6 +141,37 @@ fetch(kmlFilePath)
                 galleryContainer.appendChild(galleryItem);
             }
         });
+    })
+    .then(() => {
+        // Set up filter toggle after gallery is loaded
+        const toggle = document.getElementById('images-only-toggle');
+        const itemCount = document.getElementById('item-count');
+        
+        function updateFilter() {
+            const showImagesOnly = toggle.checked;
+            const items = document.querySelectorAll('.gallery-item');
+            let visibleCount = 0;
+            let totalImages = 0;
+            
+            items.forEach(item => {
+                const hasImages = item.dataset.hasImages === 'true';
+                if (hasImages) totalImages++;
+                
+                if (showImagesOnly && !hasImages) {
+                    item.classList.add('hidden');
+                } else {
+                    item.classList.remove('hidden');
+                    visibleCount++;
+                }
+            });
+            
+            itemCount.textContent = showImagesOnly 
+                ? `Showing ${visibleCount} items with images`
+                : `Showing all ${visibleCount} items (${totalImages} with images)`;
+        }
+        
+        toggle.addEventListener('change', updateFilter);
+        updateFilter(); // Initial count
     })
     .catch(error => {
         console.error("Error loading KML file:", error);
