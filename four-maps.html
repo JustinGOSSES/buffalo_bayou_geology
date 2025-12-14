@@ -303,7 +303,7 @@
     <main>
         <div class="maps-grid">
             <div class="map-container">
-                <div class="map-title">📍 Topo Map with Field Data</div>
+                <div class="map-title">📍 Basemap with Field Data (<i>see large map for legend</i>)</div>
                 <div class="map-wrapper">
                     <div id="topoMap"></div>
                 </div>
@@ -329,7 +329,7 @@
                     <p><span class="label">Latitude:</span> <span class="value" id="latValue">--</span></p>
                     <p><span class="label">Longitude:</span> <span class="value" id="lngValue">--</span></p>
                 </div>
-                <h3>🪨 Geology at Clicked Point (<a href="https://macrostrat.org/" target="_blank" style="color: #a8d8ea;">Macrostrat</a>)</h3>
+                <h3>🪨 Geology at Clicked Point (<a href="https://macrostrat.org/" target="_blank" style="color: #a8d8ea;">Macrostrat geology map API results at location</a>)</h3>
                 <div class="geology-results" id="geologyResults">
                     <p style="color: rgba(255,255,255,0.5); font-style: italic;">Click on any map to see geologic information...</p>
                 </div>
@@ -337,7 +337,7 @@
         </div>
 
         <div class="streetview-section">
-            <h3>📸 Google Street View at Clicked Location</h3>
+            <h3>📸 Google Street View at Last Clicked Location</h3>
             <div id="streetview">
                 <div class="streetview-placeholder">
                     Click on any map to load Street View for that location.<br>
@@ -417,7 +417,7 @@
             zoomOffset: -1,
             opacity: 0.25,
             attribution: 'Street Map &copy; OpenStreetMap contributors'
-        });
+        }).addTo(macrostratMap);
 
         var streetsBoldOverlay = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 18,
