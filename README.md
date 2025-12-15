@@ -158,9 +158,9 @@ Regional level diretion of flow does not seem to correlate with fault positionin
 
 ### Well Data
 
-Well locations are mostly near-surface wells drilled for water supply and geotechnical purposes.
-Source data is stored in `data/wells_v1.geojson`.
-
+Well locations are mostly near-surface wells drilled for water supply and geotechnical purposes. Source data is stored in `data/wells_v1.geojson` and the `data/wells_cross_sections` directory. Well log data was collected by Dorene B. West and
+Richard Lang. Well logs were sourced from Texas Commission on Environmental Quality.
+Richard lang created the well log cross-sections.
 
 ### Basemaps
 
