@@ -6,6 +6,8 @@ cross-sections created of water well logs in the Buffalo Bayou area.
 This information was aggregated primarily by Richard Lang in collaboration
 with other members of the Houston Geological Society Buffalo Bayou working group.
 
+Please see https://www.tceq.texas.gov/gis/waterwellview.html for original raw data sources.
+
 ## What is in this directory 
 
 This folder contains PDFs of cross-sections, individual well log images, interpreted
