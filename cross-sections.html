@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffalo Bayou Geology - Well Cross Sections</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Roboto Condensed", sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem 2rem;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: #a8d8ea;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a:hover {
+            background: rgba(168, 216, 234, 0.3);
+        }
+
+        nav a.active {
+            background: rgba(168, 216, 234, 0.4);
+            font-weight: 600;
+        }
+
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .page-title h2 {
+            font-size: 2rem;
+            color: #a8d8ea;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-title p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+        }
+
+        .info-banner {
+            background: rgba(168, 216, 234, 0.15);
+            border-left: 4px solid #a8d8ea;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            color: #a8d8ea;
+        }
+
+        .info-banner a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .section h3 {
+            color: #a8d8ea;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.5rem;
+        }
+
+        .pdf-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .pdf-item {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .pdf-item h4 {
+            color: #a8d8ea;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .pdf-item iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 4px;
+            background: #fff;
+        }
+
+        .pdf-item .pdf-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: #a8d8ea;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .pdf-item .pdf-link:hover {
+            text-decoration: underline;
+        }
+
+        .well-selector {
+            margin-bottom: 1rem;
+        }
+
+        .well-selector label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+
+        .well-selector select {
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            min-width: 300px;
+            cursor: pointer;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+
+        .well-selector select:focus {
+            outline: none;
+            border-color: #a8d8ea;
+        }
+
+        .well-selector select option {
+            background: #1a1a2e;
+            color: #fff;
+        }
+
+        .well-image-container {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            min-height: 90vh;
+        }
+
+        .well-image-container h4 {
+            color: #a8d8ea;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .well-image-container iframe {
+            width: 100%;
+            height: 85vh;
+            border: none;
+            border-radius: 4px;
+            background: #fff;
+        }
+
+        .well-info {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(168, 216, 234, 0.1);
+            border-radius: 8px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .well-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .well-info strong {
+            color: #a8d8ea;
+        }
+
+        .no-selection {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.1rem;
+        }
+
+        .image-note {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #a8d8ea;
+        }
+
+        @media (max-width: 768px) {
+            .pdf-item iframe {
+                height: 400px;
+            }
+
+            .well-selector select {
+                width: 100%;
+                min-width: unset;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>🏞️ Buffalo Bayou Geology</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="large-map.html">Large Map</a>
+                <a href="four-maps.html">Four Maps</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="cross-sections.html" class="active">Cross Sections</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-title">
+            <h2>Well Cross Sections</h2>
+            <p>Regional dip and strike cross sections with individual well log data from the Buffalo Bayou area</p>
+            <p>These water wells provide valuable insights into the near subsurface geology equivalent and below what is exposed in the Buffalo Bayou outcrops.</p>
+            <p>Cross-section correlations and diagrams created by Richard Lang, 2025</p>
+        </div>
+
+        <div class="info-banner">
+            📁 <strong>Data Access:</strong> All cross section files can be downloaded from the <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology/tree/main/data/well_cross_sections" target="_blank" rel="noopener">GitHub repository</a>.
+        </div>
+
+        <!-- Regional Cross Sections -->
+        <div class="section">
+            <h3>📊 Regional Cross Sections</h3>
+            <div class="pdf-container">
+                <div class="pdf-item">
+                    <h4>Dip Section</h4>
+                    <iframe src="data/well_cross_sections/Dip_Section.pdf" title="Dip Section PDF"></iframe>
+                    <a href="data/well_cross_sections/Dip_Section.pdf" target="_blank" class="pdf-link">📄 Open in new tab</a>
+                </div>
+                <div class="pdf-item">
+                    <h4>Strike Section</h4>
+                    <iframe src="data/well_cross_sections/Strike_Section.pdf" title="Strike Section PDF"></iframe>
+                    <a href="data/well_cross_sections/Strike_Section.pdf" target="_blank" class="pdf-link">📄 Open in new tab</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Individual Well Cross Sections -->
+        <div class="section">
+            <h3>🔬 Individual Well Cross Sections</h3>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1rem;">
+                Select a well location to view its detailed cross section image. Each well is labeled A through N with its coordinates.
+            </p>
+            
+            <div class="well-selector">
+                <label for="well-select">Select Well Location:</label>
+                <select id="well-select" onchange="updateWellImage()">
+                    <option value="A" selected>A - West Harris MUD 4 (29.7128°N, 95.676578°W)</option>
+                    <option value="B">B - Longhorn Town (29.77788°N, 95.686004°W)</option>
+                    <option value="C">C - City of South Houston (29.664082°N, 95.219818°W)</option>
+                    <option value="D">D - Air Products 2 (29.700519°N, 95.069389°W)</option>
+                    <option value="E">E - City of West University (29.715931°N, 95.438271°W)</option>
+                    <option value="F">F - City of Houston-Southwest 5 (29.724131°N, 95.492172°W)</option>
+                    <option value="G">G - Southwest 3SB (29.724932°N, 95.479958°W)</option>
+                    <option value="H">H - Wilcrest Improvement 1 (29.745001°N, 95.558609°W)</option>
+                    <option value="I">I - Memorial MUD (29.753984°N, 95.7418°W)</option>
+                    <option value="J">J - City of Bunker Hill 3 (29.759125°N, 95.537883°W)</option>
+                    <option value="K">K - Memorial Village (29.763786°N, 95.518723°W)</option>
+                    <option value="L">L - Green Trail MUD (29.766391°N, 95.713246°W)</option>
+                    <option value="M">M - Ricewood MUD (29.822605°N, 95.718169°W)</option>
+                    <option value="N">N - Horsepen Bayou MUD 1 (29.859046°N, 95.611829°W)</option>
+                </select>
+            </div>
+
+            <div class="well-image-container" id="well-image-container">
+                <div class="no-selection" id="no-selection">
+                    Select a well from the dropdown above to view its cross section
+                </div>
+                <div id="well-content" style="display: none;">
+                    <h4 id="well-title"></h4>
+                    <iframe id="well-pdf" src="" title="Well cross section"></iframe>
+                    <a id="well-pdf-link" href="" target="_blank" class="pdf-link">📄 Open PDF in new tab</a>
+                    <div class="well-info" id="well-info"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Buffalo Bayou Geology Project | <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology" target="_blank">GitHub Repository</a></p>
+    </footer>
+
+    <script>
+        // Well data with paths and metadata
+        const wellData = {
+            'A': {
+                name: 'West Harris MUD 4',
+                folder: 'A_29.7128N95.676578W',
+                lat: 29.7128,
+                lon: -95.676578,
+                pdf: 'West Harris MUD 4.pdf'
+            },
+            'B': {
+                name: 'Longhorn Town',
+                folder: 'B_29.77788N95.686004W',
+                lat: 29.77788,
+                lon: -95.686004,
+                pdf: 'Longhorn Town.pdf'
+            },
+            'C': {
+                name: 'City of South Houston',
+                folder: 'C_29.664082N95.219818W',
+                lat: 29.664082,
+                lon: -95.219818,
+                pdf: 'City of South Houston.pdf'
+            },
+            'D': {
+                name: 'Air Products 2',
+                folder: 'D_29.700519N95.069389W',
+                lat: 29.700519,
+                lon: -95.069389,
+                pdf: 'Air Products 2.pdf'
+            },
+            'E': {
+                name: 'City of West University',
+                folder: 'E_29.715931N95.438271W',
+                lat: 29.715931,
+                lon: -95.438271,
+                pdf: 'City of West University.pdf'
+            },
+            'F': {
+                name: 'City of Houston-Southwest 5',
+                folder: 'F_29.724131N95.492172W',
+                lat: 29.724131,
+                lon: -95.492172,
+                pdf: 'City of Houston-Southwest 5.pdf'
+            },
+            'G': {
+                name: 'Southwest 3SB',
+                folder: 'G_29.724932N95.479958W',
+                lat: 29.724932,
+                lon: -95.479958,
+                pdf: 'Southwest 3SB.pdf'
+            },
+            'H': {
+                name: 'Wilcrest Improvement 1',
+                folder: 'H_29.745001N95.558609W',
+                lat: 29.745001,
+                lon: -95.558609,
+                pdf: 'Wilcrest Improvement 1.pdf'
+            },
+            'I': {
+                name: 'Memorial MUD',
+                folder: 'I_29.753984N95.7418W',
+                lat: 29.753984,
+                lon: -95.7418,
+                pdf: 'Memorial MUD.pdf'
+            },
+            'J': {
+                name: 'City of Bunker Hill 3',
+                folder: 'J_29.759125N95.537883W',
+                lat: 29.759125,
+                lon: -95.537883,
+                pdf: 'City of Bunker Hill_3.pdf'
+            },
+            'K': {
+                name: 'Memorial Village',
+                folder: 'K_29.763786N95.518723W',
+                lat: 29.763786,
+                lon: -95.518723,
+                pdf: 'Memorial Village.pdf'
+            },
+            'L': {
+                name: 'Green Trail MUD',
+                folder: 'L_29.766391N95.713246W',
+                lat: 29.766391,
+                lon: -95.713246,
+                pdf: 'Green Trail MUD.pdf'
+            },
+            'M': {
+                name: 'Ricewood MUD',
+                folder: 'M_29.822605N95.718169W',
+                lat: 29.822605,
+                lon: -95.718169,
+                pdf: 'Ricewood MUD.pdf'
+            },
+            'N': {
+                name: 'Horsepen Bayou MUD 1',
+                folder: 'N_29.859046N95.611829W',
+                lat: 29.859046,
+                lon: -95.611829,
+                pdf: 'Horsepen Bayou MUD 1.pdf'
+            }
+        };
+
+        function updateWellImage() {
+            const select = document.getElementById('well-select');
+            const selectedWell = select.value;
+            const noSelection = document.getElementById('no-selection');
+            const wellContent = document.getElementById('well-content');
+            const wellTitle = document.getElementById('well-title');
+            const wellPdf = document.getElementById('well-pdf');
+            const wellPdfLink = document.getElementById('well-pdf-link');
+            const wellInfo = document.getElementById('well-info');
+
+            if (!selectedWell) {
+                noSelection.style.display = 'flex';
+                wellContent.style.display = 'none';
+                return;
+            }
+
+            const well = wellData[selectedWell];
+            const basePath = `data/well_cross_sections/Water_Wells_Xsections_Lang/${well.folder}`;
+            const pdfPath = `${basePath}/${well.pdf}`;
+            
+            noSelection.style.display = 'none';
+            wellContent.style.display = 'block';
+            
+            wellTitle.textContent = `Well ${selectedWell}: ${well.name}`;
+            wellPdf.src = pdfPath;
+            wellPdfLink.href = pdfPath;
+            
+            wellInfo.innerHTML = `
+                <p><strong>Well Name:</strong> ${well.name}</p>
+                <p><strong>Latitude:</strong> ${well.lat}°N</p>
+                <p><strong>Longitude:</strong> ${Math.abs(well.lon)}°W</p>
+            `;
+        }
+
+        // Load the first well on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateWellImage();
+        });
+    </script>
+</body>
+</html>
