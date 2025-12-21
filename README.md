@@ -60,6 +60,15 @@ and puts less emphasis on their spatial location.
 
 link: https://justingosses.github.io/buffalo_bayou_geology/gallery.html
 
+### Well Cross Sections page
+
+This page displays regional dip and strike cross sections as well as individual 
+well log data from 14 water wells (A through N) across the Buffalo Bayou area.
+These water wells provide valuable insights into the near subsurface geology 
+equivalent and below what is exposed in the Buffalo Bayou outcrops.
+
+link: https://justingosses.github.io/buffalo_bayou_geology/cross-sections.html
+
 # Data 
 
 ## Data structure
@@ -70,6 +79,7 @@ buffalo_bayou_geology/
 ├── large-map.html          # Single large interactive map view
 ├── four-maps.html          # Four synchronized linked maps with info panel
 ├── gallery.html            # Scrollable photo gallery view
+├── cross-sections.html     # Well cross sections viewer
 ├── old.html                # Legacy version of the visualization page
 ├── README.md
 ├── LICENSE
@@ -92,7 +102,15 @@ buffalo_bayou_geology/
 │   │   └── *.png           # Stereonet plots and other diagrams
 │   ├── texas_faults.json   # Regional fault traces (GeoJSON)
 │   ├── wells_v1.geojson    # Well locations (GeoJSON)
-│   └── faults/             # Original fault shapefiles
+│   ├── faults/             # Original fault shapefiles
+│   └── well_cross_sections/
+│       ├── Dip_Section.pdf           # Regional dip cross section
+│       ├── Strike_Section.pdf        # Regional strike cross section
+│       └── Water_Wells_Xsections_Lang/
+│           ├── A_29.7128N95.676578W/     # Individual well data (A-N)
+│           ├── B_29.77788N95.686004W/
+│           ├── ...                       # Each folder contains PDF and TIFF files
+│           └── N_29.859046N95.611829W/
 │
 ├── icons/                  # Map marker icons
 │
@@ -161,6 +179,10 @@ Regional level diretion of flow does not seem to correlate with fault positionin
 Well locations are mostly near-surface wells drilled for water supply and geotechnical purposes. Source data is stored in `data/wells_v1.geojson` and the `data/wells_cross_sections` directory. Well log data was collected by Dorene B. West and
 Richard Lang. Well logs were sourced from Texas Commission on Environmental Quality.
 Richard lang created the well log cross-sections.
+
+### Thin Sections
+
+--TODO--
 
 ### Basemaps
 
