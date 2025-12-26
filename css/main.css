@@ -1,3 +1,26 @@
+/* ============================================
+   Buffalo Bayou Geology - Shared Styles
+   ============================================ */
+
+/* === Reset & Base === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Roboto Condensed", sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    color: #fff;
+}
+
+/* === Typography === */
 .roboto-condensed-one {
     font-family: "Roboto Condensed", sans-serif;
     font-optical-sizing: auto;
@@ -5,13 +28,14 @@
     font-style: normal;
 }
 
-html {
-    font-size: 16px; /* Or your desired base size */
-}
-
 h1 { 
     font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
+
 h2 {
     font-family: "Roboto Condensed", sans-serif;
 }
@@ -23,6 +47,222 @@ h3 {
 p {
     font-family: "Roboto Condensed", sans-serif;
     font-size: larger;
+}
+
+/* === Header === */
+header {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem 2rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Wide header variant for map pages */
+.header-content-wide {
+    max-width: 1800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Narrow header variant for index page */
+.header-content-narrow {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* === Navigation === */
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    color: #a8d8ea;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+nav a:hover {
+    background: rgba(168, 216, 234, 0.3);
+    transform: translateY(-2px);
+}
+
+nav a.active {
+    background: rgba(168, 216, 234, 0.4);
+    font-weight: 600;
+}
+
+/* Nav links should not change color when visited */
+nav a,
+nav a:visited {
+    color: #a8d8ea;
+    text-decoration: none;
+}
+
+/* === Link Styles (Accessibility) === */
+a {
+    color: #5bc0de;
+}
+
+a:visited {
+    color: #c8e8f0;
+    text-decoration: underline dotted;
+}
+
+a:visited:hover {
+    color: #e0f4f8;
+    text-decoration: underline;
+}
+
+/* === Main Content === */
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Wide main for map pages */
+main.main-wide {
+    max-width: 1800px;
+    padding: 1.5rem 2rem;
+}
+
+/* === Notice & Info Banners === */
+.notice {
+    background: rgba(255, 193, 7, 0.15);
+    border-left: 4px solid #ffc107;
+    padding: 0.75rem 1rem;
+    margin: 1rem 2rem;
+    border-radius: 0 8px 8px 0;
+    color: #ffc107;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.notice-wide {
+    max-width: 1800px;
+}
+
+.info-banner {
+    background: rgba(168, 216, 234, 0.15);
+    border-left: 4px solid #a8d8ea;
+    padding: 0.75rem 1rem;
+    margin: 0.5rem 2rem 1rem;
+    border-radius: 0 8px 8px 0;
+    color: #a8d8ea;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info-banner-wide {
+    max-width: 1800px;
+}
+
+.info-banner a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* === Section Styles === */
+.section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section h2 {
+    font-size: 1.5rem;
+    color: #a8d8ea;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(168, 216, 234, 0.3);
+}
+
+.section h3 {
+    font-size: 1.2rem;
+    color: #a8d8ea;
+    margin-bottom: 0.75rem;
+}
+
+.section p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* === Page Title === */
+.page-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.page-title h2 {
+    font-size: 2rem;
+    color: #a8d8ea;
+    margin-bottom: 0.5rem;
+}
+
+.page-title p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+}
+
+/* === PDF Container === */
+.pdf-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pdf-container h3 {
+    font-size: 1.3rem;
+    color: #a8d8ea;
+    margin-bottom: 1rem;
+}
+
+.pdf-container p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.pdf-container iframe {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 #geoData{
@@ -217,8 +457,8 @@ p {
 }
 
 .map-container {
-    width: 200px; /* Or a specific width, e.g., 300px */
-    height: 200px; /* Ensure height is explicitly set */
+    width: 100%; /* Or a specific width, e.g., 300px */
+    height: 100%; /* Ensure height is explicitly set */
     /* margin-top: 10px; */
     position: relative; /* Required for Leaflet maps */
 }

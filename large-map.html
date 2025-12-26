@@ -8,94 +8,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            font-size: 16px;
-        }
-
-        body {
-            font-family: "Roboto Condensed", sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            min-height: 100vh;
-            color: #fff;
-        }
-
-        header {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 1rem 2rem;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
+        /* Page-specific: Large map uses wider layout */
         .header-content {
             max-width: 1800px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        h1 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        nav {
-            display: flex;
-            gap: 1rem;
-        }
-
-        nav a {
-            color: #a8d8ea;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        nav a:hover {
-            background: rgba(168, 216, 234, 0.3);
-            transform: translateY(-2px);
-        }
-
-        nav a.active {
-            background: rgba(168, 216, 234, 0.4);
-            font-weight: 600;
         }
 
         .notice {
-            background: rgba(255, 193, 7, 0.15);
-            border-left: 4px solid #ffc107;
-            padding: 0.75rem 1rem;
-            margin: 1rem 2rem;
-            border-radius: 0 8px 8px 0;
-            color: #ffc107;
             max-width: 1800px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         main {
             padding: 1.5rem 2rem;
             max-width: 1800px;
-            margin: 0 auto;
         }
 
         .map-section {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 16px;
             padding: 1.5rem;
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 2rem;
@@ -228,7 +161,10 @@
             </nav>
         </div>
     </header>
-
+          <div class="page-title">
+            <h2>Large Map</h2>
+            <p>Outcrop photos and other data shown on a single large map to make it easier to click on different items</p>
+        </div>
     <div class="notice">
         ⚠️ Note: Icons for strike and flow direction are not oriented properly, but clicking on them displays accurate measurements.
     </div>
