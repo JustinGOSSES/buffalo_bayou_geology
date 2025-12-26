@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffalo Bayou Geology - Thin Sections</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Roboto Condensed", sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem 2rem;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: #a8d8ea;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a:hover {
+            background: rgba(168, 216, 234, 0.3);
+        }
+
+        nav a.active {
+            background: rgba(168, 216, 234, 0.4);
+            font-weight: 600;
+        }
+
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .page-title h2 {
+            font-size: 2rem;
+            color: #a8d8ea;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-title p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+        }
+
+        .info-banner {
+            background: rgba(168, 216, 234, 0.15);
+            border-left: 4px solid #a8d8ea;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            color: #a8d8ea;
+        }
+
+        .info-banner a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section h3 {
+            color: #a8d8ea;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .pdf-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .pdf-container h4 {
+            background: rgba(168, 216, 234, 0.2);
+            padding: 0.75rem 1rem;
+            color: #a8d8ea;
+            font-size: 1.1rem;
+        }
+
+        .pdf-container iframe {
+            width: 100%;
+            height: 70vh;
+            border: none;
+        }
+
+        .video-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .video-container h4 {
+            background: rgba(168, 216, 234, 0.2);
+            padding: 0.75rem 1rem;
+            color: #a8d8ea;
+            font-size: 1.1rem;
+        }
+
+        .video-container video {
+            width: 100%;
+            max-height: 70vh;
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #a8d8ea;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .pdf-container iframe {
+                height: 50vh;
+            }
+
+            .video-container video {
+                max-height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>🦬 Buffalo Bayou Geology</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="large-map.html">Large Map</a>
+                <a href="four-maps.html">Four Maps</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="cross-sections.html">Cross Sections</a>
+                <a href="thin-sections.html" class="active">Thin Sections</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-title">
+            <h2>Thin Section Analysis</h2>
+            <p>Petrographic thin sections from Buffalo Bayou outcrop samples</p>
+        </div>
+
+        <div class="info-banner">
+            📁 Data files available in the <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology/tree/main/data/thin-sections" target="_blank" rel="noopener">GitHub repository</a>
+        </div>
+
+        <div class="section">
+            <h3>About Thin Sections</h3>
+            <p>
+                Thin sections are slices of rock cut thin enough (typically 30 micrometers) to allow light to pass through, 
+                enabling detailed examination of mineral composition, texture, and fabric under a polarizing microscope. 
+                These thin sections were prepared from samples collected along Buffalo Bayou to help characterize the 
+                sedimentology and diagenesis of the Beaumont Formation.
+            </p>
+          
+        </div>
+        <div class="section">
+            <h3>Analysis</h3>
+            <h4>See published papaer for detailed conclusions</h4>
+              <p>
+                For a detailed analysis of the thin sections and their implications for the geology of Buffalo Bayou,
+                please refer to the associated publication:
+                Patterson, P., Kendall, J., Schwartz, A., Novello, J., Gaston, W., Lang, R., West, D., Gosses, J., &amp; Wachtman, C. (2025). 
+                <em>Sedimentology, Sequence Stratigraphy, Diagenesis, and Paleogeographic Reconstruction of the Beaumont Formation, 
+                Late Pleistocene, Buffalo Bayou, Houston, Texas.</em> Houston Geological        Society Bulletin, June 2025.            
+                <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology/blob/main/associatedPapers/Final-6_2_25JuneBulletin.pdf" target="_blank" rel="noopener">[PDF]</a>
+            </p>
+            <h4>High-level conclussions</h4>
+            <p>
+                As described in more detail in the associated publication, 
+                the thin section analysis indicates that the Buffalo Bayou outcrops are composed primarily of 
+                ---- TODO -----
+            </p>
+            <p>
+                The classification of the rock samples based on QFL (Quartz, Feldspar, Lithics) diagram from Folk (1980) is shown below:
+                <img src="associatedPapers/FiguresForHGSBulletin_May62025/Figure 11_QFL Diagram.jpg" alt="Sandstone Classification Chart from Folk 1980" style="width:100%;max-width:600px;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,0.2);margin-top:1rem;">
+            </p>
+        </div>
+        <div class="section">
+            <h3>Where were these sampled from?</h3>
+            <p>
+                These thin sections were made from rock samples collected at the woodway outcrops along Buffalo Bayou in Houston, Texas just downstream from the kayak put-in at that location.
+            </p>
+            <p>Initially, a hand sample was examined and described before thin sections were prepared for detailed analysis.</p>
+            <div>
+                <h3></h3>
+                <p>
+                    
+                    A sample of lithified sandstone weighing approximately 32 g was taken from the same level as the BB 3. 
+                </p>
+                <img src="data/thin-sections/OutcropSampled_1.jpg" alt="Location of hand Sample from Buffalo Bayou Outcrop used for thin-sections" style="width:100%;max-width:600px;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,0.2);margin-top:1rem;">
+                <p>The sample was submerged in 100 ml of distilled white vinegar of nominal acidity of 5% for about 2.5 hrs with the goal of obtaining some disaggregated sediment and performing measurements and observations using a 3x hand lens.
+                The submerged sample displayed intense bubbling (see video) indicating that the cement is Calcium Carbonate (Calcite). After 2.5 hrs elapsed, the remaining lithified sample and the disaggregated sediment was drained and washed with distilled water. After drying the disaggregated sample was weighed. The following table summarizes the weights before and after the acid bath.
+                </p>
+                <table style="width:100%;max-width:400px;margin:1rem 0;border-collapse:collapse;">
+                    <thead>
+                        <tr style="background:rgba(168,216,234,0.2);color:#a8d8ea;">
+                            <th>Measurement</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Initial Dry Sample Weight</td>
+                            <td>32 g</td>
+                        </tr>
+                        <tr>
+                            <td>Aggregated after acid bath</td>
+                            <td>23 g</td>
+                        </tr>
+                        <tr>
+                            <td>Disaggregated sediment after acid bath</td>
+                            <td>6 g</td>
+                        </tr>
+                        <tr>
+                            <td>Calculated dissolved cement</td>
+                            <td>3 g</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                </p>
+                <p>
+                    The following observations of the disaggregated sediment were made under a 3x hand lens:
+<div style="margin-left:2rem;">
+    <ul>
+        <li>Sediment appears tan in color</li>
+        <li>Composed of Very Fine Sand (0.063-0.125 mm) (Wentworth, 1922)</li>
+        <li>Mostly Quartz with some rare dark to black accessory mineral grains</li>
+        <li>Occasionally some of the dark grains appear to be oxidized (red coloration)</li>
+        <li>The grains appear well rounded and well sorted</li>
+    </ul>
+</div>
+
+These observations and the apparent lack of marine fossils suggest that the sediment is of fluvial origin possibly subjected to long transport and sorting. 
+Better observations can be made under a petrographic microscope.
+
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>BB3 Thin Section Analysis</h3>
+            <p>Detailed petrographic analysis of the BB3 sample location.</p>
+            <div class="pdf-container">
+                <h4>Buffalo Bayou Thin Sections - BB3</h4>
+                <iframe src="data/thin-sections/Buffalo_Bayou_Thin_Sections_9.15.24_condensed_BB3.pdf" title="BB3 Thin Sections PDF"></iframe>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Other Thin Section Samples</h3>
+            <p>Petrographic analysis of thin sections from other sample locations along Buffalo Bayou.</p>
+            <div class="pdf-container">
+                <h4>Buffalo Bayou Thin Sections - Other Samples</h4>
+                <iframe src="data/thin-sections/Buffalo_Bayou_Thin_Sections_9.15.24_condensed_OtherThanBB3.pdf" title="Other Thin Sections PDF"></iframe>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Thin Section Video</h3>
+            <p>Video footage showing thin section examination under the microscope.</p>
+            <div class="video-container">
+                <h4>Microscope Video</h4>
+                <video controls preload="metadata">
+                    <source src="data/thin-sections/IMG_7157.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Created by Justin Gosses for the Houston Geological Society working group on Buffalo Bayou</p>
+        <p>Code repository: <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology" target="_blank" rel="noopener">GitHub</a></p>
+    </footer>
+</body>
+</html>
