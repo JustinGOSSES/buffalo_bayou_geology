@@ -83,7 +83,7 @@
         .hero {
             text-align: center;
             padding: 1rem 1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 0rem;
         }
 
         .hero h2 {
@@ -96,7 +96,7 @@
             font-size: 1.2rem;
             color: rgba(255, 255, 255, 0.8);
             max-width: 800px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 1rem;
             line-height: 1.6;
         }
 
@@ -331,6 +331,7 @@
                 <a href="four-maps.html">Four Maps</a>
                 <a href="gallery.html">Gallery</a>
                 <a href="cross-sections.html">Cross Sections</a>
+                <a href="thin-sections.html">Thin Sections</a>
             </nav>
         </div>
     </header>
@@ -340,9 +341,24 @@
             <h2>Rock Outcrops Along Buffalo Bayou</h2>
             <p>
                 This site provides interactive visualizations of geologic field data collected along Buffalo Bayou in Houston, Texas. 
-           While there are many geologists in Houston, there are few rock outcrops. This website details some of Houston's limited rock outcrops that appear during low water levels.</p>
+           While there are many geologists in Houston, there are few rock outcrops. This website details some of Houston's limited rock outcrops that appear during low water levels along Buffalo Bayou.</p>
         </section>
 
+          <div class="publication-box">
+            <h3>📄 This website visualizes the data archive of a publication</h3>
+            <p>
+                The outcrop photos, thin-sections, and other data visualized on this website were collected or created by the authors of the publication:
+                <br><br>
+                Patterson, P., Kendall, J., Schwartz, A., Novello, J., Gaston, W., Lang, R., West, D., Gosses, J., &amp; Wachtman, C. (2025). 
+                <em>Sedimentology, Sequence Stratigraphy, Diagenesis, and Paleogeographic Reconstruction of the Beaumont Formation, 
+                Late Pleistocene, Buffalo Bayou, Houston, Texas.</em> Houston Geological Society Bulletin, June 2025. 
+                <a href="https://www.newhgs.org/documents/bulletin_archives/Final%20-6_2_25%20June%20Bulletin.pdf" target="_blank" rel="noopener">[PDF]</a>
+            </p>
+            <br>
+            <p>
+                Please refer to this website's <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology" target="_blank" rel="noopener">GitHub repository's README.md</a> for information on how to download or work with this data.</a>   
+            </p>
+        </div>
 
         <h2 style="text-align: center; margin: 1rem 0 1rem; color: #a8d8ea;">Choose a View</h2>
 
@@ -382,8 +398,19 @@
                 </p>
                 <a href="cross-sections.html" class="btn">Open Cross Sections →</a>
             </div>
+
+            <div class="view-card">
+                <h3>🔬 Thin Sections</h3>
+                <p>
+                    Petrographic thin section analysis from Buffalo Bayou outcrop samples. View mineral composition, 
+                    texture, and fabric under polarized light microscopy.
+                </p>
+                <a href="thin-sections.html" class="btn">Open Thin Sections →</a>
+            </div>
         </div>
 
+        
+       
 
         <div class="two-col">
             <div class="section">
@@ -405,8 +432,8 @@
                 Their geographic positions should be considered approximate.</p>
                 <strong>How to use data</strong>:
                   <p>
-                    You can <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology" target="_blank" rel="noopener">download or fork the GitHub repository</a> 
-                    to work with the data directly.
+                    Please refer to the GitHub repository's README.md <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology" target="_blank" rel="noopener"> for information on how to download or work with the data shown on this website.</a> 
+                   
                 </p>
             </div>
 
@@ -416,6 +443,10 @@
                     <ul>
                         <li>
                             Photos, strike dips, and other field observations collected using the Midland Valley Clino app by Jerry Kendall and the HGS Buffalo Bayou working group.
+                        </li>
+                        <li>
+                            Richard Lang created the well log cross-sections. Well log data was collected by Dorene B. West and
+                            Richard Lang. Well logs were sourced from [Texas Commission on Environmental Quality](https://www.tceq.texas.gov/gis/waterwellview.html).
                         </li>
 
                     </ul>
@@ -427,43 +458,11 @@
                     <li>ESRI <a href="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer" target="_blank" rel="noopener">World Imagery</a> and <a href="https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer" target="_blank" rel="noopener">National Geographic World Map</a></li>
                     <li><a href="https://developers.google.com/maps/documentation/streetview/overview" target="_blank" rel="noopener">Google Street View</a> for street-level imagery</li>
                 </ul>
-                <br></br>
-                <p>For more information on data, see the <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology">The GitHub repository for this website.</a></p>
+            
             </div>
         </div>
 
-
-         <div class="publication-box">
-            <h3>📄 Associated Publication</h3>
-            <p>
-                The outcrop photos and data visualized here were used in:<br><br>
-                Patterson, P., Kendall, J., Schwartz, A., Novello, J., Gaston, W., Lang, R., West, D., Gosses, J., &amp; Wachtman, C. (2025). 
-                <em>Sedimentology, Sequence Stratigraphy, Diagenesis, and Paleogeographic Reconstruction of the Beaumont Formation, 
-                Late Pleistocene, Buffalo Bayou, Houston, Texas.</em> Houston Geological Society Bulletin, June 2025. 
-                <a href="https://www.newhgs.org/documents/bulletin_archives/Final%20-6_2_25%20June%20Bulletin.pdf" target="_blank" rel="noopener">[PDF]</a>
-            </p>
-        </div>
-
         <div class="section">
-            <h3>Closely Related Resources Elsewhere (digital elevation models)</h3>
-            <p>
-                The Python code for creating Relative Elevation Maps (REM) that was originally part of this repository 
-                has moved to a separate project: 
-                <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology_REM" target="_blank" rel="noopener">buffalo_bayou_geology_REM</a>
-            </p>
-            <p>
-                That work formed the basis of the blog post: 
-                <a href="https://justingosses.com/blog/why-buffalo-bayou-does-not-drain-to-the-sea" target="_blank" rel="noopener">
-                    "Houston has topography: Looking at why Buffalo Bayou does not drain to the sea, directly"
-                </a>
-                and may be of interest
-                    for seeing small changes in geomorphology along Buffalo Bayou and in comparison to other surrounding river systems.
-            </p>
-            <img src="screen_captures/buffaloBayouREM.png" alt="Relative Elevation Map with elevation profile" style="width: 100%; border-radius: 8px; margin-top: 1rem;">
-        </div>
-
-
-         <div class="section">
             <h3>📊 Current Water Level - Buffalo Bayou at Houston (USGS Gage 08074000)</h3>
             <p>
                 Check the current gage height before planning a field visit. Most outcrop photos were taken when 
@@ -501,6 +500,38 @@
                 was slightly above 1 foot.
             </p>
          </div>
+
+        <div class="section">
+            <h3>Closely Related Resources Elsewhere (digital elevation models)</h3>
+            <p>
+                Somewhat separate from the question of the depositional environment of the bedrock exposed
+                in outcrops along Buffalo Bayou is the question of why Buffalo Bayou exists where
+                it is and flows east not south towards the coast. Although the information in the bedrock
+                exposed in Buffalo Bayou can help a little with that question, much of the answer can be
+                found in the topography and surficial geology of the region.
+            </p>
+
+            <p>
+                Originally, this repository held some Python code 
+                for analyzing digital elevation models of the Houston area and
+                creating Relative Elevation Maps (REM) that make small changes in topography
+                more visible.
+                That work has since moved to a separate GitHub repository: 
+                <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology_REM" target="_blank" rel="noopener">buffalo_bayou_geology_REM</a>
+            </p>
+            <p>
+                It forms the basis of the blog post: 
+                <a href="https://justingosses.com/blog/why-buffalo-bayou-does-not-drain-to-the-sea" target="_blank" rel="noopener">
+                    "Houston has topography: Looking at why Buffalo Bayou does not drain to the sea, directly"
+                </a>
+                and may be of interest for answering the question of why Buffalo Bayou flows where it does
+                and how it differs from some of the larger regional fluvial systems.
+            </p>
+            <img src="screen_captures/buffaloBayouREM.png" alt="Relative Elevation Map with elevation profile" style="width: 100%; border-radius: 8px; margin-top: 1rem;">
+        </div>
+
+
+         
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -533,7 +564,7 @@
                 // Set status based on level
                 const statusEl = document.getElementById('levelStatus');
                 if (currentHeight <= 1.5) {
-                    statusEl.textContent = '✅ Outcrops likely visible';
+                    statusEl.textContent = '✅ Outcrops likely visible if below this level';
                     statusEl.style.color = '#90EE90';
                 } else if (currentHeight <= 2.0) {
                     statusEl.textContent = '⚠️ Some outcrops may be submerged while others visible';
