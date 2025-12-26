@@ -7,110 +7,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Roboto Condensed", sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            min-height: 100vh;
-            color: #fff;
-        }
-
-        header {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 1rem 2rem;
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
+        /* Page-specific: Use wider layout like map pages */
         .header-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
+            max-width: 1800px;
         }
 
-        h1 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        nav {
-            display: flex;
-            gap: 1rem;
-        }
-
-        nav a {
-            color: #a8d8ea;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        nav a:hover {
-            background: rgba(168, 216, 234, 0.3);
-        }
-
-        nav a.active {
-            background: rgba(168, 216, 234, 0.4);
-            font-weight: 600;
-        }
-
-        main {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .page-title {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .page-title h2 {
-            font-size: 2rem;
-            color: #a8d8ea;
-            margin-bottom: 0.5rem;
-        }
-
-        .page-title p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.1rem;
+        .notice {
+            max-width: 1800px;
         }
 
         .info-banner {
-            background: rgba(168, 216, 234, 0.15);
-            border-left: 4px solid #a8d8ea;
-            padding: 0.75rem 1rem;
-            margin-bottom: 1.5rem;
-            border-radius: 0 8px 8px 0;
-            color: #a8d8ea;
+            max-width: 1800px;
         }
 
-        .info-banner a {
-            color: #fff;
-            text-decoration: underline;
+        main {
+            max-width: 1800px;
         }
 
         .section {
-            background: rgba(255, 255, 255, 0.05);
             border-radius: 12px;
             padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 2rem;
         }
 
         .section h3 {
@@ -286,27 +204,64 @@
     </header>
 
     <main>
-        <div class="page-title">
+            <div class="page-title">
             <h2>Well Cross Sections</h2>
-            <p>Regional dip and strike cross sections with individual well log data from the Buffalo Bayou area</p>
-            <p>These water wells provide valuable insights into the near subsurface geology equivalent and below what is exposed in the Buffalo Bayou outcrops.</p>
-            <p></p>
-            <br>
-            <p> 
-                Richard Lang created the well log cross-sections. Well log data was collected by Dorene B. West and Richard Lang. 
-            </p>
-            <p>Well logs were sourced from Texas Commission on Environmental Quality. Please see <a href="https://www.tceq.texas.gov/gis/waterwellview.html ">https://www.tceq.texas.gov/gis/waterwellview.html</a> for original data.</p>
-            <br
-            <p>For a detailed explaination of how these water well logs related to the outcrops along Buffalo Bayou, 
-                see the associated publication
-                <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology/tree/main/associatedPapers">
-                    Patterson, P., Kendall, J., Schwartz, A., Novello, J., Gaston, W., Lang, R., West, D., Gosses, J., & Wachtman, C. (2025). Sedimentology, Sequence Stratigraphy, Diagenesis, and Paleogeographic Reconstruction of the Beaumont Formation, Late Pleistocene, Buffalo Bayou, Houston, Texas. Houston Geological Society Bulletin, June 2025.
-                </a>
-            </p>
+            <p>Water well log cross-sections equivalent and below outcrops</p>
         </div>
 
         <div class="info-banner">
             📁 <strong>Data Access:</strong> All cross section files can be downloaded from the <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology/tree/main/data/well_cross_sections" target="_blank" rel="noopener">GitHub repository</a>.
+        </div>
+        <div class="section" id="intro">
+            <h3>About Well Logs</h3>
+            <div style="margin-bottom: 1rem;">
+                <h4 style="color: #a8d8ea; margin-bottom: 0.5rem;">What are well logs?</h4>
+                <p>
+                    Well logs are created by lowering measurement instruments into a borehole to obtain different types of measurements that tell us something about the physical properties of the rocks and fluids present in the subsurface. 
+                    These measurements are recorded continuously as a function of depth. These shallow water wells provide valuable insights into the near subsurface geology equivalent and below what is exposed in the Buffalo Bayou outcrops.
+                </p>
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <h4 style="color: #a8d8ea; margin-bottom: 0.5rem;">Who created these?</h4>
+                <p> 
+                    Richard Lang created the well log cross-sections. Well log data was collected by Dorene B. West and Richard Lang. 
+                    Well logs were sourced from Texas Commission on Environmental Quality. Please see <a href="https://www.tceq.texas.gov/gis/waterwellview.html">https://www.tceq.texas.gov/gis/waterwellview.html</a> for original data.
+                </p>
+            </div>
+            <div>
+                <h4 style="color: #a8d8ea; margin-bottom: 0.5rem;">Detailed interpretations</h4>
+                <p>
+                    For a detailed explanation of how these water well logs relate to the outcrops along Buffalo Bayou, 
+                    see the associated publication:
+                    <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology/tree/main/associatedPapers">
+                        Patterson, P., Kendall, J., Schwartz, A., Novello, J., Gaston, W., Lang, R., West, D., Gosses, J., & Wachtman, C. (2025). Sedimentology, Sequence Stratigraphy, Diagenesis, and Paleogeographic Reconstruction of the Beaumont Formation, Late Pleistocene, Buffalo Bayou, Houston, Texas. Houston Geological Society Bulletin, June 2025.
+                    </a>
+                </p>
+            </div>
+        </div>
+
+   
+
+        <!-- Well Log Signature of Outcrops -->
+        <div class="section">
+            <h3>Well Log Signature of Outcrops</h3
+            <p>
+                Diagrams 19 and 20 from the associated publication show approximately
+                what part of Well Log G the Buffalo Bayou outcrops are equivalent to,
+                providing a useful reference for correlating surface exposures with subsurface stratigraphy.
+            </p>
+            <div class="pdf-container">
+                <div class="pdf-item">
+                    <h4>Figure 19: Well Log Signature of Outcrops</h4>
+                    <iframe src="associatedPapers/FiguresForHGSBulletin_May62025/Figure 19 Well Log signature of outcrops.pdf" title="Well Log Signature of Outcrops PDF"></iframe>
+                    <a href="associatedPapers/FiguresForHGSBulletin_May62025/Figure 19 Well Log signature of outcrops.pdf" target="_blank" class="pdf-link">📄 Open in new tab</a>
+                </div>
+                <div class="pdf-item">
+                    <h4>Figure 20: Well Log Cross Section</h4>
+                    <iframe src="associatedPapers/FiguresForHGSBulletin_May62025/Figure 20 Well log cross section.pdf" title="Well Log Cross Section PDF"></iframe>
+                    <a href="associatedPapers/FiguresForHGSBulletin_May62025/Figure 20 Well log cross section.pdf" target="_blank" class="pdf-link">📄 Open in new tab</a>
+                </div>
+            </div>
         </div>
 
         <!-- Regional Cross Sections -->

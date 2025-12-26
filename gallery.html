@@ -8,101 +8,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Roboto Condensed", sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            min-height: 100vh;
-            color: #fff;
-        }
-
-        header {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 1rem 2rem;
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
+        /* Page-specific: Use wider layout like map pages */
         .header-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        h1 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        nav {
-            display: flex;
-            gap: 1rem;
-        }
-
-        nav a {
-            color: #a8d8ea;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        nav a:hover {
-            background: rgba(168, 216, 234, 0.3);
-        }
-
-        nav a.active {
-            background: rgba(168, 216, 234, 0.4);
-            font-weight: 600;
+            max-width: 1800px;
         }
 
         .notice {
-            background: rgba(255, 193, 7, 0.15);
-            border-left: 4px solid #ffc107;
-            padding: 0.75rem 1rem;
-            margin: 1rem 2rem;
-            border-radius: 0 8px 8px 0;
-            color: #ffc107;
-            max-width: 1400px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 1800px;
         }
 
         .info-banner {
-            background: rgba(168, 216, 234, 0.15);
-            border-left: 4px solid #a8d8ea;
-            padding: 0.75rem 1rem;
-            margin: 0.5rem 2rem 1rem;
-            border-radius: 0 8px 8px 0;
-            color: #a8d8ea;
-            max-width: 1400px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .info-banner a {
-            color: #fff;
-            text-decoration: underline;
+            max-width: 1800px;
         }
 
         main {
             padding: 1rem 2rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
+            max-width: 1800px;
         }
 
         #gallery-container {
@@ -157,8 +80,6 @@
             display: inline-block;
             width: fit-content;
         }
-
-     
 
         .filter-controls {
             max-width: 1400px;
@@ -253,9 +174,13 @@
             </nav>
         </div>
     </header>
-
+      <div class="page-title">
+            <h2>Gallery view of outcrop photos</h2>
+            <p>Arranged in simple gallery view to avoid having to click on a map </p>
+        </div>
     <div class="info-banner">
         📍 <strong>Gallery View:</strong> Scroll through all field data points with photos and location maps. For interactive map exploration, visit the <a href="large-map.html">Large Map</a> or <a href="four-maps.html">Four Maps</a> view.
+         Note that faults and other line features are rough observations extracted from a KMZ file and not indicative of an actual fault or surface expression.
     </div>
 
     <div class="filter-controls">
