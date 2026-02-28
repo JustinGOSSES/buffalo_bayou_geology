@@ -158,8 +158,17 @@
           
         </div>
         <div class="section">
-            <h3>Analysis</h3>
-            <h4>See published papaer for detailed conclusions</h4>
+            <h3>Conclusions</h3>
+           
+            <h4>High-level conclusions</h4>
+            <p>
+                At a very high level,
+                the thin section analysis indicates that the Buffalo Bayou outcrops are composed primarily of sublitharenite to litharenite sandstone with a carbonate cement.
+                Where each facies sits on the QFL (Quartz, Feldspar, Lithics) diagram from Folk (1980) is shown below:
+                </p>
+                <img src="associatedPapers/FiguresForHGSBulletin_May62025/Figure 11_QFL Diagram.jpg" alt="Sandstone Classification Chart from Folk 1980" style="width:100%;max-width:600px;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,0.2);margin-top:1rem;">
+            </p>
+             <h4>See published paper for detailed conclusions</h4>
               <p>
                 For a detailed analysis of the thin sections and their implications for the geology of Buffalo Bayou,
                 please refer to the associated publication:
@@ -167,16 +176,6 @@
                 <em>Sedimentology, Sequence Stratigraphy, Diagenesis, and Paleogeographic Reconstruction of the Beaumont Formation, 
                 Late Pleistocene, Buffalo Bayou, Houston, Texas.</em> Houston Geological        Society Bulletin, June 2025.            
                 <a href="https://github.com/JustinGOSSES/buffalo_bayou_geology/blob/main/associatedPapers/Final-6_2_25JuneBulletin.pdf" target="_blank" rel="noopener">[PDF]</a>
-            </p>
-            <h4>High-level conclussions</h4>
-            <p>
-                As described in more detail in the associated publication, 
-                the thin section analysis indicates that the Buffalo Bayou outcrops are composed primarily of 
-                ---- TODO -----
-            </p>
-            <p>
-                The classification of the rock samples based on QFL (Quartz, Feldspar, Lithics) diagram from Folk (1980) is shown below:
-                <img src="associatedPapers/FiguresForHGSBulletin_May62025/Figure 11_QFL Diagram.jpg" alt="Sandstone Classification Chart from Folk 1980" style="width:100%;max-width:600px;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,0.2);margin-top:1rem;">
             </p>
         </div>
         <div class="section">
@@ -244,7 +243,7 @@ Better observations can be made under a petrographic microscope.
 
         <div class="section">
             <h3>BB3 Thin Section Analysis</h3>
-            <p>Detailed petrographic analysis of the BB3 sample location.</p>
+            <p>Detailed petrographic observations & analysis of the BB3 sample location.</p>
             <div class="pdf-container">
                 <h4>Buffalo Bayou Thin Sections - BB3</h4>
                 <iframe src="data/thin-sections/Buffalo_Bayou_Thin_Sections_9.15.24_condensed_BB3.pdf" title="BB3 Thin Sections PDF"></iframe>
@@ -253,7 +252,7 @@ Better observations can be made under a petrographic microscope.
 
         <div class="section">
             <h3>Other Thin Section Samples</h3>
-            <p>Petrographic analysis of thin sections from other sample locations along Buffalo Bayou.</p>
+            <p>Petrographic observations & analysis of thin sections from other sample locations along Buffalo Bayou.</p>
             <div class="pdf-container">
                 <h4>Buffalo Bayou Thin Sections - Other Samples</h4>
                 <iframe src="data/thin-sections/Buffalo_Bayou_Thin_Sections_9.15.24_condensed_OtherThanBB3.pdf" title="Other Thin Sections PDF"></iframe>
@@ -261,16 +260,410 @@ Better observations can be made under a petrographic microscope.
         </div>
 
         <div class="section">
-            <h3>Thin Section Video</h3>
-            <p>Video footage showing thin section examination under the microscope.</p>
+            <h3>Example Thin Section Video</h3>
+            <p>Video footage showing thin section examination using microscope under <a href="https://en.wikipedia.org/wiki/Petrographic_microscope">polarized light</a> - from sample BB3</p>
             <div class="video-container">
-                <h4>Microscope Video</h4>
+                <h4>Microscope Video: File IMG_7157.mp4 from sample BB3</h4>
                 <video controls preload="metadata">
                     <source src="data/thin-sections/IMG_7157.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
         </div>
+
+        <div class="section">
+            <h3>Raw Video and Images Per Sample Location</h3>
+            <p>
+                Browse raw microscope images and videos from each sample location. 
+                These images and videos are sometimes also in the analysis section above.
+                Select a sample from the dropdown to view its media.
+            </p>
+            <p>Original .MOV files were converted to .MP4 files to ensure compatibility with most web browsers. Not all images of thin-sections in the associated paper were in the data archive folder, possibly a mistake related to multiple rounds of thin-sections.</p>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <label for="sample-select" style="color: #a8d8ea; font-size: 1.1rem; margin-right: 0.5rem;">Select Sample Location:</label>
+                <select id="sample-select" style="padding: 0.5rem 1rem; border-radius: 4px; background: rgba(0,0,0,0.3); color: white; border: 1px solid rgba(168,216,234,0.3); font-size: 1rem; cursor: pointer;">
+                    <option value="">-- Select a sample --</option>
+                    <option value="BB2_Mid">BB2_Mid</option>
+                    <option value="BB3">BB3</option>
+                    <option value="BB3_RL">BB3_RL</option>
+                    <option value="BB3N">BB3N</option>
+                    <option value="BBTS">BBTS</option>
+                    <option value="Unknown">Unknown</option>
+                </select>
+            </div>
+            
+            <div id="sample-gallery" style="display: flex; flex-direction: column; gap: 1rem;">
+                <p style="color: rgba(255,255,255,0.6); font-style: italic;">Select a sample location to view images and videos.</p>
+            </div>
+        </div>
+
+        <script>
+            // Media data for each sample location (only .mp4, .jpeg, .jpg files)
+            const sampleMedia = {
+                "BB2_Mid": [
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0687.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0688.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0689.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0690.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0691.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0692.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0693.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0694.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0695.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0696.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0697.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0698.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0699.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0700.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0701.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0702.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0703.jpg" },
+                    { type: "video", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0704.mp4" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0705.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0706.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0707.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0708.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0709.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0710.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0711.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0712.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0713.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0714.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0715.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0716.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0717.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0718.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0719.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0720.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0721.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0722.jpg" },
+                    { type: "video", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0723.mp4" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0724.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0725.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0726.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB2_Mid/IMG_0727.jpg" }
+                ],
+                "BB3": [
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_6606.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_6607.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_6608.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_6609.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_6610.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_6611.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_6612.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_6613.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_6614.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7129.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7130.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7131.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7132.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7133.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7134.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7135.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7136.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7137.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7138.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7139.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7140.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7141.JPEG" },
+                    { type: "video", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7147.mp4" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7148.JPG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7149.JPG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7150.JPG" },
+                    { type: "video", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7153.mp4" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7156.JPG" },
+                    { type: "video", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7157.mp4" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7158.JPG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7159.JPG" },
+                    { type: "video", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7160.mp4" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7161.JPG" },
+                    { type: "video", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7162.mp4" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7163.JPG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7164.JPG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7165.JPG" },
+                    { type: "video", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7166.mp4" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7167.JPG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7168.JPG" },
+                    { type: "video", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7169.mp4" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7170.JPG" },
+                    { type: "video", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7171.mp4" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7172.JPG" },
+                    { type: "video", src: "data/thin-sections/thin_section_photos_raw/BB3/IMG_7173.mp4" },
+                    // No_Filter subfolder
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0644.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0645.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0646.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0647.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0648.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0649.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0650.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0651.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0652.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0653.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0654.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0655.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0656.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0657.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0658.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0659.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0660.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0661.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0662.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0663.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0664.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0665.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0666.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0667.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0668.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0669.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0670.jpg" },
+                    { type: "video", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0671.mp4" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0672.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0673.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0674.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0675.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0676.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0677.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0678.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0679.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0680.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0681.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0682.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0683.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0684.jpg" },
+                    { type: "video", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0685.mp4" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3/No_Filter/IMG_0686.jpg" }
+                ],
+                "BB3_RL": [
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/IMG_0633.JPG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/IMG_0634.JPG" },
+                    { type: "video", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/IMG_0635.mp4" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/IMG_0636.JPG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/IMG_0637.JPG" },
+                    { type: "video", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/IMG_0638.mp4" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/IMG_0639.JPG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/IMG_6615.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/IMG_6616.JPEG" },
+                    { type: "video", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/IMG_6617.MP4" },
+                    // No_Filter subfolder
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/No_Filter/IMG_0633.JPG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/No_Filter/IMG_0634.JPG" },
+                    { type: "video", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/No_Filter/IMG_0635.mp4" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/No_Filter/IMG_0636.JPG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/No_Filter/IMG_0637.JPG" },
+                    { type: "video", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/No_Filter/IMG_0638.mp4" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/No_Filter/IMG_0639.JPG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/No_Filter/IMG_0728.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/No_Filter/IMG_0729.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/No_Filter/IMG_0730.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/No_Filter/IMG_0731.jpg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/No_Filter/IMG_0732.jpg" },
+                    { type: "video", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/No_Filter/IMG_0733.mp4" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/No_Filter/IMG_6619.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3_RL/No_Filter/IMG_6620.JPEG" }
+                ],
+                "BB3N": [
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6833.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6834.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6835.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6836.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6837.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6838.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6839.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6840.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6843.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6844.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6845.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6846.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6847.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6848.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6849.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6850.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6851.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6852.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6853.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6854.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6855.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6856.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6858.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6859.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6860.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6861.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6863.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6864.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6865.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6866.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6867.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6868.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6870.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6871.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6873.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6874.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6875.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6876.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6877.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6878.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6879.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6880.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6883.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6885.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6886.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6887.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6888.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6889.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6890.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6891.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6892.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6893.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6894.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6895.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6896.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6897.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6898.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6899.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6900.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6901.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BB3N/IMG_6902.JPEG" }
+                ],
+                "BBTS": [
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB1Bottom_200X_ppl (1).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB1Bottom_200X_ppl (2).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB1Bottom_200X_ppl (3) mudclast.jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB1Bottom_200X_ppl (4).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB1Bottom_200X_ppl.jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB1Bottom_200X_xpl (2).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB1Bottom_25X_ppl (1).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB1Bottom_25X_ppl (2).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB1Bottom_25X_ppl (3).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB1Bottom_25X_ppl.jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB1OS_200X_ppl (1).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB1OS_200X_ppl (2).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB1OS_200X_ppl (3).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB1OS_200X_ppl (4).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB1OS_200X_ppl.jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB1OS_20X_ppl (1).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB1OS_20X_ppl (2).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB1OS_20X_ppl (3).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB1OS_20X_ppl.jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB2MID_200X_ppl (1).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB2MID_200X_ppl (2).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB2MID_200X_ppl (3).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB2MID_200X_ppl (4).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB2MID_200X_xpl (3).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB2MID_25X_ppl (2).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB2MID_25X_ppl (3).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3 RL_200X_ppl (1).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3 RL_200X_ppl (2).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3 RL_200X_ppl (3).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3 RL_200X_ppl (4).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3 RL_200X_xpl (2).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3 RL_25X_ppl (1).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3 RL_25X_ppl (2).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3 RL_25X_ppl (3).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3 RL_25X_ppl.jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3_200X_ppl (1).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3_200X_ppl (2).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3_200X_ppl (3).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3_200X_ppl (4).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3_200X_xpl (3).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3_25X_ppl (1).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3_25X_ppl (2).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3_25X_ppl (3).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3-2_200X_ppl (1).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3-2_200X_ppl (2).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3-2_200X_ppl (3).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3-2_200X_ppl (4).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3-2_200X_xpl (4).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3-2_25X_ppl (1).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3-2_25X_ppl (2).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3-2_25X_ppl (3).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3-3_200X_ppl (1).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3-3_200X_ppl (2).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3-3_200X_ppl (3).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3-3_200X_ppl (4).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3-3_200X_xpl (3).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3-3_25X_ppl (1).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3-3_25X_ppl (2).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3-3_25X_ppl (3).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3N_200X_ppl (1).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3N_200X_ppl (2).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3N_200X_ppl (3).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3N_200X_ppl (4).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3N_200X_ppl (5).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3N_200X_ppl.jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3N_200X_xpl (5).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3N_25X_ppl (1).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3N_25X_ppl (2).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3N_25X_ppl (3).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3N_25X_ppl mudclast.jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3N_25X_ppl.jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3NOS_200X_ppl (1).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3NOS_200X_ppl (2).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3NOS_200X_ppl (3).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3NOS_200X_ppl.jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3NOS_200X_xpl (1).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3NOS_25X_ppl (1).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3NOS_25X_ppl (2).jpeg" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/BBTS/BB3NOS_25X_ppl.jpeg" }
+                ],
+                "Unknown": [
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/Unknown/IMG_6621.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/Unknown/IMG_6622.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/Unknown/IMG_6623.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/Unknown/IMG_6624.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/Unknown/IMG_6625.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/Unknown/IMG_6626.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/Unknown/IMG_6627.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/Unknown/IMG_6628.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/Unknown/IMG_6629.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/Unknown/IMG_6630.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/Unknown/IMG_6631.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/Unknown/IMG_6632.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/Unknown/IMG_6633.JPEG" },
+                    { type: "image", src: "data/thin-sections/thin_section_photos_raw/Unknown/IMG_6634.JPEG" }
+                ]
+            };
+
+            // Handle dropdown change
+            document.getElementById('sample-select').addEventListener('change', function() {
+                const gallery = document.getElementById('sample-gallery');
+                const sample = this.value;
+                
+                if (!sample) {
+                    gallery.innerHTML = '<p style="color: rgba(255,255,255,0.6); font-style: italic;">Select a sample location to view images and videos.</p>';
+                    return;
+                }
+                
+                const media = sampleMedia[sample];
+                if (!media || media.length === 0) {
+                    gallery.innerHTML = '<p style="color: rgba(255,255,255,0.6);">No media available for this sample.</p>';
+                    return;
+                }
+                
+                gallery.innerHTML = media.map((item, index) => {
+                    const filename = item.src.split('/').pop();
+                    if (item.type === 'video') {
+                        return `
+                            <div class="video-container">
+                                <h4>${filename}</h4>
+                                <video controls preload="metadata">
+                                    <source src="${item.src}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        `;
+                    } else {
+                        return `
+                            <div style="background: rgba(0,0,0,0.3); border-radius: 8px; overflow: hidden;">
+                                <h4 style="background: rgba(168,216,234,0.2); padding: 0.75rem 1rem; color: #a8d8ea; font-size: 1.1rem;">${filename}</h4>
+                                <img src="${item.src}" alt="${filename}" style="width: 100%; display: block;" loading="lazy">
+                            </div>
+                        `;
+                    }
+                }).join('');
+            });
+        </script>
     </main>
 
     <footer>
