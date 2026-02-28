@@ -1,26 +1,25 @@
-cff-version: 1.1.0
+cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
-- family-names: Patterson
-  given-names: Penny
-- family-names: Kendall
-  given-names: Jerry
-- family-names: Schwartz
-  given-names: Angela
-- family-names: Novello
-  given-names: Joshua
-- family-names: Gaston
-  given-names: Will
-- family-names: Lang
-  given-names: Richard
-- family-names: West
-  given-names: Dorrene
-- family-names: Gosses
-  given-names: Justin
-- family-names: Wachtman
-  given-names: Caroline
-orcid: https://orcid.org/0000-0000-0000-0000
-title:
+  - family-names: Patterson
+    given-names: Penny
+  - family-names: Kendall
+    given-names: Jerry
+  - family-names: Schwartz
+    given-names: Angela
+  - family-names: Novello
+    given-names: Joshua
+  - family-names: Gaston
+    given-names: Will
+  - family-names: Lang
+    given-names: Richard
+  - family-names: West
+    given-names: Dorrene
+  - family-names: Gosses
+    given-names: Justin
+  - family-names: Wachtman
+    given-names: Caroline
+title: "Buffalo Bayou Geology"
 version: 0.0.2
 date-released: 2026-02-28
                              
