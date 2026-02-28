@@ -17,7 +17,7 @@ The outcrop photos from along Buffalo Bayou in this repository were used in the 
 
 ## DOI
 
-[DOI: 10.5281/zenodo.18811406 ](https://doi.org/10.5281/zenodo.18811406)
+[DOI: 10.5281/zenodo.18811474](https://doi.org/10.5281/zenodo.18811474)
 
 ## Visualization of where the photos occur 
 
