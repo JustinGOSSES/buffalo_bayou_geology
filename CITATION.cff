@@ -1,5 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
+title: "Buffalo Bayou Geology"
+type: dataset
 authors:
   - family-names: Patterson
     given-names: Penny
@@ -19,7 +21,6 @@ authors:
     given-names: Justin
   - family-names: Wachtman
     given-names: Caroline
-title: "Buffalo Bayou Geology"
-version: 0.0.2
-date-released: 2026-02-28
-                             
+repository-code: "https://github.com/JustinGOSSES/buffalo_bayou_geology"
+version: "0.0.2"
+date-released: "2026-02-28"
