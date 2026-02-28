@@ -1,0 +1,1108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImageMetadata>
+  <HardwareSetting>
+    <ParameterCollection Id="MTBCamera_MTBCameraAdapter_MTBTube_Cameraport"></ParameterCollection>
+    <ParameterCollection Id="MTBCameraAdapter_MTBTube_Cameraport">
+      <TheoreticalTotalMagnification Status="Valid">2.5</TheoreticalTotalMagnification>
+      <TotalMagnification Status="Valid">2.5</TotalMagnification>
+      <DefaultScalingUnit Status="Valid">mm</DefaultScalingUnit>
+    </ParameterCollection>
+    <ParameterCollection Id="MTBCondenserContrastChanger">
+      <Position Status="Valid">1</Position>
+      <PositionName Status="Valid">Contrast.BrightField</PositionName>
+    </ParameterCollection>
+    <ParameterCollection Id="MTBCondenserFrontLensChanger">
+      <Position Status="Valid">1</Position>
+      <PositionName Status="Valid">FrontLens.Out</PositionName>
+    </ParameterCollection>
+    <ParameterCollection Id="MTBEyePiece">
+      <TheoreticalTotalMagnification Status="Valid">25</TheoreticalTotalMagnification>
+    </ParameterCollection>
+    <ParameterCollection Id="MTBFocus">
+      <Position Status="Valid">21898.54</Position>
+      <MeasurementPosition Status="Valid">27.491</MeasurementPosition>
+      <IsPrecise Status="Valid">false</IsPrecise>
+      <AxisSetPositionMode Status="Valid">Default</AxisSetPositionMode>
+      <Speed Status="Valid">0</Speed>
+      <ContinualSpeed Status="Valid">6000</ContinualSpeed>
+      <ContinualAcceleration Status="Valid">10000</ContinualAcceleration>
+      <IsHandwheelDeactivated Status="Valid">false</IsHandwheelDeactivated>
+      <AxisCalibrationMode Status="Valid">AutomaticallyCalibrated</AxisCalibrationMode>
+    </ParameterCollection>
+    <ParameterCollection Id="MTBMicroscopeManager">
+      <ContrastManagerContrastMethod Status="Valid">0</ContrastManagerContrastMethod>
+      <ContrastManagerMode Status="Valid">Off</ContrastManagerMode>
+      <LightManagerMode Status="Valid">Objective</LightManagerMode>
+      <IsCondenserFocusing Status="Valid">false</IsCondenserFocusing>
+      <IsCurrentFeed Status="Valid">false</IsCurrentFeed>
+      <IsDazzleProtection Status="Valid">true</IsDazzleProtection>
+      <IsLightManagerTemporary Status="Valid">false</IsLightManagerTemporary>
+      <IsLoadWorkCoupling Status="Valid">false</IsLoadWorkCoupling>
+      <IsVignettingFreeModeTemporary Status="Valid">false</IsVignettingFreeModeTemporary>
+      <IsLaserSafety Status="Valid">false</IsLaserSafety>
+      <IsParfocalCorrection Status="Valid">true</IsParfocalCorrection>
+      <IsParfocalCorrectionSilentMode Status="Valid">false</IsParfocalCorrectionSilentMode>
+      <IsParcentralCorrection Status="Valid">false</IsParcentralCorrection>
+      <IsParcentralCorrectionSilentMode Status="Valid">false</IsParcentralCorrectionSilentMode>
+      <ParfocalParcentralValues Status="Valid">0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|</ParfocalParcentralValues>
+    </ParameterCollection>
+    <ParameterCollection Id="MTBObject"></ParameterCollection>
+    <ParameterCollection Id="MTBObjectiveChanger">
+      <Position Status="Valid">2</Position>
+      <PositionName Status="Valid">Objective.420320-9901-000</PositionName>
+    </ParameterCollection>
+    <ParameterCollection Id="MTBOptovarChanger">
+      <Position Status="Valid">2</Position>
+      <PositionName Status="Valid">Imager.Tubelens 1x</PositionName>
+    </ParameterCollection>
+    <ParameterCollection Id="MTBReflectorChanger">
+      <Position Status="Valid">3</Position>
+      <PositionName Status="Valid">Reflector.none</PositionName>
+    </ParameterCollection>
+    <ParameterCollection Id="MTBRLHalogenLamp">
+      <Intensity Status="Valid">0</Intensity>
+      <LampMode Status="Valid">Standby</LampMode>
+      <LampActive Status="Valid">false</LampActive>
+    </ParameterCollection>
+    <ParameterCollection Id="MTBRLShutter">
+      <PositionName Status="Valid">Shutter.Closed</PositionName>
+      <IsClosed Status="Valid">true</IsClosed>
+    </ParameterCollection>
+    <ParameterCollection Id="MTBRLTLSwitch">
+      <Position Status="Valid">1</Position>
+      <PositionName Status="Valid">RLTLSwitch.TL</PositionName>
+    </ParameterCollection>
+    <ParameterCollection Id="MTBStage"></ParameterCollection>
+    <ParameterCollection Id="MTBStageAxisX">
+      <Position Status="Valid">10768.396</Position>
+      <MeasurementPosition Status="Valid">-6422.258</MeasurementPosition>
+      <IsPrecise Status="Valid">false</IsPrecise>
+      <AxisSetPositionMode Status="Valid">Default</AxisSetPositionMode>
+      <Speed Status="Valid">0</Speed>
+      <ContinualSpeed Status="Valid">100000</ContinualSpeed>
+      <ContinualAcceleration Status="Valid">100000</ContinualAcceleration>
+      <IsHandwheelDeactivated Status="Valid">false</IsHandwheelDeactivated>
+      <AxisCalibrationMode Status="Valid">AutomaticallyCalibrated</AxisCalibrationMode>
+    </ParameterCollection>
+    <ParameterCollection Id="MTBStageAxisY">
+      <Position Status="Valid">32144.326</Position>
+      <MeasurementPosition Status="Valid">20546.666</MeasurementPosition>
+      <IsPrecise Status="Valid">false</IsPrecise>
+      <AxisSetPositionMode Status="Valid">Default</AxisSetPositionMode>
+      <Speed Status="Valid">0</Speed>
+      <ContinualSpeed Status="Valid">100000</ContinualSpeed>
+      <ContinualAcceleration Status="Valid">100000</ContinualAcceleration>
+      <IsHandwheelDeactivated Status="Valid">false</IsHandwheelDeactivated>
+      <AxisCalibrationMode Status="Valid">AutomaticallyCalibrated</AxisCalibrationMode>
+    </ParameterCollection>
+    <ParameterCollection Id="MTBTLApertureStop">
+      <Position Status="Valid">0.9</Position>
+      <Speed Status="Valid">0</Speed>
+    </ParameterCollection>
+    <ParameterCollection Id="MTBTLFieldStop">
+      <Position Status="Valid">100</Position>
+      <Speed Status="Valid">0</Speed>
+    </ParameterCollection>
+    <ParameterCollection Id="MTBTLHalogenLamp">
+      <Intensity Status="Valid">2.1964774951076</Intensity>
+      <LampMode Status="Valid">Manual</LampMode>
+      <LampActive Status="Valid">true</LampActive>
+    </ParameterCollection>
+    <ParameterCollection Id="MTBTLShutter">
+      <PositionName Status="Valid">Shutter.Open</PositionName>
+      <IsClosed Status="Valid">false</IsClosed>
+    </ParameterCollection>
+    <ParameterCollection Id="MTBTubeVisCamChanger">
+      <Position Status="Valid">3</Position>
+      <PositionName Status="Valid">FotoTube.VIS_Cam_0/100</PositionName>
+    </ParameterCollection>
+    <ParameterCollection Id="MTBCamera_MTBTube_Cameraport.AxioCamMRc5">
+      <ApplyCameraProfile Status="Valid">false</ApplyCameraProfile>
+      <ApplyCameraProfile.Type Status="Valid" IsReadOnly="true">BoolType</ApplyCameraProfile.Type>
+      <ApplyCameraProfile.Default Status="Valid" IsReadOnly="true">false</ApplyCameraProfile.Default>
+      <ApplyImageOrientation Status="Valid">true</ApplyImageOrientation>
+      <ApplyImageOrientation.Type Status="Valid" IsReadOnly="true">BoolType</ApplyImageOrientation.Type>
+      <ApplyImageOrientation.Default Status="Valid" IsReadOnly="true">true</ApplyImageOrientation.Default>
+      <CameraBias Status="Valid" IsReadOnly="true">32</CameraBias>
+      <CameraBias.Type Status="Valid" IsReadOnly="true">IntegerType</CameraBias.Type>
+      <CameraOrientation Status="Valid" IsReadOnly="true">0</CameraOrientation>
+      <CameraOrientation.Type Status="Valid" IsReadOnly="true">IntegerType</CameraOrientation.Type>
+      <CameraOrientation.ListItems Status="Valid" IsReadOnly="true">0|Original|Original,1|Flip|Flip Horizontally,2|Reverse|Flip Vertically,4|Rotate|Rotate 90 CW,7|FlipReverseRotate|Rotate 90 CCW,3|FlipReverse|Rotate 180,6|ReverseRotate|Mirror at +45 Diagonal,5|FlipRotate|Mirror at -45 Diagonal</CameraOrientation.ListItems>
+      <CameraOrientation.Default Status="Valid" IsReadOnly="true">0</CameraOrientation.Default>
+      <CameraPixelAccuracy Status="Valid" IsReadOnly="true">0.000244140625</CameraPixelAccuracy>
+      <CameraPixelAccuracy.Type Status="Valid" IsReadOnly="true">DoubleType</CameraPixelAccuracy.Type>
+      <CameraPixelDistances Status="Valid" IsReadOnly="true">3.4,3.4</CameraPixelDistances>
+      <CameraPixelDistances.Type Status="Valid" IsReadOnly="true">SizeType</CameraPixelDistances.Type>
+      <CameraPixelMaximum Status="Valid" IsReadOnly="true">4095</CameraPixelMaximum>
+      <CameraPixelMaximum.Type Status="Valid" IsReadOnly="true">IntegerType</CameraPixelMaximum.Type>
+      <CameraPixelMinimum Status="Valid" IsReadOnly="true">0</CameraPixelMinimum>
+      <CameraPixelMinimum.Type Status="Valid" IsReadOnly="true">IntegerType</CameraPixelMinimum.Type>
+      <CameraPixelType Status="Valid" IsReadOnly="true">Bgr48</CameraPixelType>
+      <CameraPixelType.Type Status="Valid" IsReadOnly="true">IntegerType</CameraPixelType.Type>
+      <ExposureTime Status="Valid">23.5</ExposureTime>
+      <ExposureTime.Type Status="Valid" IsReadOnly="true">DoubleType</ExposureTime.Type>
+      <ExposureTime.Default Status="Valid" IsReadOnly="true">20</ExposureTime.Default>
+      <ExposureTime.Min Status="Valid" IsReadOnly="true">0.25</ExposureTime.Min>
+      <ExposureTime.Max Status="Valid" IsReadOnly="true">60000</ExposureTime.Max>
+      <ExposureTime.Increment Status="Valid" IsReadOnly="true">0.25</ExposureTime.Increment>
+      <ExposureTime.GuiHint Status="Valid" IsReadOnly="true">GuiLogSlider</ExposureTime.GuiHint>
+      <Frame Status="Valid">0,0,2584,1936</Frame>
+      <Frame.Type Status="Valid" IsReadOnly="true">RectType</Frame.Type>
+      <Frame.Default Status="Valid" IsReadOnly="true">Empty</Frame.Default>
+      <Frame.Max Status="Valid" IsReadOnly="true">0,0,2584,1936</Frame.Max>
+      <ImageByteSize Status="Valid" IsReadOnly="true">30015744</ImageByteSize>
+      <ImageByteSize.Type Status="Valid" IsReadOnly="true">IntegerType</ImageByteSize.Type>
+      <ImageFrame Status="Valid" IsReadOnly="true">0,0,2584,1936</ImageFrame>
+      <ImageFrame.Type Status="Valid" IsReadOnly="true">RectType</ImageFrame.Type>
+      <ImageOrientation Status="Valid">0</ImageOrientation>
+      <ImageOrientation.Type Status="Valid" IsReadOnly="true">IntegerType</ImageOrientation.Type>
+      <ImageOrientation.ListItems Status="Valid" IsReadOnly="true">0|Original|Original,1|Flip|Flip Horizontally,2|Reverse|Flip Vertically,4|Rotate|Rotate 90 CW,7|FlipReverseRotate|Rotate 90 CCW,3|FlipReverse|Rotate 180,6|ReverseRotate|Mirror at +45 Diagonal,5|FlipRotate|Mirror at -45 Diagonal</ImageOrientation.ListItems>
+      <ImageOrientation.Default Status="Valid" IsReadOnly="true">0</ImageOrientation.Default>
+      <ImageOrientation.Label Status="Valid" IsReadOnly="true">Orientation</ImageOrientation.Label>
+      <ImageOrientation.GuiHint Status="Valid" IsReadOnly="true">GuiComboBox</ImageOrientation.GuiHint>
+      <ImagePixelAccuracy Status="Valid" IsReadOnly="true">0.000244140625</ImagePixelAccuracy>
+      <ImagePixelAccuracy.Type Status="Valid" IsReadOnly="true">DoubleType</ImagePixelAccuracy.Type>
+      <ImagePixelDistances Status="Valid" IsReadOnly="true">3.4,3.4</ImagePixelDistances>
+      <ImagePixelDistances.Type Status="Valid" IsReadOnly="true">SizeType</ImagePixelDistances.Type>
+      <ImagePixelType Status="Valid" IsReadOnly="true">Bgr48</ImagePixelType>
+      <ImagePixelType.Type Status="Valid" IsReadOnly="true">IntegerType</ImagePixelType.Type>
+      <LiveFrame Status="Valid" IsReadOnly="true">0,0,2584,1936</LiveFrame>
+      <LiveFrame.Type Status="Valid" IsReadOnly="true">RectType</LiveFrame.Type>
+      <LiveImageByteSize Status="Valid" IsReadOnly="true">7503936</LiveImageByteSize>
+      <LiveImageByteSize.Type Status="Valid" IsReadOnly="true">IntegerType</LiveImageByteSize.Type>
+      <LiveImageFrame Status="Valid" IsReadOnly="true">0,0,1292,968</LiveImageFrame>
+      <LiveImageFrame.Type Status="Valid" IsReadOnly="true">RectType</LiveImageFrame.Type>
+      <LiveImagePixelAccuracy Status="Valid" IsReadOnly="true">0.000244140625</LiveImagePixelAccuracy>
+      <LiveImagePixelAccuracy.Type Status="Valid" IsReadOnly="true">DoubleType</LiveImagePixelAccuracy.Type>
+      <LiveImagePixelDistances Status="Valid" IsReadOnly="true">6.8,6.8</LiveImagePixelDistances>
+      <LiveImagePixelDistances.Type Status="Valid" IsReadOnly="true">SizeType</LiveImagePixelDistances.Type>
+      <LiveImagePixelType Status="Valid" IsReadOnly="true">Bgr48</LiveImagePixelType>
+      <LiveImagePixelType.Type Status="Valid" IsReadOnly="true">IntegerType</LiveImagePixelType.Type>
+      <LiveValidBits Status="Valid" IsReadOnly="true">12</LiveValidBits>
+      <LiveValidBits.Type Status="Valid" IsReadOnly="true">IntegerType</LiveValidBits.Type>
+      <ValidBits Status="Valid" IsReadOnly="true">12</ValidBits>
+      <ValidBits.Type Status="Valid" IsReadOnly="true">IntegerType</ValidBits.Type>
+      <ValidPixelMaximum Status="Valid" IsReadOnly="true">4095</ValidPixelMaximum>
+      <ValidPixelMaximum.Type Status="Valid" IsReadOnly="true">IntegerType</ValidPixelMaximum.Type>
+      <ValidPixelMaximum.Default Status="Valid" IsReadOnly="true">255</ValidPixelMaximum.Default>
+      <ContinuousAcquisitionSafeMode Status="Valid"></ContinuousAcquisitionSafeMode>
+      <ContinuousAcquisitionSafeMode.Type Status="Valid" IsReadOnly="true">BoolType</ContinuousAcquisitionSafeMode.Type>
+      <ContinuousAcquisitionSafeMode.Default Status="Valid" IsReadOnly="true"></ContinuousAcquisitionSafeMode.Default>
+      <ContinuousAcquisitionSafeMode.GuiHint Status="Valid" IsReadOnly="true">GuiCheckBox</ContinuousAcquisitionSafeMode.GuiHint>
+      <ContinuousAcquisitionSafeMode.Mode Status="Valid" IsReadOnly="true">Debug</ContinuousAcquisitionSafeMode.Mode>
+      <ContinuousAcquisitionSafeMode.Enabled Status="Valid" IsReadOnly="true">true</ContinuousAcquisitionSafeMode.Enabled>
+      <ShadingReference Status="Valid">true</ShadingReference>
+      <ShadingReference.Type Status="Valid" IsReadOnly="true">BoolType</ShadingReference.Type>
+      <ShadingReference.Default Status="Valid" IsReadOnly="true">false</ShadingReference.Default>
+      <ShadingReference.GuiHint Status="Valid" IsReadOnly="true">GuiCheckBox</ShadingReference.GuiHint>
+      <ShadingReferenceSource Status="Valid">1</ShadingReferenceSource>
+      <ShadingReferenceSource.Type Status="Valid" IsReadOnly="true">IntegerType</ShadingReferenceSource.Type>
+      <ShadingReferenceSource.ListItems Status="Valid" IsReadOnly="true">0|Global|Global,1|Specific|Specific</ShadingReferenceSource.ListItems>
+      <ShadingReferenceSource.Default Status="Valid" IsReadOnly="true">0</ShadingReferenceSource.Default>
+      <ShadingReferenceSource.GuiHint Status="Valid" IsReadOnly="true">GuiComboBox</ShadingReferenceSource.GuiHint>
+      <ShadingReferenceSource.Mode Status="Valid" IsReadOnly="true">Normal</ShadingReferenceSource.Mode>
+      <ShadingReference.Enabled Status="Valid" IsReadOnly="true">true</ShadingReference.Enabled>
+      <Resolution Status="Valid">0</Resolution>
+      <Resolution.Type Status="Valid" IsReadOnly="true">IntegerType</Resolution.Type>
+      <Resolution.ListItems Status="Valid" IsReadOnly="true">0|2584x1936 Interpolated|2584x1936 Interpolated,1|2584x1936 Progressive Scan|2584x1936 Progressive Scan,2|2584x1936 Interlaced|2584x1936 Interlaced</Resolution.ListItems>
+      <Resolution.Default Status="Valid" IsReadOnly="true">0</Resolution.Default>
+      <Resolution.GuiHint Status="Valid" IsReadOnly="true">GuiComboBox</Resolution.GuiHint>
+      <BinningList Status="Valid">0</BinningList>
+      <BinningList.Type Status="Valid" IsReadOnly="true">IntegerType</BinningList.Type>
+      <BinningList.ListItems Status="Valid" IsReadOnly="true">0|1x1|1x1</BinningList.ListItems>
+      <BinningList.Default Status="Valid" IsReadOnly="true">0</BinningList.Default>
+      <BinningList.GuiHint Status="Valid" IsReadOnly="true">GuiComboBox</BinningList.GuiHint>
+      <Resolution.Label Status="Valid" IsReadOnly="true">Resolution</Resolution.Label>
+      <ColorMode Status="Valid">1</ColorMode>
+      <ColorMode.Type Status="Valid" IsReadOnly="true">IntegerType</ColorMode.Type>
+      <ColorMode.ListItems Status="Valid" IsReadOnly="true">0|0|Monochrome,1|1|Color</ColorMode.ListItems>
+      <ColorMode.Default Status="Valid" IsReadOnly="true">1</ColorMode.Default>
+      <ColorMode.GuiHint Status="Valid" IsReadOnly="true">GuiComboBox</ColorMode.GuiHint>
+      <WhiteBalance Status="Valid">0.89538173998792,0.65203663978102,0.1721180336471</WhiteBalance>
+      <WhiteBalance.Type Status="Valid" IsReadOnly="true">StringType</WhiteBalance.Type>
+      <WhiteBalance.Default Status="Valid" IsReadOnly="true">1,1,1</WhiteBalance.Default>
+      <WhiteBalance.GuiHint Status="Valid" IsReadOnly="true">GuiWhiteBalanceValues</WhiteBalance.GuiHint>
+      <WhiteBalanceOffset Status="Valid">0</WhiteBalanceOffset>
+      <WhiteBalanceOffset.Type Status="Valid" IsReadOnly="true">DoubleType</WhiteBalanceOffset.Type>
+      <WhiteBalanceOffset.Default Status="Valid" IsReadOnly="true">0</WhiteBalanceOffset.Default>
+      <WhiteBalanceOffset.Min Status="Valid" IsReadOnly="true">-3</WhiteBalanceOffset.Min>
+      <WhiteBalanceOffset.Max Status="Valid" IsReadOnly="true">3</WhiteBalanceOffset.Max>
+      <WhiteBalanceOffset.Increment Status="Valid" IsReadOnly="true">0.1</WhiteBalanceOffset.Increment>
+      <WhiteBalanceOffset.GuiHint Status="Valid" IsReadOnly="true">GuiSlider</WhiteBalanceOffset.GuiHint>
+      <ColorSaturation Status="Valid">0.5</ColorSaturation>
+      <ColorSaturation.Type Status="Valid" IsReadOnly="true">DoubleType</ColorSaturation.Type>
+      <ColorSaturation.Default Status="Valid" IsReadOnly="true">0.5</ColorSaturation.Default>
+      <ColorSaturation.Min Status="Valid" IsReadOnly="true">0</ColorSaturation.Min>
+      <ColorSaturation.Max Status="Valid" IsReadOnly="true">1</ColorSaturation.Max>
+      <ColorSaturation.Increment Status="Valid" IsReadOnly="true">0.1</ColorSaturation.Increment>
+      <ColorSaturation.GuiHint Status="Valid" IsReadOnly="true">GuiSlider</ColorSaturation.GuiHint>
+      <ColorMode.Enabled Status="Valid" IsReadOnly="true">true</ColorMode.Enabled>
+      <WhiteBalance.Enabled Status="Valid" IsReadOnly="true">true</WhiteBalance.Enabled>
+      <WhiteBalanceOffset.Enabled Status="Valid" IsReadOnly="true">true</WhiteBalanceOffset.Enabled>
+      <ColorSaturation.Enabled Status="Valid" IsReadOnly="true">true</ColorSaturation.Enabled>
+      <WhiteBalance.ListItems Status="Valid" IsReadOnly="true">0|1.37&amp;comma;1.93&amp;comma;1|3200K,1|0.6028&amp;comma;1.0615&amp;comma;0.74|5500K</WhiteBalance.ListItems>
+      <ExposureTime.Enabled Status="Valid" IsReadOnly="true">true</ExposureTime.Enabled>
+      <LiveSpeed Status="Valid">0</LiveSpeed>
+      <LiveSpeed.Type Status="Valid" IsReadOnly="true">IntegerType</LiveSpeed.Type>
+      <LiveSpeed.Default Status="Valid" IsReadOnly="true">0</LiveSpeed.Default>
+      <LiveSpeed.GuiHint Status="Valid" IsReadOnly="true">GuiComboBox</LiveSpeed.GuiHint>
+      <LiveSpeed.Enabled Status="Valid" IsReadOnly="true">true</LiveSpeed.Enabled>
+      <LiveSpeed.ListItems Status="Valid" IsReadOnly="true">0|Slow|Slow,1|Medium|Medium,2|Fast|Fast</LiveSpeed.ListItems>
+      <Trigger Status="Valid">false</Trigger>
+      <Trigger.Type Status="Valid" IsReadOnly="true">BoolType</Trigger.Type>
+      <Trigger.Default Status="Valid" IsReadOnly="true">false</Trigger.Default>
+      <Trigger.GuiHint Status="Valid" IsReadOnly="true">GuiCheckBox</Trigger.GuiHint>
+      <Trigger.Enabled Status="Valid" IsReadOnly="true">true</Trigger.Enabled>
+      <TriggerMode Status="Valid">0</TriggerMode>
+      <TriggerMode.Type Status="Valid" IsReadOnly="true">IntegerType</TriggerMode.Type>
+      <TriggerMode.ListItems Status="Valid" IsReadOnly="true">0|Falling Edge|Falling Edge,1|Rising Edge|Rising Edge</TriggerMode.ListItems>
+      <TriggerMode.Default Status="Valid" IsReadOnly="true">0</TriggerMode.Default>
+      <TriggerMode.GuiHint Status="Valid" IsReadOnly="true">GuiComboBox</TriggerMode.GuiHint>
+      <TriggerMode.Label Status="Valid" IsReadOnly="true">Acquire|Trigger Mode</TriggerMode.Label>
+      <TriggerMode.Mode Status="Valid" IsReadOnly="true">Expert</TriggerMode.Mode>
+      <TriggerMode.Enabled Status="Valid" IsReadOnly="true">true</TriggerMode.Enabled>
+      <SnapShutter Status="Valid">false</SnapShutter>
+      <SnapShutter.Type Status="Valid" IsReadOnly="true">BoolType</SnapShutter.Type>
+      <SnapShutter.Default Status="Valid" IsReadOnly="true">false</SnapShutter.Default>
+      <SnapShutter.GuiHint Status="Valid" IsReadOnly="true">GuiCheckBox</SnapShutter.GuiHint>
+      <SnapShutter.Enabled Status="Valid" IsReadOnly="true">true</SnapShutter.Enabled>
+      <LiveShutter Status="Valid">false</LiveShutter>
+      <LiveShutter.Type Status="Valid" IsReadOnly="true">BoolType</LiveShutter.Type>
+      <LiveShutter.Default Status="Valid" IsReadOnly="true">false</LiveShutter.Default>
+      <LiveShutter.GuiHint Status="Valid" IsReadOnly="true">GuiCheckBox</LiveShutter.GuiHint>
+      <LiveShutter.Enabled Status="Valid" IsReadOnly="true">true</LiveShutter.Enabled>
+      <ShutterMode Status="Valid">0</ShutterMode>
+      <ShutterMode.Type Status="Valid" IsReadOnly="true">IntegerType</ShutterMode.Type>
+      <ShutterMode.ListItems Status="Valid" IsReadOnly="true">0|Active High|Active High,1|Active Low|Active Low</ShutterMode.ListItems>
+      <ShutterMode.Default Status="Valid" IsReadOnly="true">0</ShutterMode.Default>
+      <ShutterMode.GuiHint Status="Valid" IsReadOnly="true">GuiComboBox</ShutterMode.GuiHint>
+      <ShutterMode.Label Status="Valid" IsReadOnly="true">Acquire|Shutter Mode</ShutterMode.Label>
+      <ShutterMode.Mode Status="Valid" IsReadOnly="true">Expert</ShutterMode.Mode>
+      <ShutterMode.Enabled Status="Valid" IsReadOnly="true">true</ShutterMode.Enabled>
+      <ShutterOpenDelay Status="Valid">0</ShutterOpenDelay>
+      <ShutterOpenDelay.Type Status="Valid" IsReadOnly="true">DoubleType</ShutterOpenDelay.Type>
+      <ShutterOpenDelay.Default Status="Valid" IsReadOnly="true">0</ShutterOpenDelay.Default>
+      <ShutterOpenDelay.Min Status="Valid" IsReadOnly="true">-1024</ShutterOpenDelay.Min>
+      <ShutterOpenDelay.Max Status="Valid" IsReadOnly="true">1024</ShutterOpenDelay.Max>
+      <ShutterOpenDelay.Increment Status="Valid" IsReadOnly="true">0.001</ShutterOpenDelay.Increment>
+      <ShutterOpenDelay.GuiHint Status="Valid" IsReadOnly="true">GuiSlider</ShutterOpenDelay.GuiHint>
+      <ShutterOpenDelay.Label Status="Valid" IsReadOnly="true">Acquire|Shutter Open Delay</ShutterOpenDelay.Label>
+      <ShutterOpenDelay.Mode Status="Valid" IsReadOnly="true">Expert</ShutterOpenDelay.Mode>
+      <ShutterOpenDelay.Enabled Status="Valid" IsReadOnly="true">true</ShutterOpenDelay.Enabled>
+      <CameraDisplayName Status="Valid" IsReadOnly="true">AxioCam MRc5</CameraDisplayName>
+      <CameraDisplayName.Type Status="Valid" IsReadOnly="true">StringType</CameraDisplayName.Type>
+      <CameraDisplayName.GuiHint Status="Valid" IsReadOnly="true">GuiNone</CameraDisplayName.GuiHint>
+      <CameraDisplayName.Mode Status="Valid" IsReadOnly="true">Expert, NoPersist</CameraDisplayName.Mode>
+      <ImageDeliveryBufferCount Status="Valid">4</ImageDeliveryBufferCount>
+      <ImageDeliveryBufferCount.Type Status="Valid" IsReadOnly="true">IntegerType</ImageDeliveryBufferCount.Type>
+      <ImageDeliveryBufferCount.Default Status="Valid" IsReadOnly="true">4</ImageDeliveryBufferCount.Default>
+      <ImageDeliveryBufferCount.GuiHint Status="Valid" IsReadOnly="true">GuiNone</ImageDeliveryBufferCount.GuiHint>
+      <Adjust Status="Valid">1</Adjust>
+      <Adjust.Type Status="Valid" IsReadOnly="true">DoubleType</Adjust.Type>
+      <Adjust.Default Status="Valid" IsReadOnly="true">1</Adjust.Default>
+      <Adjust.Min Status="Valid" IsReadOnly="true">0.05</Adjust.Min>
+      <Adjust.Max Status="Valid" IsReadOnly="true">2</Adjust.Max>
+      <Adjust.Increment Status="Valid" IsReadOnly="true">0.05</Adjust.Increment>
+      <Adjust.GuiHint Status="Valid" IsReadOnly="true">GuiSlider</Adjust.GuiHint>
+      <Adjust.Enabled Status="Valid" IsReadOnly="true">true</Adjust.Enabled>
+      <AdjustFrameRate Status="Valid">false</AdjustFrameRate>
+      <AdjustFrameRate.Type Status="Valid" IsReadOnly="true">BoolType</AdjustFrameRate.Type>
+      <AdjustFrameRate.Default Status="Valid" IsReadOnly="true">false</AdjustFrameRate.Default>
+      <AdjustFrameRate.Label Status="Valid" IsReadOnly="true">Acquire|Adjust Live Frame Rate</AdjustFrameRate.Label>
+      <AdjustFrameRate.GuiHint Status="Valid" IsReadOnly="true">GuiCheckBox</AdjustFrameRate.GuiHint>
+      <AdjustFrameRate.Mode Status="Valid" IsReadOnly="true">Expert</AdjustFrameRate.Mode>
+      <AdjustFrameRate.Enabled Status="Valid" IsReadOnly="true">true</AdjustFrameRate.Enabled>
+      <AdjustFrameRate.DisplayOrder Status="Valid" IsReadOnly="true">200</AdjustFrameRate.DisplayOrder>
+      <AutoExposure Status="Valid">false</AutoExposure>
+      <AutoExposure.Type Status="Valid" IsReadOnly="true">BoolType</AutoExposure.Type>
+      <AutoExposure.Default Status="Valid" IsReadOnly="true">false</AutoExposure.Default>
+      <AutoExposure.GuiHint Status="Valid" IsReadOnly="true">GuiCheckBox</AutoExposure.GuiHint>
+      <AutoExposure.Enabled Status="Valid" IsReadOnly="true">true</AutoExposure.Enabled>
+      <AutoExposureFrame Status="Valid">Empty</AutoExposureFrame>
+      <AutoExposureFrame.Type Status="Valid" IsReadOnly="true">RectType</AutoExposureFrame.Type>
+      <AutoExposureFrame.Default Status="Valid" IsReadOnly="true">Empty</AutoExposureFrame.Default>
+      <AutoExposureFrame.GuiHint Status="Valid" IsReadOnly="true">GuiRect</AutoExposureFrame.GuiHint>
+      <AutoExposureFrame.Enabled Status="Valid" IsReadOnly="true">true</AutoExposureFrame.Enabled>
+      <Binning Status="Valid">1,1</Binning>
+      <Binning.Type Status="Valid" IsReadOnly="true">SizeType</Binning.Type>
+      <Binning.Default Status="Valid" IsReadOnly="true">1,1</Binning.Default>
+      <Binning.GuiHint Status="Valid" IsReadOnly="true">GuiNone</Binning.GuiHint>
+      <BlackReference Status="Valid">false</BlackReference>
+      <BlackReference.Type Status="Valid" IsReadOnly="true">BoolType</BlackReference.Type>
+      <BlackReference.Default Status="Valid" IsReadOnly="true">false</BlackReference.Default>
+      <BlackReference.Enabled Status="Valid" IsReadOnly="true">false</BlackReference.Enabled>
+      <DualCameraCalibration Status="Valid">false</DualCameraCalibration>
+      <DualCameraCalibration.Type Status="Valid" IsReadOnly="true">BoolType</DualCameraCalibration.Type>
+      <DualCameraCalibration.Default Status="Valid" IsReadOnly="true">false</DualCameraCalibration.Default>
+      <DualCameraCalibration.GuiHint Status="Valid" IsReadOnly="true">GuiCheckBox</DualCameraCalibration.GuiHint>
+      <DualCameraCalibrationId Status="Valid">None</DualCameraCalibrationId>
+      <DualCameraCalibrationId.Type Status="Valid" IsReadOnly="true">StringType</DualCameraCalibrationId.Type>
+      <DualCameraCalibrationId.Default Status="Valid" IsReadOnly="true"></DualCameraCalibrationId.Default>
+      <DualCameraCalibration.Enabled Status="Valid" IsReadOnly="true">false</DualCameraCalibration.Enabled>
+      <ExposureDelay Status="Valid">0</ExposureDelay>
+      <ExposureDelay.Type Status="Valid" IsReadOnly="true">DoubleType</ExposureDelay.Type>
+      <ExposureDelay.Default Status="Valid" IsReadOnly="true">0</ExposureDelay.Default>
+      <ExposureDelay.GuiHint Status="Valid" IsReadOnly="true">GuiNone</ExposureDelay.GuiHint>
+      <ExposureDelay.Max Status="Valid" IsReadOnly="true">1000</ExposureDelay.Max>
+      <FrameRate Status="Valid" IsReadOnly="true">3.5</FrameRate>
+      <FrameRate.Type Status="Valid" IsReadOnly="true">DoubleType</FrameRate.Type>
+      <FrameRate.Default Status="Valid" IsReadOnly="true">0</FrameRate.Default>
+      <FrameRate.Label Status="Valid" IsReadOnly="true">Acquire|Live Frame Rate</FrameRate.Label>
+      <FrameRate.GuiHint Status="Valid" IsReadOnly="true">GuiTextBox</FrameRate.GuiHint>
+      <FrameRate.Mode Status="Valid" IsReadOnly="true">Expert</FrameRate.Mode>
+      <FrameRate.DisplayOrder Status="Valid" IsReadOnly="true">202</FrameRate.DisplayOrder>
+      <FrameRateTarget Status="Valid">30</FrameRateTarget>
+      <FrameRateTarget.Type Status="Valid" IsReadOnly="true">DoubleType</FrameRateTarget.Type>
+      <FrameRateTarget.Default Status="Valid" IsReadOnly="true">30</FrameRateTarget.Default>
+      <FrameRateTarget.Min Status="Valid" IsReadOnly="true">1</FrameRateTarget.Min>
+      <FrameRateTarget.Max Status="Valid" IsReadOnly="true">100</FrameRateTarget.Max>
+      <FrameRateTarget.Increment Status="Valid" IsReadOnly="true">1</FrameRateTarget.Increment>
+      <FrameRateTarget.Label Status="Valid" IsReadOnly="true">Acquire|Live Frame Rate Max</FrameRateTarget.Label>
+      <FrameRateTarget.GuiHint Status="Valid" IsReadOnly="true">GuiSlider</FrameRateTarget.GuiHint>
+      <FrameRateTarget.Mode Status="Valid" IsReadOnly="true">Expert</FrameRateTarget.Mode>
+      <FrameRateTarget.Enabled Status="Valid" IsReadOnly="true">false</FrameRateTarget.Enabled>
+      <FrameRateTarget.DisplayOrder Status="Valid" IsReadOnly="true">201</FrameRateTarget.DisplayOrder>
+      <ImageOrientation.Enabled Status="Valid" IsReadOnly="true">true</ImageOrientation.Enabled>
+      <NoiseFilter Status="Valid">false</NoiseFilter>
+      <NoiseFilter.Type Status="Valid" IsReadOnly="true">BoolType</NoiseFilter.Type>
+      <NoiseFilter.Default Status="Valid" IsReadOnly="true">false</NoiseFilter.Default>
+      <NoiseFilter.GuiHint Status="Valid" IsReadOnly="true">GuiCheckBox</NoiseFilter.GuiHint>
+      <NoiseFilterThreshold Status="Valid">1.5</NoiseFilterThreshold>
+      <NoiseFilterThreshold.Type Status="Valid" IsReadOnly="true">DoubleType</NoiseFilterThreshold.Type>
+      <NoiseFilterThreshold.Default Status="Valid" IsReadOnly="true">1.5</NoiseFilterThreshold.Default>
+      <NoiseFilterThreshold.Min Status="Valid" IsReadOnly="true">0</NoiseFilterThreshold.Min>
+      <NoiseFilterThreshold.Max Status="Valid" IsReadOnly="true">10</NoiseFilterThreshold.Max>
+      <NoiseFilterThreshold.Increment Status="Valid" IsReadOnly="true">0.1</NoiseFilterThreshold.Increment>
+      <NoiseFilterThreshold.GuiHint Status="Valid" IsReadOnly="true">GuiSlider</NoiseFilterThreshold.GuiHint>
+      <NoiseFilter.Enabled Status="Valid" IsReadOnly="true">true</NoiseFilter.Enabled>
+      <NoiseFilterThreshold.Enabled Status="Valid" IsReadOnly="true">true</NoiseFilterThreshold.Enabled>
+      <ReferenceImageCount Status="Valid">3</ReferenceImageCount>
+      <ReferenceImageCount.Type Status="Valid" IsReadOnly="true">IntegerType</ReferenceImageCount.Type>
+      <ReferenceImageCount.Default Status="Valid" IsReadOnly="true">3</ReferenceImageCount.Default>
+      <ReferenceImageCount.GuiHint Status="Valid" IsReadOnly="true">GuiNone</ReferenceImageCount.GuiHint>
+      <ReferenceImageCount.Label Status="Valid" IsReadOnly="true">Post Processing|Reference Image Count</ReferenceImageCount.Label>
+      <ReferenceImageCount.Enabled Status="Valid" IsReadOnly="true">true</ReferenceImageCount.Enabled>
+      <ReferenceImageCount.Min Status="Valid" IsReadOnly="true">1</ReferenceImageCount.Min>
+      <ReferenceImageCount.Max Status="Valid" IsReadOnly="true">5</ReferenceImageCount.Max>
+      <ReferenceImageCount.Increment Status="Valid" IsReadOnly="true">1</ReferenceImageCount.Increment>
+      <ReferenceImageCount.Mode Status="Valid" IsReadOnly="true">Expert</ReferenceImageCount.Mode>
+      <UnsharpMask Status="Valid">false</UnsharpMask>
+      <UnsharpMask.Type Status="Valid" IsReadOnly="true">BoolType</UnsharpMask.Type>
+      <UnsharpMask.Default Status="Valid" IsReadOnly="true">false</UnsharpMask.Default>
+      <UnsharpMask.GuiHint Status="Valid" IsReadOnly="true">GuiCheckBox</UnsharpMask.GuiHint>
+      <UnsharpMaskState Status="Valid"></UnsharpMaskState>
+      <UnsharpMaskState.Type Status="Valid" IsReadOnly="true">StringType</UnsharpMaskState.Type>
+      <UnsharpMaskState.Default Status="Valid" IsReadOnly="true"></UnsharpMaskState.Default>
+      <UnsharpMask.Enabled Status="Valid" IsReadOnly="true">true</UnsharpMask.Enabled>
+      <CameraIdentifier Status="Valid" IsReadOnly="true">AxioCamMRc5_S8235</CameraIdentifier>
+      <CameraIdentifier.Type Status="Valid" IsReadOnly="true">StringType</CameraIdentifier.Type>
+      <CameraIdentifier.GuiHint Status="Valid" IsReadOnly="true">GuiTextBox</CameraIdentifier.GuiHint>
+      <CameraIdentifier.DisplayOrder Status="Valid" IsReadOnly="true">-999</CameraIdentifier.DisplayOrder>
+      <CameraIdentifier.Label Status="Valid" IsReadOnly="true">Camera Identifier</CameraIdentifier.Label>
+      <AutomaticTriggerControl Status="Valid">true</AutomaticTriggerControl>
+      <AutomaticTriggerControl.Type Status="Valid" IsReadOnly="true">BoolType</AutomaticTriggerControl.Type>
+      <AutomaticTriggerControl.Default Status="Valid" IsReadOnly="true">true</AutomaticTriggerControl.Default>
+      <AutomaticTriggerControl.Enabled Status="Valid" IsReadOnly="true">true</AutomaticTriggerControl.Enabled>
+      <AutomaticTriggerControl.Label Status="Valid" IsReadOnly="true">Acquire|Auto Trigger Control</AutomaticTriggerControl.Label>
+      <AutomaticTriggerControl.Mode Status="Valid" IsReadOnly="true">Expert, NoPersist</AutomaticTriggerControl.Mode>
+      <AutomaticTriggerControl.GuiHint Status="Valid" IsReadOnly="true">GuiNone</AutomaticTriggerControl.GuiHint>
+      <AutomaticTriggerControl.DisplayOrder Status="Valid" IsReadOnly="true">203</AutomaticTriggerControl.DisplayOrder>
+      <Resolution.Enabled Status="Valid" IsReadOnly="true">true</Resolution.Enabled>
+      <BinningList.Enabled Status="Valid" IsReadOnly="true">false</BinningList.Enabled>
+      <Frame.Enabled Status="Valid" IsReadOnly="true">true</Frame.Enabled>
+      <ImageFrame.Max Status="Valid" IsReadOnly="true">0,0,2584,1936</ImageFrame.Max>
+      <LiveImageFrame.Max Status="Valid" IsReadOnly="true">0,0,1292,968</LiveImageFrame.Max>
+      <TheoreticalTotalMagnification Status="Valid" IsActivated="true" IsReadOnly="true">2.5</TheoreticalTotalMagnification>
+      <TotalMagnification Status="Valid" IsActivated="true" IsReadOnly="true">2.5</TotalMagnification>
+      <DefaultScalingUnit Status="Valid" IsActivated="true" IsReadOnly="true">mm</DefaultScalingUnit>
+    </ParameterCollection>
+    <ParameterCollection Id="SoftwareAutofocus">
+      <IsInitialized Status="Valid">true</IsInitialized>
+      <IsRunning Status="Valid">false</IsRunning>
+      <AutofocusResult Status="Valid">Undefined</AutofocusResult>
+      <AutofocusSignalQuality Status="Valid">0</AutofocusSignalQuality>
+    </ParameterCollection>
+    <ParameterCollection Id="Autofocus">
+      <IsInitialized Status="Valid">true</IsInitialized>
+      <IsRunning Status="Valid">false</IsRunning>
+      <AutofocusResult Status="Valid">Undefined</AutofocusResult>
+      <AutofocusSignalQuality Status="Valid">0</AutofocusSignalQuality>
+      <AutofocusStrategyMode Status="Valid">Software</AutofocusStrategyMode>
+      <AutofocusSignalQualityThreshold Status="Valid">50</AutofocusSignalQualityThreshold>
+    </ParameterCollection>
+    <Configuration>
+      <Device Id="Microscope" Name="Axio Imager.Z2" UniqueName="ImagerZ2.Stand" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="false" IsDetector="false">
+        <StandSpecification>
+          <StandCharacteristic Key="Standard"></StandCharacteristic>
+        </StandSpecification>
+        <Devices>
+          <DeviceRef Id="MTBCameraAdapter_MTBTube_Cameraport"></DeviceRef>
+          <DeviceRef Id="MTBCondenserContrastChanger"></DeviceRef>
+          <DeviceRef Id="MTBCondenserFrontLensChanger"></DeviceRef>
+          <DeviceRef Id="MTBEyePiece"></DeviceRef>
+          <DeviceRef Id="MTBFocus"></DeviceRef>
+          <DeviceRef Id="MTBMicroscopeManager"></DeviceRef>
+          <DeviceRef Id="MTBObject"></DeviceRef>
+          <DeviceRef Id="MTBObjectiveChanger"></DeviceRef>
+          <DeviceRef Id="MTBOptovarChanger"></DeviceRef>
+          <DeviceRef Id="MTBReflectorChanger"></DeviceRef>
+          <DeviceRef Id="MTBRLHalogenLamp"></DeviceRef>
+          <DeviceRef Id="MTBRLShutter"></DeviceRef>
+          <DeviceRef Id="MTBRLTLSwitch"></DeviceRef>
+          <DeviceRef Id="MTBStage"></DeviceRef>
+          <DeviceRef Id="MTBStageAxisX"></DeviceRef>
+          <DeviceRef Id="MTBStageAxisY"></DeviceRef>
+          <DeviceRef Id="MTBTLApertureStop"></DeviceRef>
+          <DeviceRef Id="MTBTLFieldStop"></DeviceRef>
+          <DeviceRef Id="MTBTLHalogenLamp"></DeviceRef>
+          <DeviceRef Id="MTBTLShutter"></DeviceRef>
+          <DeviceRef Id="MTBTubeVisCamChanger"></DeviceRef>
+          <DeviceRef Id="MTBObject"></DeviceRef>
+          <DeviceRef Id="Condenser"></DeviceRef>
+          <DeviceRef Id="MTBCamera_MTBTube_Cameraport.AxioCamMRc5"></DeviceRef>
+          <DeviceRef Id="SoftwareAutofocus"></DeviceRef>
+          <DeviceRef Id="Autofocus"></DeviceRef>
+        </Devices>
+        <BeamPaths>
+          <BeamPath Key="ObservationPath">
+            <BeamPathNode Id="MTBObject">
+              <Successors>
+                <BeamPathNode Id="MTBObjectiveChanger">
+                  <Successors>
+                    <BeamPathNode Id="MTBReflectorChanger">
+                      <Successors>
+                        <BeamPathNode Id="MTBOptovarChanger">
+                          <Successors>
+                            <BeamPathNode Id="MTBTubeVisCamChanger">
+                              <Successors>
+                                <BeamPathNode Id="MTBCameraAdapter_MTBTube_Cameraport">
+                                  <Successors>
+                                    <BeamPathNode Id="MTBCamera_MTBTube_Cameraport.AxioCamMRc5">
+                                      <Successors></Successors>
+                                    </BeamPathNode>
+                                  </Successors>
+                                </BeamPathNode>
+                                <BeamPathNode Id="MTBEyePiece">
+                                  <Successors></Successors>
+                                </BeamPathNode>
+                              </Successors>
+                            </BeamPathNode>
+                          </Successors>
+                        </BeamPathNode>
+                      </Successors>
+                    </BeamPathNode>
+                  </Successors>
+                </BeamPathNode>
+              </Successors>
+            </BeamPathNode>
+          </BeamPath>
+          <BeamPath Key="ReflectedLightPath">
+            <BeamPathNode Id="MTBObject">
+              <Successors>
+                <BeamPathNode Id="MTBObjectiveChanger">
+                  <Successors>
+                    <BeamPathNode Id="MTBReflectorChanger">
+                      <Successors>
+                        <BeamPathNode Id="MTBRLShutter">
+                          <Successors>
+                            <BeamPathNode Id="MTBRLHalogenLamp">
+                              <Successors></Successors>
+                            </BeamPathNode>
+                          </Successors>
+                        </BeamPathNode>
+                      </Successors>
+                    </BeamPathNode>
+                  </Successors>
+                </BeamPathNode>
+              </Successors>
+            </BeamPathNode>
+          </BeamPath>
+          <BeamPath Key="TransmittedLightPath">
+            <BeamPathNode Id="MTBObject">
+              <Successors>
+                <BeamPathNode Id="Condenser">
+                  <Successors>
+                    <BeamPathNode Id="MTBCondenserFrontLensChanger">
+                      <Successors>
+                        <BeamPathNode Id="MTBCondenserContrastChanger">
+                          <Successors>
+                            <BeamPathNode Id="MTBTLApertureStop">
+                              <Successors>
+                                <BeamPathNode Id="MTBTLFieldStop">
+                                  <Successors>
+                                    <BeamPathNode Id="MTBTLShutter">
+                                      <Successors>
+                                        <BeamPathNode Id="MTBTLHalogenLamp">
+                                          <Successors></Successors>
+                                        </BeamPathNode>
+                                      </Successors>
+                                    </BeamPathNode>
+                                  </Successors>
+                                </BeamPathNode>
+                              </Successors>
+                            </BeamPathNode>
+                          </Successors>
+                        </BeamPathNode>
+                      </Successors>
+                    </BeamPathNode>
+                  </Successors>
+                </BeamPathNode>
+              </Successors>
+            </BeamPathNode>
+          </BeamPath>
+          <BeamPath Key="ObliqueLightPath">
+            <BeamPathNode Id="MTBObject">
+              <Successors></Successors>
+            </BeamPathNode>
+          </BeamPath>
+        </BeamPaths>
+      </Device>
+      <Device Id="MTBCameraAdapter_MTBTube_Cameraport" Name="1x Camera Adapter" UniqueName="CameraAdapterAurox.1x" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="None" IsEmitter="false" IsDetector="false">
+        <Magnification>1</Magnification>
+        <CameraId></CameraId>
+      </Device>
+      <Device Id="MTBCondenserContrastChanger" Name="Motorized Condenser 0.9 H D Ph DIC" UniqueName="ImagerZ2M2.Condenser_09_H_D_PH_DIC_mot" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="false" IsDetector="false">
+        <MinPosition>1</MinPosition>
+        <MaxPosition>8</MaxPosition>
+        <ChangerElements>
+          <Contrast Name="Bright Field" Id="" UniqueName="Contrast.BrightField" Model="" IsMounted="true" Position="1" Type="Contrast">
+            <ContrastMethods>BrightField</ContrastMethods>
+          </Contrast>
+          <Contrast Name="PH1" Id="" UniqueName="Contrast.PH1" Model="" IsMounted="true" Position="2" Type="Contrast">
+            <ContrastMethods>PH1</ContrastMethods>
+          </Contrast>
+          <Contrast Name="DIC 1" Id="" UniqueName="Contrast.DIC1" Model="" IsMounted="true" Position="3" Type="Contrast">
+            <ContrastMethods>DIC1</ContrastMethods>
+          </Contrast>
+          <Contrast Name="PH2" Id="" UniqueName="Contrast.PH2" Model="" IsMounted="true" Position="4" Type="Contrast">
+            <ContrastMethods>PH2</ContrastMethods>
+          </Contrast>
+          <Contrast Name="DIC 2" Id="" UniqueName="Contrast.DIC2" Model="" IsMounted="true" Position="5" Type="Contrast">
+            <ContrastMethods>DIC2</ContrastMethods>
+          </Contrast>
+          <Contrast Name="PH3" Id="" UniqueName="Contrast.PH3" Model="" IsMounted="true" Position="6" Type="Contrast">
+            <ContrastMethods>PH3</ContrastMethods>
+          </Contrast>
+          <Contrast Name="DIC 3" Id="" UniqueName="Contrast.DIC3" Model="" IsMounted="true" Position="7" Type="Contrast">
+            <ContrastMethods>DIC3</ContrastMethods>
+          </Contrast>
+          <Contrast Name="Dark Field" Id="" UniqueName="Contrast.DarkField" Model="" IsMounted="true" Position="8" Type="Contrast">
+            <ContrastMethods>DarkField</ContrastMethods>
+          </Contrast>
+        </ChangerElements>
+      </Device>
+      <Device Id="MTBCondenserFrontLensChanger" Name="Condenser Frontlens" UniqueName="ImagerZ2M2.Condenser_Frontlens" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="false" IsDetector="false">
+        <MinPosition>1</MinPosition>
+        <MaxPosition>2</MaxPosition>
+        <ChangerElements>
+          <FrontLens Name="Swung Out" Id="" UniqueName="FrontLens.Out" Model="" IsMounted="true" Position="1" Type="FrontLens">
+            <SwungIn>false</SwungIn>
+          </FrontLens>
+          <FrontLens Name="Swung In" Id="" UniqueName="FrontLens.In" Model="" IsMounted="true" Position="2" Type="FrontLens">
+            <SwungIn>true</SwungIn>
+          </FrontLens>
+        </ChangerElements>
+      </Device>
+      <Device Id="MTBEyePiece" Name="10x Eyepiece SF23" UniqueName="Eyepiece.10x_23" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="None" IsEmitter="false" IsDetector="true">
+        <Magnification>10</Magnification>
+        <DepthOfField>124.72380952380954</DepthOfField>
+        <FieldOfView>23</FieldOfView>
+        <TotalFieldOfView>9.2</TotalFieldOfView>
+      </Device>
+      <Device Id="MTBFocus" Name="Motorized Focus" UniqueName="ImagerZ2.Focus_mot" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="false" IsDetector="false">
+        <MinPosition>-25000</MinPosition>
+        <MaxPosition>25000</MaxPosition>
+        <MaxDeviation>0.005</MaxDeviation>
+        <TypicalDeviation>0.005</TypicalDeviation>
+        <StepWidth>0.01</StepWidth>
+        <PositionUnit>µm</PositionUnit>
+        <MinMoveSpeed>0.062</MinMoveSpeed>
+        <MaxMoveSpeed>6000</MaxMoveSpeed>
+        <SpeedUnit>µm/s</SpeedUnit>
+        <HasContinualAcceleration>true</HasContinualAcceleration>
+        <HasContinualStartSpeed>false</HasContinualStartSpeed>
+        <MinContinualSpeed>0.062</MinContinualSpeed>
+        <MaxContinualSpeed>6000</MaxContinualSpeed>
+        <ContinualSpeedUnit>µm/s</ContinualSpeedUnit>
+        <MinContinualAcceleration>0</MinContinualAcceleration>
+        <MaxContinualAcceleration>10000</MaxContinualAcceleration>
+        <ContinualAccelerationUnit>µm/s²</ContinualAccelerationUnit>
+        <CoordinateDirection>1</CoordinateDirection>
+        <HasLoadWork>true</HasLoadWork>
+        <HasHandwheelDeactivation>false</HasHandwheelDeactivation>
+        <IsAutomaticCalibrationSupported>true</IsAutomaticCalibrationSupported>
+        <IsManualCalibrationSupported>true</IsManualCalibrationSupported>
+        <IsPositiveDirectionAgainstGravity>true</IsPositiveDirectionAgainstGravity>
+        <IsPositiveDirectionTowardSpecimen>true</IsPositiveDirectionTowardSpecimen>
+      </Device>
+      <Device Id="MTBMicroscopeManager" Name="Microscope manager" UniqueName="ImagerZ2M2.MicroscopeManager" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="None" IsEmitter="false" IsDetector="false">
+        <ContrastManagerContrastMethods>0</ContrastManagerContrastMethods>
+        <ContrastManagerModes>Off, OnDemand, ContrastRetaining</ContrastManagerModes>
+        <LightManagerModes>Objective, Classic</LightManagerModes>
+        <IsCondenserFocusingAvailable>false</IsCondenserFocusingAvailable>
+        <IsCurrentFeedAvailable>false</IsCurrentFeedAvailable>
+        <IsDazzleProtectionAvailable>true</IsDazzleProtectionAvailable>
+        <IsLightManagerTemporaryAvailable>true</IsLightManagerTemporaryAvailable>
+        <IsParfocalCorrectionAvailable>true</IsParfocalCorrectionAvailable>
+        <IsParfocalCorrectionSilentModeOnOffAvailable>false</IsParfocalCorrectionSilentModeOnOffAvailable>
+        <IsParcentralCorrectionAvailable>false</IsParcentralCorrectionAvailable>
+        <IsParcentralCorrectionSilentModeOnOffAvailable>false</IsParcentralCorrectionSilentModeOnOffAvailable>
+        <IsLoadWorkCouplingOnOffAvailable>true</IsLoadWorkCouplingOnOffAvailable>
+        <IsVignettingFreeModeTemporaryAvailable>false</IsVignettingFreeModeTemporaryAvailable>
+        <IsLaserSafetyAvailable>false</IsLaserSafetyAvailable>
+        <SoftKeyCount>10</SoftKeyCount>
+        <HasSoftKeyLabeling>true</HasSoftKeyLabeling>
+      </Device>
+      <Device Id="MTBObject" Name="Object" UniqueName="Object" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="None" IsEmitter="false" IsDetector="false"></Device>
+      <Device Id="MTBObjectiveChanger" Name="6x Motorized Nosepiece" UniqueName="ImagerZ2M2.Nosepiece_6xmot" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="false" IsDetector="false">
+        <MinPosition>1</MinPosition>
+        <MaxPosition>6</MaxPosition>
+        <ChangerElements>
+          <Objective Name="Plan-Apochromat 20x/0.8 M27" Id="" UniqueName="Objective.420650-9901-000" Model="" IsMounted="true" Position="1" Type="Objective">
+            <ContrastMethods>DIC2, BrightField, DarkField, RLBrightField, RLPol, TLPol</ContrastMethods>
+            <Features>Pol</Features>
+            <Immersions>Air</Immersions>
+            <Magnification>20</Magnification>
+            <NumericalAperture>0.8</NumericalAperture>
+            <WorkingDistance>610</WorkingDistance>
+            <TIRFAngleCorrection>0</TIRFAngleCorrection>
+          </Objective>
+          <Objective Name="EC Plan-Neofluar 2.5x/0.075 M27" Id="" UniqueName="Objective.420320-9901-000" Model="" IsMounted="true" Position="2" Type="Objective">
+            <ContrastMethods>BrightField, DarkField, RLBrightField, RLPol, TLPol</ContrastMethods>
+            <Features>Pol</Features>
+            <Immersions>Air</Immersions>
+            <Magnification>2.5</Magnification>
+            <NumericalAperture>0.075</NumericalAperture>
+            <WorkingDistance>9500</WorkingDistance>
+            <TIRFAngleCorrection>0</TIRFAngleCorrection>
+          </Objective>
+          <Objective Name="Plan-Apochromat 63x/1.40 Oil DIC M27" Id="" UniqueName="Objective.420782-9900-000" Model="" IsMounted="true" Position="3" Type="Objective">
+            <ContrastMethods>DIC2, DIC3, BrightField, DarkField, RLBrightField, RLPol, TLPol</ContrastMethods>
+            <Features>Pol, TIRF</Features>
+            <Immersions>Oil</Immersions>
+            <Magnification>63</Magnification>
+            <NumericalAperture>1.4</NumericalAperture>
+            <WorkingDistance>193</WorkingDistance>
+            <TIRFAngleCorrection>1</TIRFAngleCorrection>
+          </Objective>
+          <Objective Name="none" Id="" UniqueName="Objective.none" Model="" IsMounted="false" Position="4" Type="Objective">
+            <ContrastMethods>Unknown</ContrastMethods>
+            <Features>Nothing</Features>
+            <Immersions>Unknown</Immersions>
+            <Magnification>0</Magnification>
+            <NumericalAperture>0</NumericalAperture>
+            <WorkingDistance>0</WorkingDistance>
+            <TIRFAngleCorrection>0</TIRFAngleCorrection>
+          </Objective>
+          <Objective Name="none" Id="" UniqueName="Objective.none" Model="" IsMounted="false" Position="5" Type="Objective">
+            <ContrastMethods>Unknown</ContrastMethods>
+            <Features>Nothing</Features>
+            <Immersions>Unknown</Immersions>
+            <Magnification>0</Magnification>
+            <NumericalAperture>0</NumericalAperture>
+            <WorkingDistance>0</WorkingDistance>
+            <TIRFAngleCorrection>0</TIRFAngleCorrection>
+          </Objective>
+          <Objective Name="none" Id="" UniqueName="Objective.none" Model="" IsMounted="false" Position="6" Type="Objective">
+            <ContrastMethods>Unknown</ContrastMethods>
+            <Features>Nothing</Features>
+            <Immersions>Unknown</Immersions>
+            <Magnification>0</Magnification>
+            <NumericalAperture>0</NumericalAperture>
+            <WorkingDistance>0</WorkingDistance>
+            <TIRFAngleCorrection>0</TIRFAngleCorrection>
+          </Objective>
+        </ChangerElements>
+      </Device>
+      <Device Id="MTBOptovarChanger" Name="5x Motorized Tubelens Turret" UniqueName="ImagerZ1M1.TubelensChanger_5xmot" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="false" IsDetector="false">
+        <MinPosition>1</MinPosition>
+        <MaxPosition>5</MaxPosition>
+        <ChangerElements>
+          <ChangerElement Name="Bertrand Lens" Id="" UniqueName="Imager.Tubelens Bertrand" Model="" IsMounted="true" Position="1" Type="None"></ChangerElement>
+          <OptovarLens Name="1x Tubelens" Id="" UniqueName="Imager.Tubelens 1x" Model="" IsMounted="true" Position="2" Type="Optovar">
+            <Magnification>1</Magnification>
+          </OptovarLens>
+          <OptovarLens Name="1.25x Tubelens" Id="" UniqueName="Imager.Tubelens 1.25x" Model="" IsMounted="true" Position="3" Type="Optovar">
+            <Magnification>1.25</Magnification>
+          </OptovarLens>
+          <OptovarLens Name="1.6x Tubelens" Id="" UniqueName="Imager.Tubelens 1.6x" Model="" IsMounted="true" Position="4" Type="Optovar">
+            <Magnification>1.6</Magnification>
+          </OptovarLens>
+          <OptovarLens Name="2.5x Tubelens" Id="" UniqueName="Imager.Tubelens 2.5x" Model="" IsMounted="true" Position="5" Type="Optovar">
+            <Magnification>2.5</Magnification>
+          </OptovarLens>
+        </ChangerElements>
+      </Device>
+      <Device Id="MTBReflectorChanger" Name="10x Motorized Reflector Changer" UniqueName="ImagerZ2.ReflectorChanger_10xmot" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="false" IsDetector="false">
+        <MinPosition>1</MinPosition>
+        <MaxPosition>10</MaxPosition>
+        <ChangerElements>
+          <ChangerElement Name="none" Id="" UniqueName="Reflector.none" Model="" IsMounted="true" Position="1" Type="None"></ChangerElement>
+          <Contrast Name="Analyzer Trans.light" Id="" UniqueName="Reflector.000000-1050-958" Model="" IsMounted="true" Position="2" Type="Contrast">
+            <ContrastMethods>AllTLDIC</ContrastMethods>
+          </Contrast>
+          <ChangerElement Name="none" Id="" UniqueName="Reflector.none" Model="" IsMounted="true" Position="3" Type="None"></ChangerElement>
+          <ChangerElement Name="none" Id="" UniqueName="Reflector.none" Model="" IsMounted="true" Position="4" Type="None"></ChangerElement>
+          <ChangerElement Name="none" Id="" UniqueName="Reflector.none" Model="" IsMounted="true" Position="5" Type="None"></ChangerElement>
+          <ChangerElement Name="none" Id="" UniqueName="Reflector.none" Model="" IsMounted="true" Position="6" Type="None"></ChangerElement>
+          <ChangerElement Name="none" Id="" UniqueName="Reflector.none" Model="" IsMounted="true" Position="7" Type="None"></ChangerElement>
+          <ChangerElement Name="none" Id="" UniqueName="Reflector.none" Model="" IsMounted="true" Position="8" Type="None"></ChangerElement>
+          <ChangerElement Name="none" Id="" UniqueName="Reflector.none" Model="" IsMounted="true" Position="9" Type="None"></ChangerElement>
+          <ChangerElement Name="none" Id="" UniqueName="Reflector.none" Model="" IsMounted="true" Position="10" Type="None"></ChangerElement>
+        </ChangerElements>
+      </Device>
+      <Device Id="MTBRLHalogenLamp" Name="RL Halogen Lamp" UniqueName="ImagerZ2M2.RL_HalogenLamp" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="true" IsDetector="false">
+        <MinPosition>0</MinPosition>
+        <MaxPosition>12.2</MaxPosition>
+        <MaxDeviation>0.0059628543499511237</MaxDeviation>
+        <TypicalDeviation>0.0059628543499511237</TypicalDeviation>
+        <StepWidth>0.011925708699902247</StepWidth>
+        <PositionUnit>Volt</PositionUnit>
+        <Has3200K>true</Has3200K>
+        <HasOnOff>true</HasOnOff>
+        <LampType>Halogen</LampType>
+      </Device>
+      <Device Id="MTBRLShutter" Name="RL Motorized Shutter" UniqueName="ImagerZ1M1.RL_Shutter_mot" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="false" IsDetector="false">
+        <MinPosition>1</MinPosition>
+        <MaxPosition>2</MaxPosition>
+        <ChangerElements>
+          <ShutterState Name="Closed" Id="" UniqueName="Shutter.Closed" Model="" IsMounted="true" Position="1" Type="ShutterState">
+            <IsOpen>false</IsOpen>
+          </ShutterState>
+          <ShutterState Name="Open" Id="" UniqueName="Shutter.Open" Model="" IsMounted="true" Position="2" Type="ShutterState">
+            <IsOpen>true</IsOpen>
+          </ShutterState>
+        </ChangerElements>
+      </Device>
+      <Device Id="MTBRLTLSwitch" Name="Motorized RL/TL Switch" UniqueName="ImagerZ2M2.RLTLSwitchMot" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="false" IsDetector="false">
+        <MinPosition>1</MinPosition>
+        <MaxPosition>2</MaxPosition>
+        <ChangerElements>
+          <RLTLSwitchState Name="TL" Id="" UniqueName="RLTLSwitch.TL" Model="" IsMounted="true" Position="1" Type="RLTLSwitchState">
+            <LightPathLocation>TransmittedLight</LightPathLocation>
+          </RLTLSwitchState>
+          <RLTLSwitchState Name="RL" Id="" UniqueName="RLTLSwitch.RL" Model="" IsMounted="true" Position="2" Type="RLTLSwitchState">
+            <LightPathLocation>ReflectedLight</LightPathLocation>
+          </RLTLSwitchState>
+        </ChangerElements>
+      </Device>
+      <Device Id="MTBStage" Name="Motorized Stage (internal Controller)" UniqueName="ImagerZ1M1.StageITK_mot" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="false" IsDetector="false">
+        <StageAxes>
+          <StageAxis Name="x-Axis" Id="MTBStageAxisX" UniqueName="XAxis" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="false" IsDetector="false">
+            <MinPosition>-80000</MinPosition>
+            <MaxPosition>80000</MaxPosition>
+            <MaxDeviation>5.005</MaxDeviation>
+            <TypicalDeviation>2.005</TypicalDeviation>
+            <StepWidth>0.01</StepWidth>
+            <PositionUnit>µm</PositionUnit>
+            <MinMoveSpeed>0.001</MinMoveSpeed>
+            <MaxMoveSpeed>200000</MaxMoveSpeed>
+            <SpeedUnit>µm/s</SpeedUnit>
+            <HasContinualAcceleration>true</HasContinualAcceleration>
+            <HasContinualStartSpeed>false</HasContinualStartSpeed>
+            <MinContinualSpeed>0</MinContinualSpeed>
+            <MaxContinualSpeed>100000</MaxContinualSpeed>
+            <ContinualSpeedUnit>µm/s</ContinualSpeedUnit>
+            <MinContinualAcceleration>0</MinContinualAcceleration>
+            <MaxContinualAcceleration>500000</MaxContinualAcceleration>
+            <ContinualAccelerationUnit>µm/s2</ContinualAccelerationUnit>
+            <CoordinateDirection>1</CoordinateDirection>
+            <HasLoadWork>false</HasLoadWork>
+            <HasHandwheelDeactivation>false</HasHandwheelDeactivation>
+            <IsAutomaticCalibrationSupported>true</IsAutomaticCalibrationSupported>
+            <IsManualCalibrationSupported>true</IsManualCalibrationSupported>
+          </StageAxis>
+          <StageAxis Name="y-Axis" Id="MTBStageAxisY" UniqueName="YAxis" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="false" IsDetector="false">
+            <MinPosition>-58000</MinPosition>
+            <MaxPosition>58000</MaxPosition>
+            <MaxDeviation>4.995</MaxDeviation>
+            <TypicalDeviation>1.995</TypicalDeviation>
+            <StepWidth>0.01</StepWidth>
+            <PositionUnit>µm</PositionUnit>
+            <MinMoveSpeed>0.001</MinMoveSpeed>
+            <MaxMoveSpeed>200000</MaxMoveSpeed>
+            <SpeedUnit>µm/s</SpeedUnit>
+            <HasContinualAcceleration>true</HasContinualAcceleration>
+            <HasContinualStartSpeed>false</HasContinualStartSpeed>
+            <MinContinualSpeed>0</MinContinualSpeed>
+            <MaxContinualSpeed>100000</MaxContinualSpeed>
+            <ContinualSpeedUnit>µm/s</ContinualSpeedUnit>
+            <MinContinualAcceleration>0</MinContinualAcceleration>
+            <MaxContinualAcceleration>500000</MaxContinualAcceleration>
+            <ContinualAccelerationUnit>µm/s2</ContinualAccelerationUnit>
+            <CoordinateDirection>1</CoordinateDirection>
+            <HasLoadWork>false</HasLoadWork>
+            <HasHandwheelDeactivation>false</HasHandwheelDeactivation>
+            <IsAutomaticCalibrationSupported>true</IsAutomaticCalibrationSupported>
+            <IsManualCalibrationSupported>true</IsManualCalibrationSupported>
+          </StageAxis>
+        </StageAxes>
+      </Device>
+      <Device Id="MTBStageAxisX" Name="x-Axis" UniqueName="XAxis" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="false" IsDetector="false">
+        <MinPosition>-80000</MinPosition>
+        <MaxPosition>80000</MaxPosition>
+        <MaxDeviation>5.005</MaxDeviation>
+        <TypicalDeviation>2.005</TypicalDeviation>
+        <StepWidth>0.01</StepWidth>
+        <PositionUnit>µm</PositionUnit>
+        <MinMoveSpeed>0.001</MinMoveSpeed>
+        <MaxMoveSpeed>200000</MaxMoveSpeed>
+        <SpeedUnit>µm/s</SpeedUnit>
+        <HasContinualAcceleration>true</HasContinualAcceleration>
+        <HasContinualStartSpeed>false</HasContinualStartSpeed>
+        <MinContinualSpeed>0</MinContinualSpeed>
+        <MaxContinualSpeed>100000</MaxContinualSpeed>
+        <ContinualSpeedUnit>µm/s</ContinualSpeedUnit>
+        <MinContinualAcceleration>0</MinContinualAcceleration>
+        <MaxContinualAcceleration>500000</MaxContinualAcceleration>
+        <ContinualAccelerationUnit>µm/s2</ContinualAccelerationUnit>
+        <CoordinateDirection>1</CoordinateDirection>
+        <HasLoadWork>false</HasLoadWork>
+        <HasHandwheelDeactivation>false</HasHandwheelDeactivation>
+        <IsAutomaticCalibrationSupported>true</IsAutomaticCalibrationSupported>
+        <IsManualCalibrationSupported>true</IsManualCalibrationSupported>
+      </Device>
+      <Device Id="MTBStageAxisY" Name="y-Axis" UniqueName="YAxis" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="false" IsDetector="false">
+        <MinPosition>-58000</MinPosition>
+        <MaxPosition>58000</MaxPosition>
+        <MaxDeviation>4.995</MaxDeviation>
+        <TypicalDeviation>1.995</TypicalDeviation>
+        <StepWidth>0.01</StepWidth>
+        <PositionUnit>µm</PositionUnit>
+        <MinMoveSpeed>0.001</MinMoveSpeed>
+        <MaxMoveSpeed>200000</MaxMoveSpeed>
+        <SpeedUnit>µm/s</SpeedUnit>
+        <HasContinualAcceleration>true</HasContinualAcceleration>
+        <HasContinualStartSpeed>false</HasContinualStartSpeed>
+        <MinContinualSpeed>0</MinContinualSpeed>
+        <MaxContinualSpeed>100000</MaxContinualSpeed>
+        <ContinualSpeedUnit>µm/s</ContinualSpeedUnit>
+        <MinContinualAcceleration>0</MinContinualAcceleration>
+        <MaxContinualAcceleration>500000</MaxContinualAcceleration>
+        <ContinualAccelerationUnit>µm/s2</ContinualAccelerationUnit>
+        <CoordinateDirection>1</CoordinateDirection>
+        <HasLoadWork>false</HasLoadWork>
+        <HasHandwheelDeactivation>false</HasHandwheelDeactivation>
+        <IsAutomaticCalibrationSupported>true</IsAutomaticCalibrationSupported>
+        <IsManualCalibrationSupported>true</IsManualCalibrationSupported>
+      </Device>
+      <Device Id="MTBTLApertureStop" Name="Motorized Condenser Aperture" UniqueName="ImagerZ2M2.Condenser_Aperture_mot" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="false" IsDetector="false">
+        <MinPosition>0.1021</MinPosition>
+        <MaxPosition>0.9</MaxPosition>
+        <MaxDeviation>0.0014097173144876326</MaxDeviation>
+        <TypicalDeviation>0.0014097173144876326</TypicalDeviation>
+        <StepWidth>0.0028194346289752651</StepWidth>
+        <PositionUnit>NA</PositionUnit>
+        <MinMoveSpeed>1</MinMoveSpeed>
+        <MaxMoveSpeed>1</MaxMoveSpeed>
+        <SpeedUnit></SpeedUnit>
+      </Device>
+      <Device Id="MTBTLFieldStop" Name="TL Motorized Fieldstop" UniqueName="ImagerZ1M1.TL_Fieldstop_mot" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="false" IsDetector="false">
+        <MinPosition>0</MinPosition>
+        <MaxPosition>100</MaxPosition>
+        <MaxDeviation>0.11933174224343675</MaxDeviation>
+        <TypicalDeviation>0.11933174224343675</TypicalDeviation>
+        <StepWidth>0.2386634844868735</StepWidth>
+        <PositionUnit>%</PositionUnit>
+        <MinMoveSpeed>1</MinMoveSpeed>
+        <MaxMoveSpeed>1</MaxMoveSpeed>
+        <SpeedUnit></SpeedUnit>
+      </Device>
+      <Device Id="MTBTLHalogenLamp" Name="TL Halogen Lamp" UniqueName="ImagerZ2M2.TL_HalogenLamp" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="true" IsDetector="false">
+        <MinPosition>0</MinPosition>
+        <MaxPosition>12.2</MaxPosition>
+        <MaxDeviation>0.0059628543499511237</MaxDeviation>
+        <TypicalDeviation>0.0059628543499511237</TypicalDeviation>
+        <StepWidth>0.011925708699902247</StepWidth>
+        <PositionUnit>Volt</PositionUnit>
+        <Has3200K>true</Has3200K>
+        <HasOnOff>true</HasOnOff>
+        <LampType>Halogen</LampType>
+      </Device>
+      <Device Id="MTBTLShutter" Name="TL Motorized Shutter" UniqueName="ImagerZ1M1.TL_Shutter_mot" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="false" IsDetector="false">
+        <MinPosition>1</MinPosition>
+        <MaxPosition>2</MaxPosition>
+        <ChangerElements>
+          <ShutterState Name="Closed" Id="" UniqueName="Shutter.Closed" Model="" IsMounted="true" Position="1" Type="ShutterState">
+            <IsOpen>false</IsOpen>
+          </ShutterState>
+          <ShutterState Name="Open" Id="" UniqueName="Shutter.Open" Model="" IsMounted="true" Position="2" Type="ShutterState">
+            <IsOpen>true</IsOpen>
+          </ShutterState>
+        </ChangerElements>
+      </Device>
+      <Device Id="MTBTubeVisCamChanger" Name="Manual Tube Vis/Camera Slider" UniqueName="ImagerZ1M1.VisCamChanger_man" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Manual" IsEmitter="false" IsDetector="false">
+        <MinPosition>1</MinPosition>
+        <MaxPosition>3</MaxPosition>
+        <ChangerElements>
+          <BeamSplitter Name="100% Eyepiece" Id="" UniqueName="FotoTube.VIS_Cam_100/0" Model="" IsMounted="true" Position="1" Type="BeamSplitter">
+            <SplittingRatioSuccessor1>1</SplittingRatioSuccessor1>
+            <Successor1Id>MTBEyePiece</Successor1Id>
+            <Successor2Id>MTBCameraAdapter_MTBTube_Cameraport</Successor2Id>
+          </BeamSplitter>
+          <BeamSplitter Name="30% Eyepiece/70% Camera" Id="" UniqueName="FotoTube.VIS_Cam_30/70" Model="" IsMounted="true" Position="2" Type="BeamSplitter">
+            <SplittingRatioSuccessor1>0.3</SplittingRatioSuccessor1>
+            <Successor1Id>MTBEyePiece</Successor1Id>
+            <Successor2Id>MTBCameraAdapter_MTBTube_Cameraport</Successor2Id>
+          </BeamSplitter>
+          <BeamSplitter Name="100% Camera" Id="" UniqueName="FotoTube.VIS_Cam_0/100" Model="" IsMounted="true" Position="3" Type="BeamSplitter">
+            <SplittingRatioSuccessor1>0</SplittingRatioSuccessor1>
+            <Successor1Id>MTBEyePiece</Successor1Id>
+            <Successor2Id>MTBCameraAdapter_MTBTube_Cameraport</Successor2Id>
+          </BeamSplitter>
+        </ChangerElements>
+      </Device>
+      <Device Id="MTBCamera_MTBTube_Cameraport.AxioCamMRc5" Name="AxioCam MRc5" UniqueName="AxioCamMRc5_S8235" Model="AxioCamMRc5" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="false" IsDetector="true"></Device>
+      <Device Id="SoftwareAutofocus" Name="SoftwareAutofocus" UniqueName="SoftwareAutofocus" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="false" IsDetector="false"></Device>
+      <Device Id="Autofocus" Name="Autofocus" UniqueName="Autofocus" Model="" IsAvailable="true" IsBroken="false" IsBrokenReason="" Motorization="Motorized" IsEmitter="false" IsDetector="false"></Device>
+    </Configuration>
+  </HardwareSetting>
+  <Information>
+    <User Id="0" />
+    <Application>
+      <Name>ZEN 2 (blue edition)</Name>
+      <Version>2.0.0.0</Version>
+    </Application>
+    <Document>
+      <CreationDate>2024-09-18T10:10:09.1424986-05:00</CreationDate>
+      <UserName>axio</UserName>
+    </Document>
+    <Image>
+      <PixelType>Bgr24</PixelType>
+      <ComponentBitCount>8</ComponentBitCount>
+      <SizeX>2584</SizeX>
+      <SizeY>1936</SizeY>
+      <SizeC>1</SizeC>
+      <SizeT>1</SizeT>
+      <Dimensions>
+        <Channels>
+          <Channel Id="Channel:0">
+            <Color>#FFFFFFFF</Color>
+            <AcquisitionMode>WideField</AcquisitionMode>
+            <ExposureTime>23500000</ExposureTime>
+            <Reflector>none</Reflector>
+            <NACondenser>0.9</NACondenser>
+            <IlluminationType>Other</IlluminationType>
+            <ContrastMethod>Other</ContrastMethod>
+            <PixelType>Bgr24</PixelType>
+            <ComponentBitCount>8</ComponentBitCount>
+            <DetectorSettings>
+              <Binning>1,1</Binning>
+              <Detector Id="Detector:AxioCam MRc5" />
+            </DetectorSettings>
+          </Channel>
+        </Channels>
+        <T>
+          <StartTime>0001-01-01T00:00:00</StartTime>
+        </T>
+      </Dimensions>
+      <ObjectiveSettings>
+        <ObjectiveRef Id="Objective:1" />
+      </ObjectiveSettings>
+      <MicroscopeRef Id="Microscope:1" />
+      <MicroscopeSettings>
+        <EyepieceSettings>
+          <TotalMagnification>25</TotalMagnification>
+        </EyepieceSettings>
+      </MicroscopeSettings>
+      <TubeLenses>
+        <TubeLensRef Id="TubeLens:1" />
+      </TubeLenses>
+    </Image>
+    <Instrument>
+      <Microscopes>
+        <Microscope Id="Microscope:1" Name="Axio Imager.Z2">
+          <Type>Upright</Type>
+        </Microscope>
+      </Microscopes>
+      <Detectors>
+        <Detector Id="Detector:AxioCam MRc5" Name="AxioCam MRc5">
+          <Manufacturer>
+            <Model>AxioCamMRc5</Model>
+          </Manufacturer>
+          <Adapter>
+            <Manufacturer>
+              <Model>1x Camera Adapter</Model>
+            </Manufacturer>
+          </Adapter>
+        </Detector>
+      </Detectors>
+      <Objectives>
+        <Objective Id="Objective:1" Name="EC Plan-Neofluar 2.5x/0.075 M27">
+          <LensNA>0.075</LensNA>
+          <NominalMagnification>2.5</NominalMagnification>
+          <WorkingDistance>9500</WorkingDistance>
+          <PupilGeometry>Circular</PupilGeometry>
+          <Immersion>Air</Immersion>
+        </Objective>
+      </Objectives>
+      <TubeLenses>
+        <TubeLens Id="TubeLens:1" Name="1x Tubelens">
+          <Magnification>1</Magnification>
+        </TubeLens>
+      </TubeLenses>
+    </Instrument>
+  </Information>
+  <Scaling>
+    <AutoScaling>
+      <Type>Measured</Type>
+      <Objective>Objective.420320-9901-000</Objective>
+      <CameraAdapter>CameraAdapterAurox.1x</CameraAdapter>
+      <ObjectiveName>EC Plan-Neofluar 2.5x/0.075 M27</ObjectiveName>
+      <OptovarMagnification>1</OptovarMagnification>
+      <ReflectorMagnification>1</ReflectorMagnification>
+      <CameraName>AxioCam MRc5</CameraName>
+      <CameraAdapterMagnification>1</CameraAdapterMagnification>
+      <CameraPixelDistance>3.4,3.4</CameraPixelDistance>
+      <CreationDateTime>09/18/2024 15:10:51</CreationDateTime>
+    </AutoScaling>
+    <Items>
+      <Distance Id="X">
+        <Value>1.3600000000000001E-06</Value>
+        <DefaultUnitFormat>mm</DefaultUnitFormat>
+      </Distance>
+      <Distance Id="Y">
+        <Value>1.3600000000000001E-06</Value>
+        <DefaultUnitFormat>mm</DefaultUnitFormat>
+      </Distance>
+    </Items>
+  </Scaling>
+  <DisplaySetting>
+    <Channels>
+      <Channel Id="Channel:0" Name="C1">
+        <BitCountRange>8</BitCountRange>
+        <DyeName>Dye1</DyeName>
+        <ColorMode>None</ColorMode>
+      </Channel>
+    </Channels>
+  </DisplaySetting>
+  <Layers>
+    <Layer Name="Annotation">
+      <Usage>Annotation</Usage>
+      <IsProtected>false</IsProtected>
+      <LayerFlags>1</LayerFlags>
+      <Elements>
+        <ScaleBar Id="77">
+          <Attributes>
+            <FontSize>48</FontSize>
+            <StrokeThickness>6.4533333333333323</StrokeThickness>
+            <CanMeasureEnable>false</CanMeasureEnable>
+          </Attributes>
+          <TextElements>
+            <TextElement Id="Annotation" Type="AlignPosition">
+              <Text>0.5 mm</Text>
+              <Position>2138.83294117647,1767.7</Position>
+            </TextElement>
+          </TextElements>
+          <Geometry>
+            <X1>2138.8329411764707</X1>
+            <Y1>1839.2</Y1>
+            <X2>2506.48</X2>
+            <Y2>1839.2</Y2>
+            <Orientation>Horizontal</Orientation>
+          </Geometry>
+        </ScaleBar>
+      </Elements>
+    </Layer>
+  </Layers>
+</ImageMetadata>
