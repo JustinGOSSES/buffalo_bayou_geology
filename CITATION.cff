@@ -3,24 +3,24 @@ message: "If you use this software, please cite it as below."
 title: "Buffalo Bayou Geology"
 type: dataset
 authors:
-  - family-names: Patterson
-    given-names: Penny
-  - family-names: Kendall
-    given-names: Jerry
-  - family-names: Schwartz
-    given-names: Angela
-  - family-names: Novello
-    given-names: Joshua
-  - family-names: Gaston
-    given-names: Will
-  - family-names: Lang
-    given-names: Richard
-  - family-names: West
-    given-names: Dorrene
-  - family-names: Gosses
-    given-names: Justin
-  - family-names: Wachtman
-    given-names: Caroline
+  - given-names: Patterson
+    family-names: Penny
+  - given-names: Kendall
+    family-names: Jerry
+  - given-names: Schwartz
+    family-names: Angela
+  - given-names: Novello
+    family-names: Joshua
+  - given-names: Gaston
+    family-names: Will
+  - given-names: Lang
+    family-names: Richard
+  - given-names: West
+    family-names: Dorrene
+  - given-names: Gosses
+    family-names: Justin
+  - given-names: Wachtman
+    family-names: Caroline
 repository-code: "https://github.com/JustinGOSSES/buffalo_bayou_geology"
 version: "0.0.2"
 date-released: "2026-02-28"
