@@ -176,7 +176,8 @@ Richard lang created the well log cross-sections.
 
 ### Thin Sections
 
-Thin-sections were collected, prepared, and analyzed by the associated paper's author group as well as Joan Welton.
+Thin-sections were collected and analyzed by the associated paper's author group as well as Joan Welton.
+Preparation of thin-sections was donated by TPS Enterprises, LLC. Contact Greg Vardilos: thinsection@gmail.com.
 
 ### Basemaps
 

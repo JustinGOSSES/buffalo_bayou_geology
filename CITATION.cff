@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: "If you use this software, please cite it as: Patterson, P., Kendall, J., Schwartz, A., Novello, J., Gaston, W., Lang, R., West, D., Gosses, J., & Wachtman, C. (2026). Buffalo Bayou Geology (Version 0.0.2) [Dataset]. https://github.com/JustinGOSSES/buffalo_bayou_geology"
 title: "Buffalo Bayou Geology"
 type: dataset
 authors:
