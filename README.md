@@ -142,9 +142,6 @@ large number of images and as a result the file size of that one file exceeded t
 one file size limit of GitHub without using LFS (Large file service), which we
 didn't want to use as then it makes loading the file with JavaScript annoyingly complex.
 
-You can still (likely) download that KMZ from a Google drive at: _____TODO______
-
-
 ## Data sources
 
 ### Geologic Field Data (Outcrops)
@@ -158,10 +155,8 @@ and LIDAR data. Only 2 of these lineaments are associated with known active faul
 
 ### Regional Fault Data
 
-Regional fault traces are from subsurface seismic mapping are shown on some of the maps as
+Regional fault traces are from subsurface seismic mapping. They are shown on the maps as
 black lines. These faults are mostly not exposed at the surface, so geographic positions should be interpreted as very approximate only.
-
-TOOD---------------
 
 #### Faults with surface geomorphic expression
 
@@ -182,7 +177,7 @@ Richard lang created the well log cross-sections.
 
 ### Thin Sections
 
---TODO--
+Thin-sections were collected, prepared, and analyzed by the associated paper's author group as well as Joan Welton.
 
 ### Basemaps
 
