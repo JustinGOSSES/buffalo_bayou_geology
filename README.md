@@ -199,7 +199,7 @@ Thin-sections were collected, prepared, and analyzed by the associated paper's a
 ## Contributing 
 
 This repository is still in flux as more information from google drives is moved here.
-However, the eventual plan is to have this repository be at some point a fixed archive.
+However, the eventual plan is to have this repository be a fixed archive, likely post March, 2026.
 
 ### Communication 
 
