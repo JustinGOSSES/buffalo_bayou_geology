@@ -18,12 +18,7 @@ The outcrop photos from along Buffalo Bayou in this repository were used in the 
 ## DOI
 
 The GitHub repository will be given a DOI and an instance on
-[https://zenodo.org/](https://zenodo.org/). This is in progress.
-
-
-IGNORE THIS ONE, trying to trigger the real DOI creation.
-[![DOI](https://zenodo.org/badge/1110961621.svg)](https://doi.org/10.5281/zenodo.17843207)
-
+https://zenodo.org. This is in progress.
 
 ## Visualization of where the photos occur 
 
